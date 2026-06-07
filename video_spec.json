@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "videoId": "my_video_001",
+    "targetAge": "6-7",
+    "hostCharacter": "parrot",
+    "themeColor": "#FFDE4D",
+    "fps": 30
+  },
+  "timeline": [
+    {
+      "stepId": "scene_01_intro",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Your subtitle here!",
+      "environment": {
+        "background": "your_background.jpg"
+      },
+      "characterState": {
+        "pose": "waving",
+        "keyframes": [
+          { "frame": 0,  "x": -4, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    }
+  ]
+}

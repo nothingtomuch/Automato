@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "videoId": "addition_apples",
+    "targetAge": "4-5",
+    "hostCharacter": "bunny",
+    "themeColor": "#FF6B6B",
+    "fps": 30
+  },
+  "timeline": [
+    {
+      "stepId": "scene_01_intro",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Let's count apples together! 🍎",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "waving",
+        "keyframes": [
+          { "frame": 0,  "x": -5, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_02_basket_a",
+      "audioFile": "scene_02.wav",
+      "subtitle": "Basket A has 3 apples.",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "keyframes": [
+          { "frame": 0, "x": -3, "y": -1, "scale": 1.0, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        { "id": "basket_a", "src": "basket.png",  "keyframes": [{"frame": 0, "x": 350, "y": 600, "scale": 1.0, "opacity": 1, "rotation": 0}] },
+        { "id": "apple_a1", "src": "apple.png",   "keyframes": [{"frame": 10, "x": 310, "y": 520, "scale": 0.6, "opacity": 0, "rotation": 0}, {"frame": 25, "x": 310, "y": 520, "scale": 0.6, "opacity": 1, "rotation": 0}] },
+        { "id": "apple_a2", "src": "apple.png",   "keyframes": [{"frame": 25, "x": 370, "y": 520, "scale": 0.6, "opacity": 0, "rotation": 0}, {"frame": 40, "x": 370, "y": 520, "scale": 0.6, "opacity": 1, "rotation": 0}] },
+        { "id": "apple_a3", "src": "apple.png",   "keyframes": [{"frame": 40, "x": 430, "y": 520, "scale": 0.6, "opacity": 0, "rotation": 0}, {"frame": 55, "x": 430, "y": 520, "scale": 0.6, "opacity": 1, "rotation": 0}] }
+      ]
+    },
+    {
+      "stepId": "scene_03_basket_b",
+      "audioFile": "scene_03.wav",
+      "subtitle": "Basket B has 2 apples.",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "keyframes": [
+          { "frame": 0, "x": 3, "y": -1, "scale": 1.0, "rotationY": 180, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        { "id": "basket_b", "src": "basket.png",  "keyframes": [{"frame": 0, "x": 1400, "y": 600, "scale": 1.0, "opacity": 1, "rotation": 0}] },
+        { "id": "apple_b1", "src": "apple.png",   "keyframes": [{"frame": 10, "x": 1360, "y": 520, "scale": 0.6, "opacity": 0, "rotation": 0}, {"frame": 25, "x": 1360, "y": 520, "scale": 0.6, "opacity": 1, "rotation": 0}] },
+        { "id": "apple_b2", "src": "apple.png",   "keyframes": [{"frame": 25, "x": 1440, "y": 520, "scale": 0.6, "opacity": 0, "rotation": 0}, {"frame": 40, "x": 1440, "y": 520, "scale": 0.6, "opacity": 1, "rotation": 0}] }
+      ]
+    },
+    {
+      "stepId": "scene_04_answer",
+      "audioFile": "scene_04.wav",
+      "subtitle": "3 + 2 = 5 apples! Great counting! ⭐",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "excited",
+        "keyframes": [
+          { "frame": 0, "x": 0, "y": -1, "scale": 1.5, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_05_celebrate",
+      "audioFile": "scene_05.wav",
+      "subtitle": "You're a superstar counter! 🌟",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "dance",
+        "keyframes": [
+          { "frame": 0, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}

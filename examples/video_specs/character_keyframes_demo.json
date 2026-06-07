@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "videoId": "character_movement_demo",
+    "targetAge": "6-7",
+    "hostCharacter": "parrot",
+    "themeColor": "#6BCB77",
+    "fps": 30
+  },
+  "timeline": [
+    {
+      "stepId": "scene_01_slide_in",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Watch me slide across the screen!",
+      "characterState": {
+        "pose": "waving",
+        "keyframes": [
+          { "frame": 0,  "x": -5, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 90, "x": 5,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_02_scale",
+      "audioFile": "scene_02.wav",
+      "subtitle": "I can grow bigger... and smaller!",
+      "characterState": {
+        "pose": "idle",
+        "keyframes": [
+          { "frame": 0,  "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 30, "x": 0, "y": -1, "scale": 2.5, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 60, "x": 0, "y": -1, "scale": 0.5, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 90, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_03_spin",
+      "audioFile": "scene_03.wav",
+      "subtitle": "Wheee! Full spin!",
+      "characterState": {
+        "pose": "dance",
+        "keyframes": [
+          { "frame": 0,  "x": 0, "y": -1, "scale": 1.2, "rotationY": 0,   "rotationZ": 0 },
+          { "frame": 90, "x": 0, "y": -1, "scale": 1.2, "rotationY": 360, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_04_tilt",
+      "audioFile": "scene_04.wav",
+      "subtitle": "Nope! That's not right! *wobble*",
+      "characterState": {
+        "pose": "gesture-negative",
+        "keyframes": [
+          { "frame": 0,  "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0  },
+          { "frame": 22, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 30 },
+          { "frame": 45, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": -30},
+          { "frame": 67, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 15 },
+          { "frame": 90, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0  }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_05_celebrate",
+      "audioFile": "scene_05.wav",
+      "subtitle": "All keyframes working perfectly! 🎉",
+      "characterState": {
+        "pose": "dance",
+        "keyframes": [
+          { "frame": 0, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}
