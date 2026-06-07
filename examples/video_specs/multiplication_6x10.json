@@ -10,15 +10,29 @@
     {
       "stepId": "scene_01_intro",
       "audioFile": "scene_01.wav",
-      "subtitle": "Hi! Today we learn about multiplication! 🐒",
+      "subtitle": "Hi! Today we learn about multiplication! \ud83d\udc12",
       "environment": {
         "background": "forest.jpg"
       },
       "characterState": {
-        "pose": "waving",
+        "pose": "idle",
         "keyframes": [
-          { "frame": 0,  "x": -5, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
-          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -5,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          },
+          {
+            "frame": 45,
+            "x": 0,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       }
     },
@@ -32,58 +46,219 @@
       "characterState": {
         "pose": "gesture-positive",
         "keyframes": [
-          { "frame": 0, "x": -3, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -3,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
-        { "id": "truck_1", "src": "truck.png", "keyframes": [{"frame": 0,  "x": 450,  "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 10, "x": 450,  "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] },
-        { "id": "truck_2", "src": "truck.png", "keyframes": [{"frame": 10, "x": 650,  "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 20, "x": 650,  "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] },
-        { "id": "truck_3", "src": "truck.png", "keyframes": [{"frame": 20, "x": 850,  "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 30, "x": 850,  "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] },
-        { "id": "truck_4", "src": "truck.png", "keyframes": [{"frame": 30, "x": 1050, "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 40, "x": 1050, "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] },
-        { "id": "truck_5", "src": "truck.png", "keyframes": [{"frame": 40, "x": 1250, "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 50, "x": 1250, "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] },
-        { "id": "truck_6", "src": "truck.png", "keyframes": [{"frame": 50, "x": 1450, "y": 700, "scale": 0.7, "opacity": 0, "rotation": 0}, {"frame": 60, "x": 1450, "y": 700, "scale": 0.7, "opacity": 1, "rotation": 0}] }
+        {
+          "id": "truck_1",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 450,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 10,
+              "x": 450,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "truck_2",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 10,
+              "x": 650,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 20,
+              "x": 650,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "truck_3",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 20,
+              "x": 850,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 30,
+              "x": 850,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "truck_4",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 30,
+              "x": 1050,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 40,
+              "x": 1050,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "truck_5",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 40,
+              "x": 1250,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 50,
+              "x": 1250,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "truck_6",
+          "src": "truck.png",
+          "keyframes": [
+            {
+              "frame": 50,
+              "x": 1450,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 60,
+              "x": 1450,
+              "y": 700,
+              "scale": 0.7,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
       ]
     },
     {
       "stepId": "scene_03_boxes",
       "audioFile": "scene_03.wav",
-      "subtitle": "Each truck carries 10 boxes. That's 6 × 10!",
+      "subtitle": "Each truck carries 10 boxes. That's 6 \u00d7 10!",
       "environment": {
         "background": "forest.jpg"
       },
       "characterState": {
-        "pose": "carrying",
+        "pose": "walk",
         "keyframes": [
-          { "frame": 0, "x": -3, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -3,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       }
     },
     {
       "stepId": "scene_04_answer",
       "audioFile": "scene_04.wav",
-      "subtitle": "6 × 10 = 60 boxes altogether! 📦",
-      "environment": {
-        "background": "forest.jpg"
-      },
-      "characterState": {
-        "pose": "excited",
-        "keyframes": [
-          { "frame": 0, "x": 0, "y": -1, "scale": 1.8, "rotationY": 0, "rotationZ": 0 }
-        ]
-      }
-    },
-    {
-      "stepId": "scene_05_celebrate",
-      "audioFile": "scene_05.wav",
-      "subtitle": "Brilliant work! You learned multiplication! 🎉",
+      "subtitle": "6 \u00d7 10 = 60 boxes altogether! \ud83d\udce6",
       "environment": {
         "background": "forest.jpg"
       },
       "characterState": {
         "pose": "dance",
         "keyframes": [
-          { "frame": 0,  "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
-          { "frame": 45, "x": 0, "y": -1, "scale": 1.2, "rotationY": 360, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": 0,
+            "y": -1,
+            "scale": 1.8,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_05_celebrate",
+      "audioFile": "scene_05.wav",
+      "subtitle": "Brilliant work! You learned multiplication! \ud83c\udf89",
+      "environment": {
+        "background": "forest.jpg"
+      },
+      "characterState": {
+        "pose": "dance",
+        "keyframes": [
+          {
+            "frame": 0,
+            "x": 0,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          },
+          {
+            "frame": 45,
+            "x": 0,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 360,
+            "rotationZ": 0
+          }
         ]
       },
       "effects": {

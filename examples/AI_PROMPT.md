@@ -40,14 +40,14 @@ Once you have answers, generate the JSON following ALL of these rules precisely:
 - `audioFile` must match exactly the filename in the public folder (e.g. `"scene_01.wav"`).
 
 ### Character Animation Rules (`characterState`)
-- `pose` must be ONE of: `idle`, `dance`, `eat`, `gesture-positive`, `gesture-negative`, `waving`, `carrying`, `excited`, `jumping`.
-- Match the pose to what the character is doing:
-  - Explaining → `gesture-positive`
+- `pose` must be ONE of: `idle`, `static`, `walk`, `run`, `dance`, `eat`, `gesture-positive`, `gesture-negative`.
+  - Explaining / Affirmative → `gesture-positive`
   - Celebrating → `dance`
   - Eating / picking up → `eat`
   - Disagreeing / wrong answer → `gesture-negative`
-  - Introducing → `waving`
-  - Holding something → `carrying`
+  - Moving across screen → `walk` or `run`
+  - Frozen completely → `static`
+  - Default resting state → `idle`
 - If the character moves across the screen, MUST include `keyframes`.
 - Character `x` range: `-5` (far left off-screen) to `+5` (far right off-screen). Center = `0`.
 - Character `y`: always keep at `-1` (ground level).

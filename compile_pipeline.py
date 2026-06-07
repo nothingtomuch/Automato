@@ -34,7 +34,7 @@ FPS: int = 30
 
 # Canonical set of baked GLTF animations shipped with Kenney's Cube Pets.
 # Any pose not in this set will be silently degraded to the fallback.
-ALLOWED_POSES: list[str] = ["idle", "waving", "carrying", "excited", "jumping", "dance", "eat", "gesture-positive", "gesture-negative"]
+ALLOWED_POSES: list[str] = ["idle", "static", "walk", "run", "dance", "eat", "gesture-positive", "gesture-negative"]
 FALLBACK_POSE: str = "idle"
 
 # Project-relative paths (resolved from the directory this script lives in)

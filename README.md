@@ -240,15 +240,14 @@ Set `characterState.pose` to one of:
 
 | Pose | Description |
 |---|---|
-| `idle` | Standing still, blinking |
+| `idle` | Standing still, subtle idle breathing |
+| `static` | Completely frozen / no movement |
+| `walk` | Walking in place |
+| `run` | Running in place |
 | `dance` | Fun dance move |
 | `eat` | Eating animation |
-| `gesture-positive` | Happy wave / thumbs up gesture |
-| `gesture-negative` | Shaking head / negative gesture |
-| `waving` | Waving hello |
-| `carrying` | Carrying an object |
-| `excited` | Jumping with excitement |
-| `jumping` | Simple jump |
+| `gesture-positive` | Happy thumbs up / affirmative gesture |
+| `gesture-negative` | Shaking head / disagreeing gesture |
 
 ---
 
