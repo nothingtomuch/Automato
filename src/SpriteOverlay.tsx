@@ -46,10 +46,10 @@ export const SpriteOverlay = ({ sprites }: { sprites: any[] }) => {
             src={staticFile(sprite.src)}
             style={{
               position: "absolute",
-              left: 0,
-              top: 0,
+              left: `${x}px`,
+              top: `${y}px`,
               opacity,
-              transform: `translate(${x}px, ${y}px) rotate(${rotation}deg) scale(${scale})`,
+              transform: `translate(-50%, -50%) rotate(${rotation}deg) scale(${scale})`,
               transformOrigin: "center center",
             }}
           />

@@ -17,8 +17,22 @@
       "characterState": {
         "pose": "walk",
         "keyframes": [
-          { "frame": 0,  "x": -5, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
-          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -5,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          },
+          {
+            "frame": 45,
+            "x": 0,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       }
     },
@@ -32,7 +46,14 @@
       "characterState": {
         "pose": "gesture-positive",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -40,8 +61,22 @@
           "id": "whole_pizza",
           "src": "pizza_whole.png",
           "keyframes": [
-            { "frame": 0,  "x": 1200, "y": -500, "scale": 1.5, "opacity": 0, "rotation": 0 },
-            { "frame": 15, "x": 1200, "y": 450,  "scale": 1.5, "opacity": 1, "rotation": 0 }
+            {
+              "frame": 0,
+              "x": 1200,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "frame": 15,
+              "x": 1200,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            }
           ]
         }
       ]
@@ -56,7 +91,14 @@
       "characterState": {
         "pose": "idle",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -64,16 +106,44 @@
           "id": "pizza_half_1",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1200, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 },
-            { "frame": 60, "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+            {
+              "frame": 0,
+              "x": 1200,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            },
+            {
+              "frame": 60,
+              "x": 800,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            }
           ]
         },
         {
           "id": "pizza_half_2",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1200, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 },
-            { "frame": 60, "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+            {
+              "frame": 0,
+              "x": 1200,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            },
+            {
+              "frame": 60,
+              "x": 1400,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            }
           ]
         }
       ]
@@ -88,7 +158,14 @@
       "characterState": {
         "pose": "gesture-positive",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -96,14 +173,28 @@
           "id": "pizza_half_1",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+            {
+              "frame": 0,
+              "x": 800,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            }
           ]
         },
         {
           "id": "pizza_half_2",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+            {
+              "frame": 0,
+              "x": 1400,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            }
           ]
         }
       ]
@@ -118,7 +209,14 @@
       "characterState": {
         "pose": "idle",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -126,14 +224,28 @@
           "id": "pizza_half_1",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+            {
+              "frame": 0,
+              "x": 800,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            }
           ]
         },
         {
           "id": "pizza_half_2",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+            {
+              "frame": 0,
+              "x": 1400,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            }
           ]
         }
       ]
@@ -148,7 +260,14 @@
       "characterState": {
         "pose": "eat",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -156,15 +275,36 @@
           "id": "pizza_half_1",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 },
-            { "frame": 45, "x": 400,  "y": 450, "scale": 0.8, "opacity": 0, "rotation": -45 }
+            {
+              "frame": 0,
+              "x": 800,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 0
+            },
+            {
+              "frame": 45,
+              "x": 200,
+              "y": 600,
+              "scale": 0.24,
+              "opacity": 0,
+              "rotation": -45
+            }
           ]
         },
         {
           "id": "pizza_half_2",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+            {
+              "frame": 0,
+              "x": 1400,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            }
           ]
         }
       ]
@@ -179,7 +319,14 @@
       "characterState": {
         "pose": "dance",
         "keyframes": [
-          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+          {
+            "frame": 0,
+            "x": -2,
+            "y": -1,
+            "scale": 1.2,
+            "rotationY": 0,
+            "rotationZ": 0
+          }
         ]
       },
       "sprites": [
@@ -187,7 +334,14 @@
           "id": "pizza_half_2",
           "src": "pizza_half.png",
           "keyframes": [
-            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+            {
+              "frame": 0,
+              "x": 1400,
+              "y": 600,
+              "scale": 0.44999999999999996,
+              "opacity": 1,
+              "rotation": 180
+            }
           ]
         }
       ],

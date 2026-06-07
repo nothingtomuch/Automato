@@ -1,5 +1,5 @@
 import React from "react";
-import { Sequence } from "remotion";
+import { Sequence, Audio, staticFile } from "remotion";
 import { Scene3DCanvas } from "./Scene3DCanvas";
 
 export const MainTimeline = ({ timeline }: any) => {
@@ -18,6 +18,7 @@ export const MainTimeline = ({ timeline }: any) => {
             from={scene.startFrame}
             durationInFrames={scene.durationInFrames}
           >
+            <Audio src={staticFile(scene.audioFile)} />
             <Scene3DCanvas sceneData={scene} />
           </Sequence>
         );
