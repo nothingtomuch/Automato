@@ -1,7 +1,7 @@
 # 🤖 AI Prompt — Generate a `video_spec.json` for Automato
 
-Copy the prompt below and paste it into any AI assistant (ChatGPT, Gemini, Claude, etc.).
-The AI will ask you clarifying questions and then produce a valid `video_spec.json` file ready to use.
+Copy the prompt below and paste it into Antigravity (see the [README](../README.md) for setup instructions).
+The AI will autonomously generate your script, voiceovers, background images, and sprite graphics!
 
 ---
 
@@ -59,8 +59,11 @@ Once you have answers, generate the JSON following ALL of these rules precisely:
 
 ### Sprite Rules
 - Each sprite MUST have a unique `id`, a `src` (filename in public/), and `keyframes`.
-- Sprite `x` is in **pixels** from the left edge of the 1920px-wide screen. Center = `960`.
-- Sprite `y` is in **pixels** from the top of the 1080px-tall screen. Center = `540`.
+- **Coordinates:** `x` and `y` represent the EXACT CENTER of the sprite in pixels on a 1920x1080 screen. Center of the screen is `x: 960, y: 540`.
+- **Predictable Sizing:** ALL sprites are automatically normalized to fit within a `300x300` pixel box before your `scale` is applied. 
+  - `scale: 1.0` = 300px wide (about 1/6th the screen width).
+  - `scale: 0.5` = 150px wide (very small).
+  - `scale: 4.0` = 1200px wide (huge, takes up most of the screen).
 - To make a sprite appear, set `opacity: 0` at start and `opacity: 1` when it should show.
 - To make a sprite disappear, animate opacity to `0`.
 - To simulate the character "placing" an item: animate the sprite's x/y to be near the character's screen position. (Note: character at x=0 in 3D ≈ x:960 in pixels; x=-4 in 3D ≈ x:100 in pixels; x=+4 in 3D ≈ x:1820 in pixels.)
@@ -91,14 +94,20 @@ Once you have answers, generate the JSON following ALL of these rules precisely:
 
 ## STEP 3 — OUTPUT FORMAT
 
-After generating the JSON, also provide:
+After generating the JSON, provide the user with the following instructions to complete the video:
 
-1. **A list of all audio files needed** (e.g. `scene_01.wav` through `scene_05.wav`) with a one-line description of what should be said in each.
-2. **A list of all image assets needed** with a description of what each should look like (for the user to create or source).
-3. **Step-by-step instructions** to render the video:
-   ```
-   1. python compile_pipeline.py
-   2. npx remotion render EducationalVideo out.mp4 --props=dist/render_props.json
+1. **Generate Images Automatically:** Use your built-in image generation tools to automatically create the required background and sprites. Save them directly to the workspace.
+2. **Run Image Processing:** Write and RUN a Python script using the `Pillow` library to move the generated images into the `public/` folder and convert their white backgrounds into transparent backgrounds.
+3. **Run Audio Generation:** Write and RUN a Python script using the `edge-tts` library to generate the exact voiceover for each scene (e.g., `scene_01.wav` through `scene_X.wav`), saving them in the `public/` folder.
+4. **Step-by-step instructions for the User:** After YOU have successfully generated the JSON, images, and audio, give the user these exact instructions to render their video via GitHub Actions:
+   ```text
+   1. Commit everything and push to GitHub:
+      git add .
+      git commit -m "New video ready"
+      git push
+   2. Go to your GitHub repository -> Actions tab.
+   3. Click "Render Automato Video" -> "Run workflow".
+   4. Wait 5-10 minutes, then download your finished out.mp4 from the Artifacts section!
    ```
 
 ## STEP 4 — OFFER REFINEMENT
@@ -130,7 +139,7 @@ After outputting the JSON, ask:
       "subtitle": "Hi! Today we're learning about multiplication!",
       "environment": { "background": "forest.jpg" },
       "characterState": {
-        "pose": "waving",
+        "pose": "walk",
         "keyframes": [
           { "frame": 0, "x": -4, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
           { "frame": 45, "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
@@ -163,7 +172,7 @@ After outputting the JSON, ask:
       "subtitle": "Each truck carries 10 boxes!",
       "environment": { "background": "forest.jpg" },
       "characterState": {
-        "pose": "carrying",
+        "pose": "gesture-positive",
         "keyframes": [
           { "frame": 0, "x": -3, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
         ]
@@ -175,7 +184,7 @@ After outputting the JSON, ask:
       "subtitle": "6 trucks × 10 boxes = 60 boxes!",
       "environment": { "background": "forest.jpg" },
       "characterState": {
-        "pose": "excited",
+        "pose": "dance",
         "keyframes": [
           { "frame": 0, "x": 0, "y": -1, "scale": 1.5, "rotationY": 0, "rotationZ": 0 }
         ]

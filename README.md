@@ -108,18 +108,41 @@ python compile_pipeline.py
 ```
 This validates your JSON and calculates frame timings from your audio files.
 
-### Step 5 — Render
+### Step 5 — Render (Locally)
 ```bash
 npx remotion render EducationalVideo out.mp4 --props=dist/render_props.json
 ```
-
 Your video will appear as `out.mp4` in the project folder.
+
+### ☁️ Alternative: Cloud Render with GitHub Actions
+If you don't want to tie up your local PC rendering frames, you can offload it to GitHub's free cloud servers!
+1. Ensure your `.github/workflows/render.yml` is set up.
+2. Push your project to GitHub:
+   ```bash
+   git add .
+   git commit -m "Render my video"
+   git push
+   ```
+3. Go to your repository on GitHub → **Actions** tab.
+4. Select **"Render Automato Video"** and click **"Run workflow"**.
+5. Wait ~5-10 minutes. Click the finished run and download your `out.mp4` from the **Artifacts** section!
 
 ---
 
 ## Creating a Video with AI
 
-See [`examples/AI_PROMPT.md`](examples/AI_PROMPT.md) for a ready-to-copy prompt you can paste into any AI assistant (ChatGPT, Gemini, Claude, etc.) to generate your `video_spec.json` automatically.
+Automato is designed to be entirely driven by AI. For the completely automated, hands-free experience:
+1. **Download Antigravity:** The agentic AI that powers this workflow.
+2. **Sign In:** Log in with your Google account.
+3. **Select Model:** Ensure you are using the **Gemini 3.1 Pro** model for optimal code and script generation.
+
+See [`examples/AI_PROMPT.md`](examples/AI_PROMPT.md) for a ready-to-copy prompt you can paste into Antigravity to generate your `video_spec.json` and all assets automatically.
+
+The AI will follow this complete asset generation workflow for you:
+1. **JSON Generation:** It writes the perfectly timed keyframe script.
+2. **Audio Generation (TTS):** It writes and *runs* a Python script using `edge-tts` to automatically generate perfectly synthesized voiceovers.
+3. **Image Generation:** It automatically generates the required backgrounds and sprites using its built-in image tools.
+4. **Transparency Processing:** It writes and *runs* a Python script using `Pillow` to automatically convert white backgrounds on the generated sprites into transparent backgrounds.
 
 See also the example specs in [`examples/video_specs/`](examples/video_specs/) for inspiration.
 
@@ -216,9 +239,9 @@ See also the example specs in [`examples/video_specs/`](examples/video_specs/) f
 | Property | Default | Description |
 |---|---|---|
 | `frame` | — | Which frame this keyframe applies to (relative to scene start) |
-| `x` | `0` | Horizontal position in **pixels**. 0 = left edge, 1920 = right edge |
-| `y` | `0` | Vertical position in **pixels**. 0 = top edge, 1080 = bottom edge |
-| `scale` | `1` | Size multiplier |
+| `x` | `0` | **Center** horizontal position in **pixels**. `960` = screen center, `0` = left edge, `1920` = right edge |
+| `y` | `0` | **Center** vertical position in **pixels**. `540` = screen center, `0` = top edge, `1080` = bottom edge |
+| `scale` | `1` | Size multiplier. All sprites are normalized to a 300×300px box first. `1.0` = 300px, `2.0` = 600px, `0.5` = 150px |
 | `opacity` | `1` | Transparency: 0 = invisible, 1 = fully visible |
 | `rotation` | `0` | Rotation in degrees |
 
