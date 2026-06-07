@@ -1,39 +1,198 @@
 {
   "meta": {
-    "videoId": "my_video_001",
+    "videoId": "fractions_halves_pizza",
     "targetAge": "6-7",
-    "hostCharacter": "parrot",
-    "themeColor": "#FFDE4D",
+    "hostCharacter": "polar",
+    "themeColor": "#FF5733",
     "fps": 30
   },
   "timeline": [
     {
       "stepId": "scene_01_intro",
       "audioFile": "scene_01.wav",
-      "subtitle": "Your subtitle here!",
+      "subtitle": "Hi friends! I'm very hungry. Let's learn about fractions with pizza!",
       "environment": {
-        "background": "your_background.jpg"
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "walk",
+        "keyframes": [
+          { "frame": 0,  "x": -5, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 },
+          { "frame": 45, "x": 0,  "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_02_whole_pizza",
+      "audioFile": "scene_02.wav",
+      "subtitle": "Look at this delicious pizza! Right now, it is one whole pizza. One over one.",
+      "environment": {
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "keyframes": [
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "whole_pizza",
+          "src": "pizza_whole.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1200, "y": -500, "scale": 1.5, "opacity": 0, "rotation": 0 },
+            { "frame": 15, "x": 1200, "y": 450,  "scale": 1.5, "opacity": 1, "rotation": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_cut_middle",
+      "audioFile": "scene_03.wav",
+      "subtitle": "But what if I want to share it with a friend? We can cut it right down the middle!",
+      "environment": {
+        "background": "kitchen_bg.png"
       },
       "characterState": {
         "pose": "idle",
         "keyframes": [
-          {
-            "frame": 0,
-            "x": -4,
-            "y": -1,
-            "scale": 1.2,
-            "rotationY": 0,
-            "rotationZ": 0
-          },
-          {
-            "frame": 45,
-            "x": 0,
-            "y": -1,
-            "scale": 1.2,
-            "rotationY": 0,
-            "rotationZ": 0
-          }
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
         ]
+      },
+      "sprites": [
+        {
+          "id": "pizza_half_1",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1200, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 },
+            { "frame": 60, "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+          ]
+        },
+        {
+          "id": "pizza_half_2",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1200, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 },
+            { "frame": 60, "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_halves",
+      "audioFile": "scene_04.wav",
+      "subtitle": "Now we have two equal pieces. When you divide a whole into two equal parts, each part is called a half.",
+      "environment": {
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "keyframes": [
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "pizza_half_1",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+          ]
+        },
+        {
+          "id": "pizza_half_2",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_one_over_two",
+      "audioFile": "scene_05.wav",
+      "subtitle": "We write a half as one over two. The two tells us how many pieces make a whole.",
+      "environment": {
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "keyframes": [
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "pizza_half_1",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 }
+          ]
+        },
+        {
+          "id": "pizza_half_2",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_eat_half",
+      "audioFile": "scene_06.wav",
+      "subtitle": "Two halves make one whole pizza. I think I'll eat this half right now. Mmmm, yummy!",
+      "environment": {
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "eat",
+        "keyframes": [
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "pizza_half_1",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1000, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 0 },
+            { "frame": 45, "x": 400,  "y": 450, "scale": 0.8, "opacity": 0, "rotation": -45 }
+          ]
+        },
+        {
+          "id": "pizza_half_2",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_conclusion",
+      "audioFile": "scene_07.wav",
+      "subtitle": "Now only one half is left. You did a great job learning about fractions today!",
+      "environment": {
+        "background": "kitchen_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "keyframes": [
+          { "frame": 0, "x": -2, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "pizza_half_2",
+          "src": "pizza_half.png",
+          "keyframes": [
+            { "frame": 0,  "x": 1400, "y": 450, "scale": 1.5, "opacity": 1, "rotation": 180 }
+          ]
+        }
+      ],
+      "effects": {
+        "confetti": true
       }
     }
   ]
