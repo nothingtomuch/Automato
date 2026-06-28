@@ -1,0 +1,90 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_06_equation_with_variables",
+      "audioFile": "scene_06.wav",
+      "subtitle": "If you have 5 bananas and your friend gives you 2 more, the equation would be x + 2 = 7.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_07_solve_for_x",
+      "audioFile": "scene_07.wav",
+      "subtitle": "To solve for x, we need to isolate the variable. In this case, we can subtract 2 from both sides of the equation.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_08_solution",
+      "audioFile": "scene_08.wav",
+      "subtitle": "So, x - 2 = 5. Therefore, x = 5!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_09_funny_moment",
+      "audioFile": "scene_09.wav",
+      "subtitle": "Haha, I hope you're not getting too bananas with all these equations!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_10_real_world_applications",
+      "audioFile": "scene_10.wav",
+      "subtitle": "Algebra has many real-world applications, from science and engineering to economics and finance.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,697 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_11",
+      "audioFile": "scene_11.wav",
+      "subtitle": "Six bananas!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_5",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_12",
+      "audioFile": "scene_12.wav",
+      "subtitle": "Seven bananas!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_5",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_6",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_13",
+      "audioFile": "scene_13.wav",
+      "subtitle": "Eight bananas!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_5",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_6",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_7",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_14",
+      "audioFile": "scene_14.wav",
+      "subtitle": "Nine bananas!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_5",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_6",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_7",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_8",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_15",
+      "audioFile": "scene_15.wav",
+      "subtitle": "And ten bananas! We did it!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_5",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_6",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_7",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_8",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_9",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 850,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ],
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}

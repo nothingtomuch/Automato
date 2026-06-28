@@ -23,6 +23,7 @@ import os
 import subprocess
 import sys
 import argparse
+import shutil
 from pathlib import Path
 
 
@@ -43,6 +44,7 @@ PUBLIC_DIR   = SCRIPT_DIR / "public"
 DIST_DIR     = SCRIPT_DIR / "dist"
 DEFAULT_INPUT  = SCRIPT_DIR / "video_spec.json"
 DEFAULT_OUTPUT = DIST_DIR   / "render_props.json"
+PROJECTS_DIR   = SCRIPT_DIR / "projects"
 
 
 # ---------------------------------------------------------------------------
@@ -130,6 +132,103 @@ def validate_pose(pose: str, step_id: str) -> str:
     return FALLBACK_POSE
 
 
+def compile_actions_to_keyframes(actions: list, fps: int, current_state: dict) -> list:
+    """
+    Convert declarative Glide/Wait actions into absolute frame-based keyframes
+    that the Remotion 3D canvas can interpolate.
+    """
+    current_time = 0.0
+    keyframes = []
+
+    for action in actions:
+        action_type = action.get("type")
+        if action_type == "wait":
+            current_time += action.get("duration", 0)
+        elif action_type == "glide":
+            keyframes.append({"frame": round(current_time * fps), **current_state})
+            target = action.get("targetState", {})
+            current_state.update(target)
+            current_time += action.get("duration", 1)
+            keyframes.append({"frame": round(current_time * fps), **current_state})
+
+    if not keyframes:
+        keyframes.append({"frame": 0, **current_state})
+    elif keyframes[0]["frame"] > 0:
+        keyframes.insert(0, {"frame": 0, **current_state})
+
+    return keyframes
+
+
+def compile_grid_actions_to_sprites(grid_actions: list, fps: int) -> list:
+    """
+    Convert declarative grid Init/Add/Destroy actions into absolute pixel-based
+    sprite keyframes for the Remotion 2D overlay layer.
+    """
+    current_time = 0.0
+    sprite_map = {}
+    grid_state = {}
+
+    for action in grid_actions:
+        action_type = action.get("type")
+        if action_type == "wait":
+            current_time += action.get("duration", 0)
+        elif action_type == "grid_init":
+            gid = action["gridId"]
+            grid_state[gid] = {
+                "count": 0, "src": action["src"],
+                "startX": action["startX"], "startY": action["startY"],
+                "spacingX": action["spacingX"]
+            }
+            for i in range(action.get("initialCount", 0)):
+                grid_state[gid]["count"] += 1
+                sid = f"{gid}_{grid_state[gid]['count']}"
+                x_pos = action["startX"] + i * action["spacingX"]
+                sprite_map[sid] = {
+                    "src": action["src"],
+                    "state": {"x": x_pos, "y": action["startY"], "scale": 0.5, "opacity": 1, "rotationZ": 0},
+                    "keyframes": [
+                        {"frame": 0, "x": x_pos, "y": action["startY"], "scale": 0.5, "opacity": 0, "rotationZ": 0},
+                        {"frame": max(1, round(current_time * fps)), "x": x_pos, "y": action["startY"], "scale": 0.5, "opacity": 1, "rotationZ": 0}
+                    ]
+                }
+        elif action_type == "grid_add":
+            gid = action["gridId"]
+            grid = grid_state.get(gid)
+            if grid:
+                for i in range(action.get("count", 1)):
+                    grid["count"] += 1
+                    sid = f"{gid}_{grid['count']}"
+                    x_pos = grid["startX"] + (grid["count"] - 1) * grid["spacingX"]
+                    start_frame = round(current_time * fps)
+                    sprite_map[sid] = {
+                        "src": grid["src"],
+                        "state": {"x": x_pos, "y": grid["startY"], "scale": 0.5, "opacity": 1, "rotationZ": 0},
+                        "keyframes": [
+                            {"frame": 0, "x": x_pos, "y": grid["startY"], "scale": 0.5, "opacity": 0, "rotationZ": 0},
+                            {"frame": start_frame, "x": x_pos, "y": grid["startY"], "scale": 0.5, "opacity": 0, "rotationZ": 0},
+                            {"frame": start_frame + fps, "x": x_pos, "y": grid["startY"], "scale": 0.5, "opacity": 1, "rotationZ": 0}
+                        ]
+                    }
+                current_time += 1
+        elif action_type == "grid_destroy":
+            gid = action["gridId"]
+            idx = action["index"]
+            sid = f"{gid}_{idx}"
+            sprite = sprite_map.get(sid)
+            if sprite:
+                start_frame = round(current_time * fps)
+                sprite["keyframes"].append({"frame": start_frame, **sprite["state"]})
+                sprite["state"]["opacity"] = 0
+                sprite["state"]["scale"] = 0.1
+                sprite["keyframes"].append({"frame": start_frame + fps, **sprite["state"]})
+                current_time += 1
+
+    return [
+        {"id": sid, "src": data["src"], "keyframes": data["keyframes"]}
+        for sid, data in sprite_map.items()
+    ]
+
+
 def validate_required_fields(spec: dict) -> None:
     """
     Lightweight structural validation of the raw spec dict.
@@ -162,7 +261,7 @@ def validate_required_fields(spec: dict) -> None:
 # Core enrichment logic
 # ---------------------------------------------------------------------------
 
-def enrich_scene(scene: dict, public_dir: Path) -> dict:
+def enrich_scene(scene: dict, public_dir: Path, char_state_tracker: dict) -> dict:
     """
     Enrich a single timeline scene block with frame-timing data and
     validated character state.  Returns a *new* dict (original is untouched).
@@ -185,6 +284,23 @@ def enrich_scene(scene: dict, public_dir: Path) -> dict:
     enriched["characterState"]["pose"] = validated
     if validated != raw_pose:
         enriched["characterState"]["originalPose"] = raw_pose
+
+    # ── Compile declarative actions -> keyframes (new format) ─────────────────
+    char_state = enriched["characterState"]
+    if "actions" in char_state and isinstance(char_state["actions"], list):
+        print(f"  [COMPILE] stepId='{step_id}': Compiling {len(char_state['actions'])} character actions to keyframes.")
+        char_state["keyframes"] = compile_actions_to_keyframes(char_state["actions"], FPS, char_state_tracker)
+        del char_state["actions"]
+
+    # ── Compile declarative gridActions -> sprites (new format) ───────────────
+    if "gridActions" in enriched and isinstance(enriched["gridActions"], list):
+        print(f"  [COMPILE] stepId='{step_id}': Compiling {len(enriched['gridActions'])} grid actions to sprites.")
+        compiled_sprites = compile_grid_actions_to_sprites(enriched["gridActions"], FPS)
+        if compiled_sprites:
+            # Merge with any manually-specified sprites
+            existing = enriched.get("sprites", [])
+            enriched["sprites"] = existing + compiled_sprites
+        del enriched["gridActions"]
 
     # ── Audio measurement ──────────────────────────────────────────────────
     # audioFile paths in the spec are relative to ./public/
@@ -228,7 +344,7 @@ def assign_start_frames(enriched_timeline: list[dict]) -> list[dict]:
     return enriched_timeline
 
 
-def compile(input_path: Path, output_path: Path) -> None:
+def compile(input_path: Path, output_path: Path, public_dir: Path = PUBLIC_DIR) -> None:
     """
     Main orchestration function.
 
@@ -245,7 +361,7 @@ def compile(input_path: Path, output_path: Path) -> None:
     print(f"  Input  : {input_path}")
     print(f"  Output : {output_path}")
     print(f"  FPS    : {FPS}")
-    print(f"  Public : {PUBLIC_DIR}")
+    print(f"  Public : {public_dir}")
     print(f"{'='*60}\n")
 
     # ── Step 1: Load ───────────────────────────────────────────────────────
@@ -264,6 +380,30 @@ def compile(input_path: Path, output_path: Path) -> None:
         print(f"[FATAL] Input is not valid JSON: {exc}")
         sys.exit(1)
 
+    # ── Step 1.5: Handle Includes ──────────────────────────────────────────
+    includes = spec.get("includes", [])
+    if "timeline" not in spec:
+        spec["timeline"] = []
+        
+    for inc_file in includes:
+        inc_path = input_path.parent / inc_file
+        try:
+            inc_text = inc_path.read_text(encoding="utf-8")
+            inc_spec = json.loads(inc_text)
+            if "timeline" in inc_spec and isinstance(inc_spec["timeline"], list):
+                spec["timeline"].extend(inc_spec["timeline"])
+            else:
+                print(f"[WARN] Included file '{inc_file}' is missing a 'timeline' array.")
+        except FileNotFoundError:
+            print(f"[FATAL] Included file not found: {inc_path}")
+            sys.exit(1)
+        except json.JSONDecodeError as exc:
+            print(f"[FATAL] Included file '{inc_file}' is not valid JSON: {exc}")
+            sys.exit(1)
+        except OSError as exc:
+            print(f"[FATAL] Cannot read included file '{inc_file}': {exc}")
+            sys.exit(1)
+
     # ── Step 2: Structural validation ─────────────────────────────────────
     try:
         validate_required_fields(spec)
@@ -274,10 +414,25 @@ def compile(input_path: Path, output_path: Path) -> None:
     print(f"Loaded spec: videoId='{spec['meta']['videoId']}'  "
           f"scenes={len(spec['timeline'])}\n")
 
+    # ── Step 2.5: Mirror assets to global public dir ───────────────────────
+    # Remotion is very stubborn about its public directory. To ensure it
+    # always sees the right files, we copy the project's public/ folder
+    # into the global Automato/public/ folder on every compile.
+    if public_dir != PUBLIC_DIR:
+        print(f"Mirroring assets from {public_dir} -> {PUBLIC_DIR}")
+        os.makedirs(PUBLIC_DIR, exist_ok=True)
+        for item in public_dir.iterdir():
+            if item.is_file():
+                shutil.copy2(item, PUBLIC_DIR / item.name)
+
     # ── Step 3: Enrich each scene ──────────────────────────────────────────
     print("Probing audio and enriching timeline scenes:")
+    
+    # Global state tracker so the character doesn't snap back to start every scene
+    char_state_tracker = {"x": -15, "y": -1, "scale": 1.2, "opacity": 1, "rotationZ": 0, "rotationY": 0, "rotationX": 0}
+    
     enriched_timeline = [
-        enrich_scene(scene, PUBLIC_DIR)
+        enrich_scene(scene, public_dir, char_state_tracker)
         for scene in spec["timeline"]
     ]
 
@@ -356,9 +511,9 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--input", "-i",
         type=Path,
-        default=DEFAULT_INPUT,
+        default=None,
         metavar="PATH",
-        help=f"Path to the raw video_spec.json  (default: {DEFAULT_INPUT})",
+        help="Path to video_spec.json (overrides --project)",
     )
     parser.add_argument(
         "--output", "-o",
@@ -367,12 +522,31 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         metavar="PATH",
         help=f"Destination path for render_props.json  (default: {DEFAULT_OUTPUT})",
     )
+    parser.add_argument(
+        "--project", "-p",
+        type=Path,
+        default=None,
+        metavar="PROJECT_ROOT",
+        help="Absolute path to a project folder (e.g. projects/my_video). "
+             "Sets --input to <PROJECT_ROOT>/video_spec.json and public dir to <PROJECT_ROOT>/public/.",
+    )
     return parser
 
 
 if __name__ == "__main__":
     args = _build_arg_parser().parse_args()
+
+    # Resolve project-based paths
+    if args.project is not None:
+        project_root = args.project.resolve()
+        input_path   = args.input.resolve() if args.input else project_root / "video_spec.json"
+        public_dir   = project_root / "public"
+    else:
+        input_path   = args.input.resolve() if args.input else DEFAULT_INPUT
+        public_dir   = PUBLIC_DIR
+
     compile(
-        input_path  = args.input.resolve(),
+        input_path  = input_path,
         output_path = args.output.resolve(),
+        public_dir  = public_dir,
     )

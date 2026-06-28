@@ -1,0 +1,81 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_21_funny_anecdote",
+      "audioFile": "scene_21.wav",
+      "subtitle": "I heard that even professional athletes use algebra to optimize their game strategies! Who knew math could be so sporty?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_22_common_misconceptions",
+      "audioFile": "scene_22.wav",
+      "subtitle": "Some people think algebra is boring or too difficult, but that's just not true! With practice and patience, anyone can become an algebra master.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_23_final_thoughts",
+      "audioFile": "scene_23.wav",
+      "subtitle": "As we wrap up our algebra adventure, remember that math is all around us - and with algebra, you can solve problems and unlock new possibilities.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_24_celebration",
+      "audioFile": "scene_24.wav",
+      "subtitle": "Congratulations, young adventurer! You've made it to the end of our algebra journey. Keep practicing, and soon you'll be a math whiz!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "actions": []
+      },
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}

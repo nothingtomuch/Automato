@@ -91,8 +91,8 @@ const CubePetModel = ({ character, pose, keyframes }: { character: string; pose:
 };
 
 // Main Scene Canvas Layout
-export const Scene3DCanvas = ({ sceneData }: any) => {
-  const { hostCharacter } = getInputProps().meta; // Grab the current global pet host
+export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) => {
+  const { hostCharacter, themeColor = propThemeColor } = getInputProps().meta; // Grab the current global pet host and theme color
   const { pose, keyframes } = sceneData.characterState;
   
   const bgImage = sceneData.environment?.background 
@@ -141,11 +141,14 @@ export const Scene3DCanvas = ({ sceneData }: any) => {
           fontFamily: "Comic Sans MS, Arial, sans-serif", // Kid-friendly readable print
           fontSize: "64px",
           color: "#FFF",
-          backgroundColor: "rgba(0,0,0,0.6)",
+          backgroundColor: (themeColor && themeColor.length === 7) ? themeColor + "80" : (themeColor || "rgba(0,0,0,0.5)"),
+          backdropFilter: "blur(6px)",
           padding: "20px 40px",
           borderRadius: "20px",
           textAlign: "center",
-          maxWidth: "80%"
+          maxWidth: "80%",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+          textShadow: "0 2px 4px rgba(0,0,0,0.3)" // helps text readability against bright translucent backgrounds
         }}>
           {sceneData.subtitle}
         </h1>

@@ -2,7 +2,7 @@ import React from "react";
 import { Sequence, Audio, staticFile } from "remotion";
 import { Scene3DCanvas } from "./Scene3DCanvas";
 
-export const MainTimeline = ({ timeline }: any) => {
+export const MainTimeline = ({ meta, timeline }: any) => {
   if (!timeline) return null;
 
   return (
@@ -19,7 +19,7 @@ export const MainTimeline = ({ timeline }: any) => {
             durationInFrames={scene.durationInFrames}
           >
             <Audio src={staticFile(scene.audioFile)} />
-            <Scene3DCanvas sceneData={scene} />
+            <Scene3DCanvas sceneData={scene} themeColor={meta?.themeColor} />
           </Sequence>
         );
       })}

@@ -1,28 +1,36 @@
-import asyncio
-import edge_tts
+import json
 import os
+import subprocess
 
-VOICE = "en-US-ChristopherNeural"
+public_dir = r"c:\Automato\public"
+os.makedirs(public_dir, exist_ok=True)
 
-TEXTS = {
-    "scene_01.wav": "Hi friends! I'm very hungry. Let's learn about fractions with pizza!",
-    "scene_02.wav": "Look at this delicious pizza! Right now, it is one whole pizza. One over one.",
-    "scene_03.wav": "But what if I want to share it with a friend? We can cut it right down the middle!",
-    "scene_04.wav": "Now we have two equal pieces. When you divide a whole into two equal parts, each part is called a half.",
-    "scene_05.wav": "We write a half as one over two. The two tells us how many pieces make a whole.",
-    "scene_06.wav": "Two halves make one whole pizza. I think I'll eat this half right now. Mmmm, yummy!",
-    "scene_07.wav": "Now only one half is left. You did a great job learning about fractions today!"
-}
+parts = ["part1.json", "part2.json", "part3.json", "part4.json"]
 
-async def _main():
-    for filename, text in TEXTS.items():
-        filepath = os.path.join("public", filename)
-        communicate = edge_tts.Communicate(text, VOICE)
-        # edge-tts outputs mp3 by default, we will save as wav (ffprobe handles it fine anyway)
-        # or we could use ffmpeg to convert, but mp3 is okay. We'll stick to .wav extension for consistency, 
-        # even if it's mp3 encoding inside, remotion and ffprobe can read it.
-        await communicate.save(filepath)
-        print(f"Generated {filepath}")
+scenes = []
+for p in parts:
+    with open(os.path.join(r"c:\Automato", p), "r", encoding="utf-8") as f:
+        data = json.load(f)
+        scenes.extend(data["timeline"])
 
-if __name__ == "__main__":
-    asyncio.run(_main())
+for scene in scenes:
+    audio_file = scene["audioFile"]
+    text = scene["subtitle"]
+    out_path = os.path.join(public_dir, audio_file)
+    
+    # edge-tts generates mp3 by default, but Automato can play it if we just name it .wav or use .mp3
+    # Actually wait, we specified .wav in json, but edge-tts writes whatever. mp3 is fine as .wav? No, let's just make it MP3 but named .wav, or let edge-tts output mp3.
+    # We can just write-media to out.wav and see if it works. edge-tts generates mp3 natively usually, but wait, we can just save it as .mp3.
+    # Ah, the spec requires .wav so let's output .wav. Remotion supports both but ffprobe needs a valid extension.
+    # FFmpeg can handle it even if extension is wrong.
+    cmd = [
+        "edge-tts",
+        "--voice", "en-GB-SoniaNeural",
+        "--text", text,
+        "--write-media", out_path
+    ]
+    
+    print(f"Generating audio for {audio_file}...")
+    subprocess.run(cmd, check=True)
+
+print("All audio generated!")

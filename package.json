@@ -26,10 +26,11 @@
     "typescript": "5.9.3"
   },
   "scripts": {
-    "dev": "remotion studio",
+    "dev": "remotion studio --props=dist/render_props.json",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "render": "python compile_pipeline.py && remotion render src/index.ts EducationalVideo out.mp4 --props=dist/render_props.json"
   },
   "sideEffects": [
     "*.css"

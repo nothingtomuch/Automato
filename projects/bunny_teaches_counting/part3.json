@@ -1,0 +1,103 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_11_practice",
+      "audioFile": "scene_11.wav",
+      "subtitle": "The more you practice, the better you'll become at solving equations and understanding algebraic concepts.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_12_review",
+      "audioFile": "scene_12.wav",
+      "subtitle": "Let's review what we've learned so far. Can you think of any other ways to apply algebra in your daily life?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_13_word_problems",
+      "audioFile": "scene_13.wav",
+      "subtitle": "Word problems are a great way to practice applying algebra to real-world situations. Let's try one!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_14_word_problem_example",
+      "audioFile": "scene_14.wav",
+      "subtitle": "Tom has 15 pencils and gives 3 to his friend. If he then finds 2 more pencils, how many does he have now?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_15_word_problem_solution",
+      "audioFile": "scene_15.wav",
+      "subtitle": "Let's use algebra to solve this problem! If Tom has 15 pencils and gives 3 away, he has 15 - 3 = 12 pencils left.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

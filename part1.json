@@ -1,0 +1,186 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_01",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Hi! I'm the bunny! Today we are going to learn how to count.",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "walk",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 1.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_02",
+      "audioFile": "scene_02.wav",
+      "subtitle": "Counting helps us know how many things we have! Let's count some bananas.",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_03",
+      "audioFile": "scene_03.wav",
+      "subtitle": "Look! One banana!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04",
+      "audioFile": "scene_04.wav",
+      "subtitle": "When we add one more...",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05",
+      "audioFile": "scene_05.wav",
+      "subtitle": "We get Two bananas! One, Two.",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

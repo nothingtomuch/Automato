@@ -1,0 +1,400 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_06",
+      "audioFile": "scene_06.wav",
+      "subtitle": "Let's add another one. What comes after two?",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07",
+      "audioFile": "scene_07.wav",
+      "subtitle": "Three! We have three bananas now.",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08",
+      "audioFile": "scene_08.wav",
+      "subtitle": "And one more makes Four!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_09",
+      "audioFile": "scene_09.wav",
+      "subtitle": "One more makes Five! Let's count them: one, two, three, four, five!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_10",
+      "audioFile": "scene_10.wav",
+      "subtitle": "Great job! Now let's try something harder. Let's count to ten!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_3",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 550,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_4",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 700,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "videoId": "algebra_bunny",
+    "targetAge": "11+",
+    "hostCharacter": "bunny",
+    "themeColor": "#ffc107",
+    "fps": 30
+  },
+  "includes": [
+    "part1.json",
+    "part2.json",
+    "part3.json",
+    "part4.json",
+    "part5.json"
+  ]
+}

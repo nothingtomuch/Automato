@@ -1,0 +1,1 @@
+import PIL; print(" PIL is installed)

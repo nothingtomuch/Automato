@@ -1,0 +1,90 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_16_word_problem_continued",
+      "audioFile": "scene_16.wav",
+      "subtitle": "Then, if he finds 2 more pencils, he now has 12 + 2 = 14 pencils!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_17_algebraic_thinking",
+      "audioFile": "scene_17.wav",
+      "subtitle": "You see, algebra isn't just about solving equations - it's about thinking logically and breaking down problems into manageable parts.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_18_problem_solving",
+      "audioFile": "scene_18.wav",
+      "subtitle": "By using algebraic thinking, you can tackle all sorts of problems - from simple equations to complex real-world scenarios.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_19_confidence_builder",
+      "audioFile": "scene_19.wav",
+      "subtitle": "The more you practice, the more confident you'll become in your ability to solve problems and think algebraically.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_20_algebra_in_real_life",
+      "audioFile": "scene_20.wav",
+      "subtitle": "Algebra is used in so many real-world applications - from medicine to music, and from science to sports.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    }
+  ]
+}

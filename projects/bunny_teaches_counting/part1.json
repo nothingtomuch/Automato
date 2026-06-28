@@ -1,0 +1,134 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_01_intro",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Hey there, young adventurer! Welcome to the world of algebra!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "walk",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 1.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "stepId": "scene_02_banana",
+      "audioFile": "scene_02.wav",
+      "subtitle": "Imagine you have 5 bananas, and your friend gives you 2 more. How many bananas do you have now?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "gridActions": [
+        {
+          "type": "grid_init",
+          "gridId": "bananas",
+          "initialCount": 5,
+          "src": "banana.png",
+          "startX": 200,
+          "startY": 720,
+          "spacingX": 100
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_add_banana",
+      "audioFile": "scene_03.wav",
+      "subtitle": "That's right! You now have 7 bananas. In algebra, we can represent this as 5 + 2 = 7.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "gridActions": [
+        {
+          "type": "grid_add",
+          "gridId": "bananas",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_equation",
+      "audioFile": "scene_04.wav",
+      "subtitle": "So, what's the equation for this problem? That's right, it's 5 + 2 = 7!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": []
+      }
+    },
+    {
+      "stepId": "scene_05_variables",
+      "audioFile": "scene_05.wav",
+      "subtitle": "In algebra, we use variables like x and y to represent unknown values. Let's say x is the number of bananas you have.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationX": 0,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

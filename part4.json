@@ -1,0 +1,167 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_16",
+      "audioFile": "scene_16.wav",
+      "subtitle": "Now it's your turn. How many bananas are here?",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "idle",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_17",
+      "audioFile": "scene_17.wav",
+      "subtitle": "Did you say three? You're right!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "gesture-positive",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": -4,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "sprites": [
+        {
+          "id": "banana_0",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 100,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_1",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 250,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "id": "banana_2",
+          "src": "banana.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 400,
+              "y": 720,
+              "scale": 0.5,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "stepId": "scene_18",
+      "audioFile": "scene_18.wav",
+      "subtitle": "Thanks for counting with me today. Bye bye!",
+      "environment": {
+        "background": "garden_bg.png"
+      },
+      "characterState": {
+        "pose": "dance",
+        "actions": [
+          {
+            "type": "glide",
+            "duration": 0.5,
+            "targetState": {
+              "x": 0,
+              "y": -1,
+              "scale": 1.2,
+              "rotationY": 0,
+              "rotationZ": 0
+            }
+          }
+        ]
+      },
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}
