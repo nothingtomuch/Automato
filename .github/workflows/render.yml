@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  render:
+  # ── Stage 1: Compile (Python pipeline → dist/render_props.json) ─────────────
+  compile:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -27,17 +28,131 @@ jobs:
       - name: Install FFmpeg
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
-      - name: Install Dependencies
+      - name: Install Python Dependencies
+        run: pip install edge-tts
+
+      - name: Install Node Dependencies
         run: npm ci
 
-      - name: Compile Pipeline
+      - name: Run Compile Pipeline
         run: python compile_pipeline.py
 
-      - name: Render Video
-        run: npx remotion render EducationalVideo out.mp4 --props=dist/render_props.json
+      - name: Upload compiled props + public assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-assets
+          path: |
+            dist/
+            public/
 
-      - name: Upload Output Video
+  # ── Stage 2: Calculate how many chunks we need (1 per minute, max 20) ────────
+  plan:
+    needs: compile
+    runs-on: ubuntu-latest
+    outputs:
+      chunks: ${{ steps.calc.outputs.chunks }}
+      total:  ${{ steps.calc.outputs.total }}
+    steps:
+      - name: Download compiled assets
+        uses: actions/download-artifact@v4
+        with:
+          name: compiled-assets
+
+      - name: Calculate chunk count
+        id: calc
+        run: |
+          TOTAL=$(node -e "const p=require('./dist/render_props.json'); console.log(p.meta.totalFrames)")
+          FPS=$(node -e "const p=require('./dist/render_props.json'); console.log(p.meta.fps || 30)")
+          MINUTES=$(( (TOTAL + FPS * 60 - 1) / (FPS * 60) ))
+          CHUNKS=$MINUTES
+          if [ $CHUNKS -lt 1 ]; then CHUNKS=1; fi
+          if [ $CHUNKS -gt 20 ]; then CHUNKS=20; fi
+          # Build a JSON array [0, 1, ..., CHUNKS-1]
+          ARRAY=$(node -e "console.log(JSON.stringify(Array.from({length:$CHUNKS},(_,i)=>i)))")
+          echo "chunks=$ARRAY" >> $GITHUB_OUTPUT
+          echo "total=$TOTAL"  >> $GITHUB_OUTPUT
+          echo "Video: $TOTAL frames, $MINUTES min → $CHUNKS parallel chunks"
+
+  # ── Stage 3: Render chunks in parallel ──────────────────────────────────────
+  render-chunk:
+    needs: plan
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        chunk: ${{ fromJson(needs.plan.outputs.chunks) }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Node Dependencies
+        run: npm ci
+
+      - name: Download compiled assets
+        uses: actions/download-artifact@v4
+        with:
+          name: compiled-assets
+
+      - name: Calculate frame range for this chunk
+        id: frames
+        run: |
+          TOTAL=${{ needs.plan.outputs.total }}
+          CHUNKS=$(echo '${{ toJson(needs.plan.outputs.chunks) }}' | node -e "process.stdin.resume();let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>console.log(JSON.parse(JSON.parse(d)).length))")
+          CHUNK_SIZE=$(( (TOTAL + CHUNKS - 1) / CHUNKS ))
+          START=$(( ${{ matrix.chunk }} * CHUNK_SIZE ))
+          END=$(( START + CHUNK_SIZE - 1 ))
+          if [ $END -ge $TOTAL ]; then END=$(( TOTAL - 1 )); fi
+          echo "start=$START" >> $GITHUB_OUTPUT
+          echo "end=$END"     >> $GITHUB_OUTPUT
+          echo "Chunk ${{ matrix.chunk }}: frames $START → $END (of $TOTAL)"
+
+      - name: Render chunk ${{ matrix.chunk }}
+        run: |
+          npx remotion render EducationalVideo chunk-${{ matrix.chunk }}.mp4 \
+            --props=dist/render_props.json \
+            --frames=${{ steps.frames.outputs.start }}-${{ steps.frames.outputs.end }} \
+            --concurrency=2 \
+            --log=verbose
+
+      - name: Upload chunk
+        uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.chunk }}
+          path: chunk-${{ matrix.chunk }}.mp4
+
+  # ── Stage 4: Stitch all chunks → final video ────────────────────────────────
+  stitch:
+    needs: [plan, render-chunk]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Download all chunks
+        uses: actions/download-artifact@v4
+        with:
+          pattern: chunk-*
+          merge-multiple: true
+
+      - name: Stitch chunks into final video
+        run: |
+          # Build concat list dynamically from however many chunks we have
+          ls chunk-*.mp4 | sort -V | while read f; do echo "file '$f'"; done > concat.txt
+          cat concat.txt
+          ffmpeg -f concat -safe 0 -i concat.txt -c copy out.mp4
+          echo "✅ Final video: $(du -sh out.mp4)"
+
+      - name: Upload final video
         uses: actions/upload-artifact@v4
         with:
           name: automato-video
           path: out.mp4
+          retention-days: 30
