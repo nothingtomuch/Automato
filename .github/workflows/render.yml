@@ -35,7 +35,10 @@ jobs:
         run: npm ci
 
       - name: Run Compile Pipeline
-        run: python compile_pipeline.py
+        run: |
+          PROJECT=$(cat .current_project | tr -d '[:space:]')
+          echo "Compiling project: $PROJECT"
+          python compile_pipeline.py --project "projects/$PROJECT"
 
       - name: Upload compiled props + public assets
         uses: actions/upload-artifact@v4
