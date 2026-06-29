@@ -110,11 +110,40 @@ function buildCharacterStateBlock(charState: any): any {
   };
 }
 
+function buildTextOverlayBlock(t: any, nextBlock?: any): any {
+  const hasBg = !!t.bg;
+  // Strip the trailing 'cc' alpha we added on export to recover the base hex
+  const bgColor = hasBg ? t.bg.slice(0, 7) : '#000000';
+  return {
+    type: "text_overlay",
+    fields: {
+      text:    t.text   ?? '',
+      x:       t.x      ?? 50,
+      y:       t.y      ?? 35,
+      size:    t.size   ?? 80,
+      color:   t.color  ?? '#ffffff',
+      bg:      bgColor,
+      showBg:  hasBg ? 'TRUE' : 'FALSE',
+    },
+    ...(nextBlock ? { next: { block: nextBlock } } : {})
+  };
+}
+
+function buildTextOverlayChain(textOverlays: any[]): any | undefined {
+  if (!textOverlays || textOverlays.length === 0) return undefined;
+  let current: any | undefined = undefined;
+  for (let i = textOverlays.length - 1; i >= 0; i--) {
+    current = buildTextOverlayBlock(textOverlays[i], current);
+  }
+  return current;
+}
+
 function buildSceneBlock(scene: any, nextBlock?: any): any {
   const bg = scene.environment?.background ?? "";
   const isKnownBg = KNOWN_BACKGROUNDS.includes(bg);
-  const charBlock = buildCharacterStateBlock(scene.characterState);
-  const gridChain = buildGridActionChain(scene.gridActions ?? []);
+  const charBlock   = buildCharacterStateBlock(scene.characterState);
+  const gridChain   = buildGridActionChain(scene.gridActions ?? []);
+  const textChain   = buildTextOverlayChain(scene.textOverlays ?? []);
 
   return {
     type: "scene",
@@ -128,7 +157,8 @@ function buildSceneBlock(scene: any, nextBlock?: any): any {
     },
     inputs: {
       CHARACTER_STATE: { block: charBlock },
-      ...(gridChain ? { GRID_ACTIONS: { block: gridChain } } : {})
+      ...(gridChain  ? { GRID_ACTIONS:   { block: gridChain  } } : {}),
+      ...(textChain  ? { TEXT_OVERLAYS:  { block: textChain  } } : {}),
     },
     ...(nextBlock ? { next: { block: nextBlock } } : {})
   };

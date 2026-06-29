@@ -123,6 +123,9 @@ export const defineBlocks = () => {
       this.appendStatementInput("GRID_ACTIONS")
           .setCheck("GridAction")
           .appendField("🍎 Grid:");
+      this.appendStatementInput("TEXT_OVERLAYS")
+          .setCheck("TextOverlay")
+          .appendField("✏️ Text:");
       this.appendDummyInput()
           .appendField("🎉 Confetti:")
           .appendField(new Blockly.FieldCheckbox("FALSE"), "confetti");
@@ -164,6 +167,13 @@ export const defineBlocks = () => {
       characterState: charState,
     };
     if (gridActions.length > 0) obj.gridActions = gridActions;
+
+    // Text overlays
+    let textCode = jsonGenerator.statementToCode(block, 'TEXT_OVERLAYS');
+    if (textCode.endsWith(',\n')) textCode = textCode.slice(0, -2) + '\n';
+    const textOverlays = textCode ? JSON.parse(`[${textCode}]`) : [];
+    if (textOverlays.length > 0) obj.textOverlays = textOverlays;
+
     if (confetti) obj.effects = { confetti: true };
     return JSON.stringify(obj) + ',\n';
   };
@@ -316,6 +326,45 @@ export const defineBlocks = () => {
   };
   jsonGenerator.forBlock['grid_destroy'] = function(block: Blockly.Block) {
     return JSON.stringify({ type: 'grid_destroy', gridId: block.getFieldValue('gridId'), index: Number(block.getFieldValue('index')) }) + ',\n';
+  };
+
+  // ── Text Overlay ──────────────────────────────────────────────────────────────
+  Blockly.Blocks['text_overlay'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("✏️ Text:")
+          .appendField(new Blockly.FieldTextInput("2 + 2 = 4"), "text");
+      this.appendDummyInput()
+          .appendField("X%:")
+          .appendField(new Blockly.FieldNumber(50, 0, 100), "x")
+          .appendField("Y%:")
+          .appendField(new Blockly.FieldNumber(35, 0, 100), "y")
+          .appendField("Size:")
+          .appendField(new Blockly.FieldNumber(80, 10, 300), "size");
+      this.appendDummyInput()
+          .appendField("Color:")
+          .appendField(new FieldColour("#ffffff"), "color")
+          .appendField("BG:")
+          .appendField(new FieldColour("#000000"), "bg")
+          .appendField("Show BG:")
+          .appendField(new Blockly.FieldCheckbox("FALSE"), "showBg");
+      this.setPreviousStatement(true, "TextOverlay");
+      this.setNextStatement(true,     "TextOverlay");
+      this.setColour(20);
+      this.setTooltip("Show floating text on screen (math equations, labels, etc.)");
+    }
+  };
+  jsonGenerator.forBlock['text_overlay'] = function(block: Blockly.Block) {
+    const text    = block.getFieldValue('text');
+    const x       = Number(block.getFieldValue('x'));
+    const y       = Number(block.getFieldValue('y'));
+    const size    = Number(block.getFieldValue('size'));
+    const color   = block.getFieldValue('color');
+    const bg      = block.getFieldValue('bg');
+    const showBg  = block.getFieldValue('showBg') === 'TRUE';
+    const obj: any = { text, x, y, size, color };
+    if (showBg) obj.bg = bg + 'cc'; // semi-transparent
+    return JSON.stringify(obj) + ',\n';
   };
 
   return jsonGenerator;

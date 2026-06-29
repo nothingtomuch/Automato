@@ -35,6 +35,10 @@ const CubePetModel = ({ character, pose, keyframes }: { character: string; pose:
       const clip = THREE.AnimationClip.findByName(gltf.animations, pose);
       if (clip) {
         const action = mixer.clipAction(clip);
+        // Gesture animations are very fast by default — slow them to half speed
+        if (pose === 'gesture-positive' || pose === 'gesture-negative') {
+          action.timeScale = 0.5;
+        }
         action.play();
         activeActionRef.current = action;
       }
@@ -161,7 +165,32 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
         </div>
       )}
 
-      {/* 4. Confetti Effects Layer */}
+      {/* 4. Text Overlays Layer — floating math, labels, equations */}
+      {sceneData.textOverlays && sceneData.textOverlays.map((t: any, i: number) => (
+        <div key={i} style={{
+          position: "absolute",
+          left:   t.x    !== undefined ? `${t.x}%`   : "50%",
+          top:    t.y    !== undefined ? `${t.y}%`   : "40%",
+          transform: "translate(-50%, -50%)",
+          zIndex: 15,
+          pointerEvents: "none",
+          fontFamily: t.font || "Comic Sans MS, Arial, sans-serif",
+          fontSize:   t.size !== undefined ? `${t.size}px` : "80px",
+          fontWeight: "bold",
+          color:      t.color || "#ffffff",
+          backgroundColor: t.bg || "rgba(0,0,0,0)",
+          padding:    t.bg ? "12px 24px" : "0",
+          borderRadius: "16px",
+          textShadow: "0 3px 12px rgba(0,0,0,0.7), 0 1px 3px rgba(0,0,0,0.9)",
+          whiteSpace: "pre-wrap",
+          textAlign: "center",
+          lineHeight: 1.3,
+        }}>
+          {t.text}
+        </div>
+      ))}
+
+      {/* 5. Confetti Effects Layer */}
       {sceneData.effects?.confetti && <ConfettiOverlay />}
     </div>
   );

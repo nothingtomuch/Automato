@@ -21,6 +21,9 @@ const TOOLBOX = {
       { kind: "block", type: "grid_add"  },
       { kind: "block", type: "grid_destroy" },
     ]},
+    { kind: "category", name: "✏️ Text",       colour: "20",  contents: [
+      { kind: "block", type: "text_overlay" },
+    ]},
     { kind: "category", name: "✨ Animation",  colour: "65",  contents: [
       { kind: "block", type: "action_glide" },
       { kind: "block", type: "action_wait"  },
@@ -520,6 +523,18 @@ export default function App() {
     } catch (e: any) { setStatusMsg(`❌ Load error: ${e.message}`); }
   };
 
+  // ── Get current spec from canvas (for AI chat context) ────────────────────
+  const getCurrentSpec = (): any => {
+    if (!workspace.current || !jsonGenerator.current) return null;
+    try {
+      const topBlocks = workspace.current.getTopBlocks(true);
+      const specBlock = topBlocks.find((b: any) => b.type === 'video_spec');
+      if (!specBlock) return null;
+      const code = jsonGenerator.current.blockToCode(specBlock) as string;
+      return JSON.parse(code);
+    } catch { return null; }
+  };
+
   // ── Git push ───────────────────────────────────────────────────────────────
   const gitPush = async () => {
     setStatusMsg('🚀 Pushing to GitHub…');
@@ -639,7 +654,7 @@ export default function App() {
 
             <RecorderPanel onSaved={f => setStatusMsg(`✅ Audio saved: ${f}`)} />
 
-            <AiPanel apiKey={apiKey} onSpecGenerated={onSpecGenerated} onStatusMsg={setStatusMsg} />
+            <AiPanel apiKey={apiKey} onSpecGenerated={onSpecGenerated} onStatusMsg={setStatusMsg} getCurrentSpec={getCurrentSpec} />
             <button onClick={generateAllAudio} style={btn('#5e35b1')} title="Generate TTS audio for all scene subtitles">🗣️ Auto-Gen Audio</button>
 
             <div style={{ width:1, height:34, background:'#1e1e38', alignSelf:'center' }} />

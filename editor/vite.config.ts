@@ -289,6 +289,65 @@ function automotoPlugin() {
             ok(res, { success: true, spec })
           } catch (err) { fail(res, err) }
 
+        // ── Chat with AI (iterative edits) ────────────────────────────────
+        } else if (url === '/api/chat' && req.method === 'POST') {
+          try {
+            const { apiKey, provider, model, messages, currentSpec } = JSON.parse(await readBody(req))
+            if (!apiKey) { fail(res, 'No API key provided'); return }
+
+            let systemPrompt = ''
+            if (fs.existsSync(AI_PROMPT)) systemPrompt = fs.readFileSync(AI_PROMPT, 'utf-8')
+
+            const specContext = currentSpec
+              ? `\n\nThe user's CURRENT video spec is:\n\`\`\`json\n${JSON.stringify(currentSpec, null, 2)}\n\`\`\`\n\nIf the user asks you to make changes, return the COMPLETE updated spec as raw JSON (no markdown fences). If the user is just asking a question or chatting, reply in plain text.`
+              : ''
+
+            const sysMsg = systemPrompt + specContext
+
+            const prov = provider || 'groq'
+            let replyText = ''
+
+            if (prov === 'gemini') {
+              const gemUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.0-flash'}:generateContent?key=${apiKey}`
+              const contents = [
+                { role: 'user', parts: [{ text: sysMsg + '\n\n---\n\n' + messages.map((m: any) => `${m.role === 'user' ? 'User' : 'Assistant'}: ${m.content}`).join('\n') }] }
+              ]
+              const result = await httpsPost(gemUrl, { contents })
+              if (result.status !== 200) { fail(res, `Gemini error: ${result.body?.error?.message}`); return }
+              replyText = result.body?.candidates?.[0]?.content?.parts?.[0]?.text || ''
+            } else {
+              const apiMessages = [
+                { role: 'system', content: sysMsg },
+                ...messages
+              ]
+              let url2 = '', headers2: any = {}, body2: any = {}
+              if (prov === 'groq') {
+                url2 = `https://api.groq.com/openai/v1/chat/completions`
+                headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }
+                body2 = { model: model || 'llama-3.3-70b-versatile', messages: apiMessages, max_tokens: 8192 }
+              } else {
+                url2 = 'https://openrouter.ai/api/v1/chat/completions'
+                headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://automato.app' }
+                body2 = { model: model || 'meta-llama/llama-3.1-8b-instruct:free', messages: apiMessages, max_tokens: 8192 }
+              }
+              const result = await httpsPost(url2, body2, headers2)
+              if (result.status !== 200) { fail(res, `API error (${result.status}): ${result.body?.error?.message}`); return }
+              replyText = result.body?.choices?.[0]?.message?.content || ''
+            }
+
+            // Check if the reply contains a JSON spec
+            const jsonMatch = replyText.match(/\{[\s\S]*\}/)
+            if (jsonMatch) {
+              try {
+                const spec = JSON.parse(jsonMatch[0])
+                if (spec.meta && spec.timeline) {
+                  ok(res, { success: true, type: 'spec', spec, reply: replyText }); return
+                }
+              } catch { /* not valid JSON, treat as text */ }
+            }
+            ok(res, { success: true, type: 'text', reply: replyText })
+          } catch (err) { fail(res, err) }
+
         // ── Generate TTS via edge-tts ──────────────────────────────────────
         } else if (url === '/api/gen-tts' && req.method === 'POST') {
           try {
