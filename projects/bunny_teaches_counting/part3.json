@@ -23,7 +23,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Practice makes perfect!",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_12_review",
@@ -35,7 +44,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Review time!",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_13_word_problems",
@@ -60,7 +78,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Word problems",
+          "x": 45,
+          "y": 20,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_14_word_problem_example",
@@ -72,7 +99,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Tom's pencils: 15 - 3 + 2 = ?",
+          "x": 40,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_15_word_problem_solution",
@@ -97,7 +133,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "15 - 3 = 12",
+          "x": 45,
+          "y": 20,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     }
   ]
 }

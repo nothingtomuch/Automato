@@ -214,8 +214,9 @@ function automotoPlugin() {
         // ── Generate spec (multi-provider) ────────────────────────────────
         } else if (url === '/api/generate' && req.method === 'POST') {
           try {
-            const { apiKey, prompt, provider, model } = JSON.parse(await readBody(req))
+            let { apiKey, prompt, provider, model } = JSON.parse(await readBody(req))
             if (!apiKey) { fail(res, 'No API key provided. Open ⚙️ Settings to add one.'); return }
+            apiKey = apiKey.trim()
             if (!prompt) { fail(res, 'No prompt provided'); return }
 
             let systemPrompt = ''
@@ -250,7 +251,7 @@ function automotoPlugin() {
                   { role: 'user',   content: prompt }
                 ],
                 temperature: 0.7,
-                max_tokens: 8192,
+                max_tokens: 4000,
                 response_format: { type: 'json_object' }
               }, { Authorization: `Bearer ${apiKey}` })
               if (result.status !== 200) {
@@ -269,7 +270,7 @@ function automotoPlugin() {
                   { role: 'user',   content: prompt }
                 ],
                 temperature: 0.7,
-                max_tokens: 8192
+                max_tokens: 4000
               }, { Authorization: `Bearer ${apiKey}`, 'HTTP-Referer': 'http://localhost:5173', 'X-Title': 'Automato Studio' })
               if (result.status !== 200) {
                 const msg = result.body?.error?.message || JSON.stringify(result.body)
@@ -292,8 +293,9 @@ function automotoPlugin() {
         // ── Chat with AI (iterative edits) ────────────────────────────────
         } else if (url === '/api/chat' && req.method === 'POST') {
           try {
-            const { apiKey, provider, model, messages, currentSpec } = JSON.parse(await readBody(req))
+            let { apiKey, provider, model, messages, currentSpec } = JSON.parse(await readBody(req))
             if (!apiKey) { fail(res, 'No API key provided'); return }
+            apiKey = apiKey.trim()
 
             let systemPrompt = ''
             if (fs.existsSync(AI_PROMPT)) systemPrompt = fs.readFileSync(AI_PROMPT, 'utf-8')
@@ -324,11 +326,11 @@ function automotoPlugin() {
               if (prov === 'groq') {
                 url2 = `https://api.groq.com/openai/v1/chat/completions`
                 headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }
-                body2 = { model: model || 'llama-3.3-70b-versatile', messages: apiMessages, max_tokens: 8192 }
+                body2 = { model: model || 'llama-3.3-70b-versatile', messages: apiMessages, max_tokens: 4000 }
               } else {
                 url2 = 'https://openrouter.ai/api/v1/chat/completions'
                 headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://automato.app' }
-                body2 = { model: model || 'meta-llama/llama-3.1-8b-instruct:free', messages: apiMessages, max_tokens: 8192 }
+                body2 = { model: model || 'meta-llama/llama-3.1-8b-instruct:free', messages: apiMessages, max_tokens: 4000 }
               }
               const result = await httpsPost(url2, body2, headers2)
               if (result.status !== 200) { fail(res, `API error (${result.status}): ${result.body?.error?.message}`); return }

@@ -23,7 +23,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Algebra Adventure",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_02_banana",
@@ -59,6 +68,15 @@
           "startY": 720,
           "spacingX": 100
         }
+      ],
+      "textOverlays": [
+        {
+          "text": "5 bananas + 2 bananas",
+          "x": 40,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
       ]
     },
     {
@@ -91,6 +109,15 @@
           "gridId": "bananas",
           "count": 2
         }
+      ],
+      "textOverlays": [
+        {
+          "text": "5 + 2 = 7",
+          "x": 45,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
       ]
     },
     {
@@ -103,7 +130,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "5 + 2 = 7",
+          "x": 45,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_05_variables",
@@ -128,7 +164,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "x = ?",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     }
   ]
 }

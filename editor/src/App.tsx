@@ -525,12 +525,12 @@ export default function App() {
 
   // ── Get current spec from canvas (for AI chat context) ────────────────────
   const getCurrentSpec = (): any => {
-    if (!workspace.current || !jsonGenerator.current) return null;
+    if (!workspace.current || !generatorRef.current) return null;
     try {
       const topBlocks = workspace.current.getTopBlocks(true);
       const specBlock = topBlocks.find((b: any) => b.type === 'video_spec');
       if (!specBlock) return null;
-      const code = jsonGenerator.current.blockToCode(specBlock) as string;
+      const code = generatorRef.current.blockToCode(specBlock) as string;
       return JSON.parse(code);
     } catch { return null; }
   };

@@ -10,7 +10,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "12 + 2 = 14",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_17_algebraic_thinking",
@@ -35,7 +44,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Algebra = Logical Thinking",
+          "x": 45,
+          "y": 20,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_18_problem_solving",
@@ -47,7 +65,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Algebraic Thinking",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_19_confidence_builder",
@@ -72,7 +99,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Practice = Confidence",
+          "x": 45,
+          "y": 20,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_20_algebra_in_real_life",
@@ -84,7 +120,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Algebra in Real Life",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     }
   ]
 }

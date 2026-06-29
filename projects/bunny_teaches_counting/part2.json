@@ -10,7 +10,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "x + 2 = 7",
+          "x": 50,
+          "y": 25,
+          "size": 100,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_07_solve_for_x",
@@ -35,7 +44,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "x + 2 - 2 = 7 - 2",
+          "x": 45,
+          "y": 30,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_08_solution",
@@ -47,7 +65,17 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "x = 5",
+          "x": 50,
+          "y": 25,
+          "size": 110,
+          "color": "#4ade80",
+          "bg": "#000000cc"
+        }
+      ]
     },
     {
       "stepId": "scene_09_funny_moment",
@@ -72,7 +100,16 @@
             }
           }
         ]
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Don't go bananas!",
+          "x": 45,
+          "y": 30,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     },
     {
       "stepId": "scene_10_real_world_applications",
@@ -84,7 +121,16 @@
       "characterState": {
         "pose": "idle",
         "actions": []
-      }
+      },
+      "textOverlays": [
+        {
+          "text": "Algebra in real life:",
+          "x": 45,
+          "y": 20,
+          "size": 90,
+          "color": "#ffffff"
+        }
+      ]
     }
   ]
 }
