@@ -149,6 +149,30 @@ function buildTextOverlayChain(textOverlays: any[]): any | undefined {
   return current;
 }
 
+function buildInfographicOverlayBlock(info: any, nextBlock?: any): any {
+  return {
+    type: "infographic_overlay",
+    fields: {
+      dsl:    info.dsl    ?? 'infographic list-pyramid-badge-card',
+      x:      info.x      ?? 50,
+      y:      info.y      ?? 50,
+      width:  info.width  ?? 400,
+      height: info.height ?? 500,
+      scale:  info.scale  ?? 1.5,
+    },
+    ...(nextBlock ? { next: { block: nextBlock } } : {})
+  };
+}
+
+function buildInfographicOverlayChain(infographics: any[]): any | undefined {
+  if (!infographics || infographics.length === 0) return undefined;
+  let current: any | undefined = undefined;
+  for (let i = infographics.length - 1; i >= 0; i--) {
+    current = buildInfographicOverlayBlock(infographics[i], current);
+  }
+  return current;
+}
+
 function buildSceneBlock(scene: any, nextBlock?: any, fallbackHost?: string): any {
   const bg = scene.environment?.background ?? "";
   const isKnownBg = KNOWN_BACKGROUNDS.includes(bg);
@@ -163,6 +187,7 @@ function buildSceneBlock(scene: any, nextBlock?: any, fallbackHost?: string): an
 
   const gridChain   = buildGridActionChain(scene.gridActions ?? []);
   const textChain   = buildTextOverlayChain(scene.textOverlays ?? []);
+  const infoChain   = buildInfographicOverlayChain(scene.infographics ?? []);
 
   return {
     type: "scene",
@@ -175,9 +200,10 @@ function buildSceneBlock(scene: any, nextBlock?: any, fallbackHost?: string): an
       confetti: scene.effects?.confetti ? "TRUE" : "FALSE",
     },
     inputs: {
-      ...(charChain  ? { CHARACTER_STATE: { block: charChain  } } : {}),
-      ...(gridChain  ? { GRID_ACTIONS:   { block: gridChain  } } : {}),
-      ...(textChain  ? { TEXT_OVERLAYS:  { block: textChain  } } : {}),
+      ...(charChain  ? { CHARACTER_STATE:       { block: charChain  } } : {}),
+      ...(gridChain  ? { GRID_ACTIONS:          { block: gridChain  } } : {}),
+      ...(textChain  ? { TEXT_OVERLAYS:         { block: textChain  } } : {}),
+      ...(infoChain  ? { INFOGRAPHIC_OVERLAYS:  { block: infoChain  } } : {}),
     },
     ...(nextBlock ? { next: { block: nextBlock } } : {})
   };

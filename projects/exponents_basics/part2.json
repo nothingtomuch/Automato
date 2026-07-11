@@ -1,0 +1,733 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_02_001",
+      "audioFile": "scene_02_001.wav",
+      "subtitle": "Alright \u2014 let's start with how we READ and WRITE exponential expressions. See this: three to the power of four.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = ?",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_002",
+      "audioFile": "scene_02_002.wav",
+      "subtitle": "Three to the power of four. So... three is the base, four is the exponent. Got it!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = ?",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_003",
+      "audioFile": "scene_02_003.wav",
+      "subtitle": "Perfect. Now \u2014 what does three to the power of four actually EQUAL?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = 3 \u00d7 3 \u00d7 3 \u00d7 3 = 81",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_004",
+      "audioFile": "scene_02_004.wav",
+      "subtitle": "It means three times three times three times three. That's... nine... times three is twenty-seven... times three is eighty-one!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = 3 \u00d7 3 \u00d7 3 \u00d7 3 = 81",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_005",
+      "audioFile": "scene_02_005.wav",
+      "subtitle": "Boom! Eighty-one. You just evaluated an exponent like a pro. The EXPANDED form is three times three times three times three. The EXPONENTIAL form is three to the power of four.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = 3 \u00d7 3 \u00d7 3 \u00d7 3 = 81",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_006",
+      "audioFile": "scene_02_006.wav",
+      "subtitle": "Oh that's sick \u2014 so exponential form is the compact version, and expanded form is the full multiplication spelled out.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "3^4 = 3 \u00d7 3 \u00d7 3 \u00d7 3 = 81",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#00E5FF"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_007",
+      "audioFile": "scene_02_007.wav",
+      "subtitle": "Spot on. Now quick drill \u2014 write five to the power of three in expanded form and solve it.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "5^3 = ?",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#FF6B6B"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_008",
+      "audioFile": "scene_02_008.wav",
+      "subtitle": "Five to the power of three means five times five times five. That's twenty-five times five \u2014 one hundred and twenty-five!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "5^3 = 5 \u00d7 5 \u00d7 5 = 125",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#FF6B6B"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_009",
+      "audioFile": "scene_02_009.wav",
+      "subtitle": "One hundred and twenty-five! Perfect. Exponents are just shorthand for repeated multiplication \u2014 never forget that.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "5^3 = 5 \u00d7 5 \u00d7 5 = 125",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#FF6B6B"
+        }
+      ],
+      "infographics": [
+        {
+          "dsl": "infographic list-pyramid-badge-card\ntheme gradient-vibrant\ndata\n  lists\n    - label 2\u00b9\n      desc Value: 2\n      color #06b6d4\n    - label 2\u00b2\n      desc Value: 4\n      color #10b981\n    - label 2\u00b3\n      desc Value: 8\n      color #f59e0b\n    - label 2\u2074\n      desc Value: 16\n      color #f43f5e\n    - label 2\u2075\n      desc Value: 32\n      color #a855f7",
+          "x": 50,
+          "y": 60,
+          "width": "400px",
+          "height": "600px"
+        }
+      ]
+    }
+  ]
+}

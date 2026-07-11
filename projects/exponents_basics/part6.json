@@ -1,0 +1,769 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_06_001",
+      "audioFile": "scene_06_001.wav",
+      "subtitle": "Law Three \u2014 the Power Rule! When you raise a power to ANOTHER power: a to the m, all in brackets, raised to the n \u2014 equals a to the m TIMES n.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Power Rule: (a^m)^n = a^(m\u00d7n)",
+          "x": 50,
+          "y": 15,
+          "size": 70,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_002",
+      "audioFile": "scene_06_002.wav",
+      "subtitle": "So now it's multiplication of exponents? Product law adds, quotient law subtracts, power law MULTIPLIES. I need a second to process this.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Power Rule: (a^m)^n = a^(m\u00d7n)",
+          "x": 50,
+          "y": 15,
+          "size": 70,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_003",
+      "audioFile": "scene_06_003.wav",
+      "subtitle": "Take your time! Let's make it concrete. Two to the three, raised to the power of four.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2^3)^4 = 2^(3\u00d74) = 2^12",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_004",
+      "audioFile": "scene_06_004.wav",
+      "subtitle": "That means two to the three, multiplied by itself four times. So I'm adding three, four times \u2014 that's three times four equals twelve. Two to the twelve!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2^3)^4 = 2^(3\u00d74) = 2^12",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_005",
+      "audioFile": "scene_06_005.wav",
+      "subtitle": "Perfect reasoning! You re-discovered the rule yourself. Three times four is twelve \u2014 the answer is two to the twelve, which is four thousand and ninety-six.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2^3)^4 = 2^(3\u00d74) = 2^12",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_006",
+      "audioFile": "scene_06_006.wav",
+      "subtitle": "That's massive. Exponents can get HUGE fast.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2^3)^4 = 2^(3\u00d74) = 2^12",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_007",
+      "audioFile": "scene_06_007.wav",
+      "subtitle": "That's the power of exponents \u2014 pun intended. They represent explosive growth. Now, there's a bonus variant: a times b, all in brackets, to the power n \u2014 equals a to the n times b to the n.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(a\u00d7b)^n = a^n \u00d7 b^n",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_008",
+      "audioFile": "scene_06_008.wav",
+      "subtitle": "So the exponent distributes over multiplication inside the bracket? Like two times three, to the power of four \u2014 that's two to the four times three to the four?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2\u00d73)^4 = 2^4 \u00d7 3^4",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_009",
+      "audioFile": "scene_06_009.wav",
+      "subtitle": "Spot on! Sixteen times eighty-one \u2014 twelve hundred and ninety-six. And six to the four is also twelve hundred and ninety-six. The law checks out!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "(2\u00d73)^4 = 2^4 \u00d7 3^4",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#EA80FC"
+        }
+      ]
+    }
+  ]
+}

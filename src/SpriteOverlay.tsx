@@ -1,4 +1,3 @@
-import React from "react";
 import { useCurrentFrame, interpolate, Img, staticFile } from "remotion";
 
 export const SpriteOverlay = ({ sprites }: { sprites: any[] }) => {

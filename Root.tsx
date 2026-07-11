@@ -1,9 +1,14 @@
 import { Composition, getInputProps } from "remotion";
 import { MainTimeline } from "./MainTimeline";
 
+interface VideoProps {
+  meta?: { totalFrames?: number; fps?: number; themeColor?: string; hostCharacter?: string };
+  timeline?: unknown[];
+}
+
 export const Root = () => {
   // Pull the enriched props compiled by the Python script
-  const props = getInputProps();
+  const props = getInputProps() as VideoProps;
   
   // Default fallbacks if compiling headlessly without props during development
   const totalFrames = props.meta?.totalFrames || 300;

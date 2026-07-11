@@ -24,6 +24,9 @@ const TOOLBOX = {
     { kind: "category", name: "✏️ Text",       colour: "20",  contents: [
       { kind: "block", type: "text_overlay" },
     ]},
+    { kind: "category", name: "📊 Infographic", colour: "180", contents: [
+      { kind: "block", type: "infographic_overlay" },
+    ]},
     { kind: "category", name: "✨ Animation",  colour: "65",  contents: [
       { kind: "block", type: "action_glide" },
       { kind: "block", type: "action_wait"  },
@@ -205,7 +208,7 @@ function TemplatesMenu({ workspace, onClose }: { workspace:Blockly.WorkspaceSvg;
     const tpl = TEMPLATES[key] as any;
     const block = Blockly.serialization.blocks.append(tpl, workspace);
     block.moveBy(40 + Math.random()*80, 40 + Math.random()*80);
-    workspace.scrollBlockIntoView(block.id);
+    workspace.centerOnBlock(block.id);
     onClose();
   };
   return (

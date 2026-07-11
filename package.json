@@ -6,11 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@antv/infographic": "^0.2.19",
     "@react-three/fiber": "^9.6.1",
     "@remotion/cli": "^4.0.473",
     "@remotion/tailwind-v4": "4.0.473",
     "@remotion/three": "^4.0.473",
     "@types/three": "^0.184.1",
+    "infographic-for-react": "^0.3.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.473",

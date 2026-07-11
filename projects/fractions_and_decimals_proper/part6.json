@@ -9,7 +9,7 @@
       },
       "characters": [
         {
-          "type": "panda",
+          "type": "elephant",
           "pose": "gesture-positive",
           "actions": [
             {
@@ -19,7 +19,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -27,9 +29,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -39,7 +43,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -55,94 +61,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -153,7 +75,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -176,7 +98,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -192,7 +116,9 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
             },
             {
@@ -200,9 +126,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": 4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
             },
             {
@@ -212,94 +140,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -310,7 +154,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -333,7 +177,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -341,9 +187,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -353,7 +201,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -369,94 +219,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -467,7 +233,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -490,7 +256,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -498,9 +266,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -510,7 +280,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -526,94 +298,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -624,7 +312,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -647,7 +335,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -655,9 +345,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -667,7 +359,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -683,94 +377,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -781,7 +391,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -804,7 +414,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -812,9 +424,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -824,7 +438,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -840,94 +456,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -938,7 +470,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     },
@@ -961,7 +493,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -969,9 +503,11 @@
               "duration": 0.1,
               "targetState": {
                 "x": -4,
-                "y": 1,
+                "y": 0,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             },
             {
@@ -981,7 +517,9 @@
                 "x": -4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": 75
+                "rotationX": 0,
+                "rotationY": 75,
+                "rotationZ": 0
               }
             }
           ]
@@ -997,94 +535,10 @@
                 "x": 4,
                 "y": -1,
                 "scale": 1.2,
-                "rotationY": -75
+                "rotationX": 0,
+                "rotationY": -75,
+                "rotationZ": 0
               }
-            }
-          ]
-        }
-      ],
-      "sprites": [
-        {
-          "id": "tenth_4",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 790,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_5",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 900,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_6",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1010,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_7",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1120,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_8",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1230,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_9",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1340,
-              "y": 540,
-              "scale": 0.6
-            }
-          ]
-        },
-        {
-          "id": "tenth_10",
-          "src": "bamboo_tenth.png",
-          "keyframes": [
-            {
-              "frame": 0,
-              "x": 1450,
-              "y": 540,
-              "scale": 0.6
             }
           ]
         }
@@ -1095,7 +549,7 @@
           "x": 50,
           "y": 20,
           "size": 80,
-          "color": "#4CAF50"
+          "color": "#4caf50"
         }
       ]
     }

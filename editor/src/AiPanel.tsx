@@ -242,7 +242,7 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
     display: 'flex', flexDirection: 'column', boxShadow: '-8px 0 40px rgba(0,0,0,0.6)',
     fontFamily: "'Inter', sans-serif",
   };
-  const tabBtn = (t: string, active: boolean): React.CSSProperties => ({
+  const tabBtn = (_t: string, active: boolean): React.CSSProperties => ({
     flex: 1, padding: '10px 0', background: active ? '#1e1e38' : 'transparent',
     border: 'none', borderBottom: active ? '2px solid #7c6af7' : '2px solid transparent',
     color: active ? '#fff' : '#666', cursor: 'pointer', fontSize: 12, fontWeight: active ? 700 : 400,

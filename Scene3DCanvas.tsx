@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { SpriteOverlay } from "./src/SpriteOverlay";
+import { InfographicOverlay } from "./src/InfographicOverlay";
 import { ConfettiOverlay } from "./src/ConfettiOverlay";
 import { interpolate } from "remotion";
 
@@ -96,7 +97,9 @@ const CubePetModel = ({ character, pose, keyframes }: { character: string; pose:
 
 // Main Scene Canvas Layout
 export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) => {
-  const { hostCharacter, themeColor = propThemeColor } = getInputProps().meta; // Fallback for backwards compatibility
+  const meta = getInputProps() as { meta?: { hostCharacter?: string; themeColor?: string } };
+  const { hostCharacter, themeColor = propThemeColor } = meta.meta ?? {}; // Fallback for backwards compatibility
+  const frame = useCurrentFrame();
   
   const characters = sceneData.characters || (sceneData.characterState ? [{ type: hostCharacter, ...sceneData.characterState }] : []);
   
@@ -179,12 +182,30 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
         </div>
       )}
 
+      {/* 3.5 AntV Infographics Layer */}
+      {sceneData.infographics && sceneData.infographics.map((info: any, i: number) => (
+        <div key={i} style={{ 
+          position: "absolute", 
+          left: info.x !== undefined ? `${info.x}%` : "50%",
+          top: info.y !== undefined ? `${info.y}%` : "50%",
+          transform: `translate(-50%, -50%) scale(${info.scale || 1})`,
+          zIndex: 12 
+        }}>
+          <InfographicOverlay
+            dsl={info.dsl}
+            width={parseInt(info.width) || 600}
+            height={parseInt(info.height) || 800}
+          />
+        </div>
+      ))}
+
       {/* 4. Text Overlays Layer — floating math, labels, equations */}
       {sceneData.textOverlays && sceneData.textOverlays.map((t: any, i: number) => (
         <div key={i} style={{
           position: "absolute",
           left:   t.x    !== undefined ? `${t.x}%`   : "50%",
           top:    t.y    !== undefined ? `${t.y}%`   : "40%",
+          opacity: interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" }),
           transform: "translate(-50%, -50%)",
           zIndex: 15,
           pointerEvents: "none",
@@ -202,7 +223,21 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
           maxWidth: "90%",
           boxSizing: "border-box",
         }}>
-          {t.text}
+          {(() => {
+            if (typeof t.text !== "string" || !t.text.includes('^')) return t.text;
+            return t.text.split(/(\^(?:{[^}]+}|\([^)]+\)|\w+|-\d+))/).map((part: string, pIndex: number) => {
+              if (part.startsWith('^')) {
+                let content = part.slice(1);
+                if (content.startsWith('(') && content.endsWith(')')) {
+                  content = content.slice(1, -1);
+                } else if (content.startsWith('{') && content.endsWith('}')) {
+                  content = content.slice(1, -1);
+                }
+                return <sup key={pIndex} style={{ fontSize: "0.6em", verticalAlign: "super" }}>{content}</sup>;
+              }
+              return part;
+            });
+          })()}
         </div>
       ))}
 

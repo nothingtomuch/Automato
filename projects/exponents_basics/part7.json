@@ -1,0 +1,854 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_07_001",
+      "audioFile": "scene_07_001.wav",
+      "subtitle": "Alright Fox, you've crushed three laws. Now let's tackle NEGATIVE exponents. What does a to the negative n actually mean?",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "a^(-n) = 1 / a^n",
+          "x": 50,
+          "y": 15,
+          "size": 90,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_002",
+      "audioFile": "scene_07_002.wav",
+      "subtitle": "Based on the quotient rule pattern \u2014 I'm guessing it's like going 'below one' on the power scale?",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "a^(-n) = 1 / a^n",
+          "x": 50,
+          "y": 15,
+          "size": 90,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_003",
+      "audioFile": "scene_07_003.wav",
+      "subtitle": "Sharp! a to the negative n equals ONE divided by a to the n. It's the RECIPROCAL. Two to the negative three equals one over two to the three, which is one over eight.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^(-3) = 1 / 2^3 = 1 / 8",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_004",
+      "audioFile": "scene_07_004.wav",
+      "subtitle": "So negative exponents don't give you negative NUMBERS \u2014 they give you fractions! Ten to the negative two is one over hundred, which is zero point zero one!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "10^(-2) = 1 / 100 = 0.01",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_005",
+      "audioFile": "scene_07_005.wav",
+      "subtitle": "Exactly! Negative exponents represent very SMALL numbers \u2014 fractions. This is massive in science \u2014 like the size of an atom is ten to the negative ten metres!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "10^(-2) = 1 / 100 = 0.01",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_006",
+      "audioFile": "scene_07_006.wav",
+      "subtitle": "Whoa. So exponents work in both directions \u2014 huge numbers going up, tiny fractions going down. It's like a number superpower.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "10^(-2) = 1 / 100 = 0.01",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_007",
+      "audioFile": "scene_07_007.wav",
+      "subtitle": "Perfect description. Let's do a quick recap of ALL the laws we've covered.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "The Laws of Exponents Recap!",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FFD700"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_008",
+      "audioFile": "scene_07_008.wav",
+      "subtitle": "Okay \u2014 Product Rule: same base, multiply, ADD exponents. Quotient Rule: same base, divide, SUBTRACT exponents. Power Rule: power of a power, MULTIPLY exponents.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "The Laws of Exponents Recap!",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FFD700"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_009",
+      "audioFile": "scene_07_009.wav",
+      "subtitle": "And Zero Exponent: anything to the zero is one. Negative Exponent: flip it to a fraction. You just rattled off five laws from memory!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "The Laws of Exponents Recap!",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FFD700"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_010",
+      "audioFile": "scene_07_010.wav",
+      "subtitle": "Wait \u2014 I actually know all of these now?! When did THAT happen?!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "number_line",
+          "src": "exponent_number_line.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 790,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "The Laws of Exponents Recap!",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FFD700"
+        }
+      ]
+    }
+  ]
+}

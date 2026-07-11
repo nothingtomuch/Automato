@@ -1,0 +1,854 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_04_001",
+      "audioFile": "scene_04_001.wav",
+      "subtitle": "Now we step into the BIG LEAGUES \u2014 the Laws of Exponents. Law One: the Product Rule.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Product Rule: a^m \u00d7 a^n = a^(m+n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_002",
+      "audioFile": "scene_04_002.wav",
+      "subtitle": "Product means multiplication, right? So this law is about multiplying expressions with exponents?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Product Rule: a^m \u00d7 a^n = a^(m+n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_003",
+      "audioFile": "scene_04_003.wav",
+      "subtitle": "Exactly. Here's the law: a to the m, multiplied by a to the n, equals a to the m PLUS n.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Product Rule: a^m \u00d7 a^n = a^(m+n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_004",
+      "audioFile": "scene_04_004.wav",
+      "subtitle": "So when you multiply two powers with the SAME base... you just ADD the exponents?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Product Rule: a^m \u00d7 a^n = a^(m+n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_005",
+      "audioFile": "scene_04_005.wav",
+      "subtitle": "That's it! Let's prove it. Two to the three times two to the four \u2014 let's expand both.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00d7 2^4 = 2^(3+4) = 2^7",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_006",
+      "audioFile": "scene_04_006.wav",
+      "subtitle": "Two to the three is two times two times two. Two to the four is two times two times two times two. Together that's seven twos multiplied!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00d7 2^4 = 2^(3+4) = 2^7",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_007",
+      "audioFile": "scene_04_007.wav",
+      "subtitle": "Seven twos \u2014 which is two to the seven. And three plus four equals seven! The law works perfectly.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00d7 2^4 = 2^(3+4) = 2^7",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_008",
+      "audioFile": "scene_04_008.wav",
+      "subtitle": "That's actually beautiful. Instead of expanding and counting, I just ADD the exponents. Huge shortcut!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00d7 2^4 = 2^(3+4) = 2^7",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_009",
+      "audioFile": "scene_04_009.wav",
+      "subtitle": "Now you try \u2014 what is five to the four times five to the three?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "5^4 \u00d7 5^3 = 5^7 = 78,125",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_010",
+      "audioFile": "scene_04_010.wav",
+      "subtitle": "Same base \u2014 five! Four plus three equals seven. So the answer is five to the seven. That's seventy-eight thousand, one hundred and twenty-five!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "5^4 \u00d7 5^3 = 5^7 = 78,125",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ]
+    }
+  ]
+}

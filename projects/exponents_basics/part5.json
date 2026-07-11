@@ -1,0 +1,769 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_05_001",
+      "audioFile": "scene_05_001.wav",
+      "subtitle": "Fantastic! Law Two \u2014 the Quotient Rule. a to the m DIVIDED BY a to the n equals a to the m MINUS n.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Quotient Rule: a^m \u00f7 a^n = a^(m-n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_002",
+      "audioFile": "scene_05_002.wav",
+      "subtitle": "So dividing powers with the same base \u2014 you SUBTRACT the exponents instead of adding? That's the opposite of the product rule!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Quotient Rule: a^m \u00f7 a^n = a^(m-n)",
+          "x": 50,
+          "y": 15,
+          "size": 65,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_003",
+      "audioFile": "scene_05_003.wav",
+      "subtitle": "Exactly the opposite! Let's verify. Three to the five divided by three to the two.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "3^5 \u00f7 3^2 = 3^(5-2) = 3^3",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_004",
+      "audioFile": "scene_05_004.wav",
+      "subtitle": "Expanded: three to the five is three times three times three times three times three. Divided by three times three \u2014 the two threes cancel out, leaving three cubed!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "3^5 \u00f7 3^2 = 3^(5-2) = 3^3",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_005",
+      "audioFile": "scene_05_005.wav",
+      "subtitle": "And five minus two equals three. Quotient rule confirmed! The cancelled factors are why subtraction works.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "3^5 \u00f7 3^2 = 3^(5-2) = 3^3",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_006",
+      "audioFile": "scene_05_006.wav",
+      "subtitle": "Oh I love when the math actually shows WHY the rule is true, not just memorise it blindly.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "3^5 \u00f7 3^2 = 3^(5-2) = 3^3",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_007",
+      "audioFile": "scene_05_007.wav",
+      "subtitle": "Always understand the WHY. Now \u2014 what if the exponent on the bottom is BIGGER? Like two to the three divided by two to the seven?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00f7 2^7 = 2^(3-7) = 2^(-4)",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_008",
+      "audioFile": "scene_05_008.wav",
+      "subtitle": "Three minus seven is... negative four. So the answer is two to the NEGATIVE four? Negative exponents are a thing?!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00f7 2^7 = 2^(3-7) = 2^(-4)",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_009",
+      "audioFile": "scene_05_009.wav",
+      "subtitle": "Oh yes they are! And they're actually really elegant \u2014 but we'll circle back to those. For now, just know the rule still works even with negative results.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "laws_scroll",
+          "src": "exponent_laws_scroll.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 510,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "2^3 \u00f7 2^7 = 2^(3-7) = 2^(-4)",
+          "x": 50,
+          "y": 15,
+          "size": 80,
+          "color": "#FF9100"
+        }
+      ]
+    }
+  ]
+}

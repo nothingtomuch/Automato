@@ -1,4 +1,3 @@
-import React from "react";
 import { Sequence, Audio, staticFile } from "remotion";
 import { Scene3DCanvas } from "./Scene3DCanvas";
 

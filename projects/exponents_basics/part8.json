@@ -1,0 +1,655 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_08_001",
+      "audioFile": "scene_08_001.wav",
+      "subtitle": "One more thing before we celebrate \u2014 let's see exponents in the REAL WORLD.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Speed of Light = 3 \u00d7 10^8 m/s",
+          "x": 50,
+          "y": 20,
+          "size": 75,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_002",
+      "audioFile": "scene_08_002.wav",
+      "subtitle": "Yes! What's the point of all this if I can't use it outside of class?",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Speed of Light = 3 \u00d7 10^8 m/s",
+          "x": 50,
+          "y": 20,
+          "size": 75,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_003",
+      "audioFile": "scene_08_003.wav",
+      "subtitle": "Science uses it constantly. The speed of light is about three times ten to the power of eight metres per second. That's three hundred million metres per second!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Speed of Light = 3 \u00d7 10^8 m/s",
+          "x": 50,
+          "y": 20,
+          "size": 75,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_004",
+      "audioFile": "scene_08_004.wav",
+      "subtitle": "And instead of writing three hundred million, scientists just write three times ten to the eight? That's... actually so much easier.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Speed of Light = 3 \u00d7 10^8 m/s",
+          "x": 50,
+          "y": 20,
+          "size": 75,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_005",
+      "audioFile": "scene_08_005.wav",
+      "subtitle": "That's called Scientific Notation \u2014 and it's built entirely on exponents. Computers measure storage in powers of two \u2014 one kilobyte is two to the ten bytes!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "1 Kilobyte = 2^10 bytes = 1,024 bytes",
+          "x": 50,
+          "y": 20,
+          "size": 65,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_006",
+      "audioFile": "scene_08_006.wav",
+      "subtitle": "Two to the ten is one thousand and twenty-four. So a kilobyte is actually one thousand and twenty-four bytes, not one thousand exactly!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "1 Kilobyte = 2^10 bytes = 1,024 bytes",
+          "x": 50,
+          "y": 20,
+          "size": 65,
+          "color": "#64FFDA"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_007",
+      "audioFile": "scene_08_007.wav",
+      "subtitle": "You just learned something most adults don't know! Alright \u2014 final challenge. Simplify: two to the three, times two to the four, divided by two to the five, all raised to the power of two.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "[(2^3 \u00d7 2^4) \u00f7 2^5]^2 = ?",
+          "x": 50,
+          "y": 20,
+          "size": 90,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_008",
+      "audioFile": "scene_08_008.wav",
+      "subtitle": "Okay okay \u2014 inside the bracket: three plus four minus five equals two. So it's two to the two, raised to the power of two. That's two to the two times two equals two to the four \u2014 which is sixteen!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "[(2^7) \u00f7 2^5]^2 = (2^2)^2",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#FF4081"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_009",
+      "audioFile": "scene_08_009.wav",
+      "subtitle": "SIXTEEN! Perfect! You combined all three laws in one expression. Fox, you are officially an Exponent Expert!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "elephant",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "fox",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "2^4 = 16. You are an Expert!",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#76FF03"
+        }
+      ],
+      "effects": {
+        "confetti": true
+      }
+    }
+  ]
+}

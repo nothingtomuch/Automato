@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { useCurrentFrame, interpolate, random } from 'remotion';
 
 export const ConfettiOverlay = () => {

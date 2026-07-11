@@ -65,7 +65,13 @@ export const defineBlocks = () => {
         includes.push(child.getFieldValue('filename'));
       } else if (child.type === 'scene') {
         try {
-          const code  = jsonGenerator.blockToCode(child) as string;
+          // IMPORTANT: opt_thisOnly is the SECOND argument to blockToCode.
+          // Passing true here tells scrub_() NOT to recurse into next-siblings,
+          // so each iteration generates only this block's JSON object.
+          // Without this, blockToCode concatenates ALL remaining scenes into one
+          // string, JSON.parse fails on subsequent iterations (multi-object string),
+          // and only the last lone scene survives.
+          const code  = jsonGenerator.blockToCode(child, true) as string;
           const clean = code.replace(/,\s*$/, '');
           scenes.push(JSON.parse(clean));
         } catch { /* skip bad blocks */ }
@@ -134,6 +140,9 @@ export const defineBlocks = () => {
       this.appendStatementInput("TEXT_OVERLAYS")
           .setCheck("TextOverlay")
           .appendField("✏️ Text:");
+      this.appendStatementInput("INFOGRAPHIC_OVERLAYS")
+          .setCheck("InfographicOverlay")
+          .appendField("📊 Infographic:");
       this.appendDummyInput()
           .appendField("🎉 Confetti:")
           .appendField(new Blockly.FieldCheckbox("FALSE"), "confetti");
@@ -182,6 +191,12 @@ export const defineBlocks = () => {
     if (textCode.endsWith(',\n')) textCode = textCode.slice(0, -2) + '\n';
     const textOverlays = textCode ? JSON.parse(`[${textCode}]`) : [];
     if (textOverlays.length > 0) obj.textOverlays = textOverlays;
+
+    // Infographic overlays
+    let infoCode = jsonGenerator.statementToCode(block, 'INFOGRAPHIC_OVERLAYS');
+    if (infoCode.endsWith(',\n')) infoCode = infoCode.slice(0, -2) + '\n';
+    const infographics = infoCode ? JSON.parse(`[${infoCode}]`) : [];
+    if (infographics.length > 0) obj.infographics = infographics;
 
     if (confetti) obj.effects = { confetti: true };
     return JSON.stringify(obj) + ',\n';
@@ -378,6 +393,41 @@ export const defineBlocks = () => {
     const obj: any = { text, x, y, size, color };
     if (showBg) obj.bg = bg + 'cc'; // semi-transparent
     return JSON.stringify(obj) + ',\n';
+  };
+
+  // ── Infographic Overlay ───────────────────────────────────────────────────────
+  Blockly.Blocks['infographic_overlay'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("📊 Infographic DSL:")
+          .appendField(new Blockly.FieldTextInput("infographic list-pyramid-badge-card"), "dsl");
+      this.appendDummyInput()
+          .appendField("X%:")
+          .appendField(new Blockly.FieldNumber(50, 0, 100), "x")
+          .appendField("Y%:")
+          .appendField(new Blockly.FieldNumber(50, 0, 100), "y");
+      this.appendDummyInput()
+          .appendField("W (px):")
+          .appendField(new Blockly.FieldNumber(400, 100, 1920), "width")
+          .appendField("H (px):")
+          .appendField(new Blockly.FieldNumber(500, 100, 1080), "height");
+      this.appendDummyInput()
+          .appendField("Scale:")
+          .appendField(new Blockly.FieldNumber(1.5, 0.1, 5.0), "scale");
+      this.setPreviousStatement(true, "InfographicOverlay");
+      this.setNextStatement(true,     "InfographicOverlay");
+      this.setColour(180);
+      this.setTooltip("Render an AntV Infographic using DSL syntax.");
+    }
+  };
+  jsonGenerator.forBlock['infographic_overlay'] = function(block: Blockly.Block) {
+    const dsl    = block.getFieldValue('dsl');
+    const x      = Number(block.getFieldValue('x'));
+    const y      = Number(block.getFieldValue('y'));
+    const width  = Number(block.getFieldValue('width'));
+    const height = Number(block.getFieldValue('height'));
+    const scale  = Number(block.getFieldValue('scale'));
+    return JSON.stringify({ dsl, x, y, width, height, scale }) + ',\n';
   };
 
   return jsonGenerator;
