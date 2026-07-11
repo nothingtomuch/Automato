@@ -1,0 +1,2056 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_05_001",
+      "audioFile": "scene_05_001.wav",
+      "subtitle": "All this math is making my tummy rumble...",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_002",
+      "audioFile": "scene_05_002.wav",
+      "subtitle": "Monkey, what are you doing?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_003",
+      "audioFile": "scene_05_003.wav",
+      "subtitle": "Chomp! Chomp! Chomp! I just ate three pieces!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_004",
+      "audioFile": "scene_05_004.wav",
+      "subtitle": "Oh boy. Well, let's use math to explain what just happened.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_005",
+      "audioFile": "scene_05_005.wav",
+      "subtitle": "Monkey just ate three out of the ten equal parts.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_006",
+      "audioFile": "scene_05_006.wav",
+      "subtitle": "So I ate three-tenths!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_007",
+      "audioFile": "scene_05_007.wav",
+      "subtitle": "Exactly. As a fraction, we write that as 3 over 10.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_008",
+      "audioFile": "scene_05_008.wav",
+      "subtitle": "But you mentioned decimals earlier! How do we write that as a decimal?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_009",
+      "audioFile": "scene_05_009.wav",
+      "subtitle": "Because our denominator is 10, it fits perfectly into the tenths place value column.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_010",
+      "audioFile": "scene_05_010.wav",
+      "subtitle": "We write a zero in the units place, a decimal point, and a three in the tenths place.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_011",
+      "audioFile": "scene_05_011.wav",
+      "subtitle": "Zero point three! 0.3! It means 3 tenths!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_012",
+      "audioFile": "scene_05_012.wav",
+      "subtitle": "Yes! 3/10 and 0.3 mean the exact same thing.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10 -> 0.3",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FF0000"
+        },
+        {
+          "text": "Units (.) Tenths",
+          "x": 50,
+          "y": 70,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "  0   .     3   ",
+          "x": 50,
+          "y": 80,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    }
+  ]
+}

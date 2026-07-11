@@ -1,0 +1,91 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_16_solution2",
+      "audioFile": "scene_16.wav",
+      "subtitle": "Let's solve it!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "3/4 - 1/4 = 2/4",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_17_review3",
+      "audioFile": "scene_17.wav",
+      "subtitle": "Let's review one last time!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Fractions are an important part of math.",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_18_conclusion",
+      "audioFile": "scene_18.wav",
+      "subtitle": "That's all for today!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Thanks for watching!",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    }
+  ]
+}

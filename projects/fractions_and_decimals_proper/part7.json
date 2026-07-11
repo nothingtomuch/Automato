@@ -1,0 +1,508 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_07_001",
+      "audioFile": "scene_07_001.wav",
+      "subtitle": "Let's head to the classroom and solve a real-world problem.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_002",
+      "audioFile": "scene_07_002.wav",
+      "subtitle": "Imagine we have a bamboo running track that is exactly 1.0 kilometers long.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_003",
+      "audioFile": "scene_07_003.wav",
+      "subtitle": "I love running!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_004",
+      "audioFile": "scene_07_004.wav",
+      "subtitle": "Monkey runs 4/10 of the track, and stops for some juice.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_005",
+      "audioFile": "scene_07_005.wav",
+      "subtitle": "Then, he runs another 0.2 kilometers.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_006",
+      "audioFile": "scene_07_006.wav",
+      "subtitle": "Phew! That's a lot of running!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_007",
+      "audioFile": "scene_07_007.wav",
+      "subtitle": "The question is: How much track is left to run?",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Track: 1.0 km. Runs: 4/10 km + 0.2 km. Left?",
+          "x": 50,
+          "y": 30,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    }
+  ]
+}

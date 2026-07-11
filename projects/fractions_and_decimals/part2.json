@@ -1,0 +1,162 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_06_blinking_text",
+      "audioFile": "scene_06.wav",
+      "subtitle": "What's left?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "dance",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = ?",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_classroom",
+      "audioFile": "scene_07.wav",
+      "subtitle": "Let's practice some more!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 1.5,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationX": 0,
+                "rotationY": 0,
+                "rotationZ": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Tom has 4/10 of a pizza. His friend, Alex, gives him 2/10 of a pizza. How much pizza does Tom have now?",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_answer",
+      "audioFile": "scene_08.wav",
+      "subtitle": "Let's solve it!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "dance",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "4/10 = 0.4",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_09_review",
+      "audioFile": "scene_09.wav",
+      "subtitle": "Let's review!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Fractions are a way to show part of a whole.",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_10_practice",
+      "audioFile": "scene_10.wav",
+      "subtitle": "Practice makes perfect!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Try solving some fraction problems on your own!",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    }
+  ]
+}

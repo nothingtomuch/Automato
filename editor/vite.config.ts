@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import https from 'https'
 import { execSync } from 'child_process'
+import { jsonrepair } from 'jsonrepair'
 
 // ─── Project System ────────────────────────────────────────────────────────────
 const EDITOR_DIR    = __dirname
@@ -242,7 +243,7 @@ function automotoPlugin() {
               rawText = result.body?.candidates?.[0]?.content?.parts?.[0]?.text || ''
 
             } else if (prov === 'groq') {
-              // ── Groq (OpenAI-compatible) ──────────────────────────────────
+              // ── Groq (OpenAI-compatible) with structured output ───────────
               const mdl    = model || 'llama-3.3-70b-versatile'
               const result = await httpsPost(`https://api.groq.com/openai/v1/chat/completions`, {
                 model: mdl,
@@ -250,10 +251,10 @@ function automotoPlugin() {
                   { role: 'system', content: systemPrompt + jsonInstruction },
                   { role: 'user',   content: prompt }
                 ],
-                temperature: 0.7,
-                max_tokens: 4000,
+                temperature: 0.1,
+                max_tokens: 8000,
                 response_format: { type: 'json_object' }
-              }, { Authorization: `Bearer ${apiKey}` })
+              }, { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' })
               if (result.status !== 200) {
                 const msg = result.body?.error?.message || JSON.stringify(result.body)
                 fail(res, `Groq ${result.status}: ${msg}`); return
@@ -286,7 +287,9 @@ function automotoPlugin() {
             // Extract first JSON object if there's surrounding text
             const match = rawText.match(/\{[\s\S]*\}/)
             if (!match) { fail(res, 'No JSON object found in AI response'); return }
-            const spec = JSON.parse(match[0])
+            // Use jsonrepair as a safety net for truncated/malformed output
+            const repairedRaw = jsonrepair(match[0])
+            const spec = JSON.parse(repairedRaw)
             ok(res, { success: true, spec })
           } catch (err) { fail(res, err) }
 
@@ -297,17 +300,287 @@ function automotoPlugin() {
             if (!apiKey) { fail(res, 'No API key provided'); return }
             apiKey = apiKey.trim()
 
+            // ── ⚡ PROGRAMMATIC BULK COMMANDS (no AI needed) ─────────────────
+            // Intercept bulk operations and execute them in code to avoid hallucination
+            const userCmd: string = (messages[messages.length - 1]?.content || '').trim()
+
+            // ── Resolve full timeline: if currentSpec only has 'includes', load all part files ──
+            const projectRoot = getProjectRoot(getCurrentProject())
+            let mergedTimeline: any[] | null = null
+            let partFilesMap: { file: string, timeline: any[] }[] = []
+
+            if (currentSpec?.includes?.length > 0) {
+              // video_spec.json with part file references — load and merge all parts
+              for (const partFile of currentSpec.includes) {
+                const partPath = path.resolve(projectRoot, partFile)
+                if (fs.existsSync(partPath)) {
+                  const partData = JSON.parse(fs.readFileSync(partPath, 'utf-8'))
+                  partFilesMap.push({ file: partFile, timeline: partData.timeline || [] })
+                }
+              }
+              mergedTimeline = partFilesMap.flatMap(p => p.timeline)
+            } else if (currentSpec?.timeline) {
+              mergedTimeline = currentSpec.timeline
+            }
+
+            if (mergedTimeline) {
+              // Build a working spec with the merged timeline
+              const spec: any = { ...currentSpec, timeline: JSON.parse(JSON.stringify(mergedTimeline)) }
+              const ANIMALS = ['beaver','bee','bunny','cat','caterpillar','chick','cow','crab','deer','dog','elephant','fish','fox','giraffe','hog','koala','lion','monkey','panda','parrot','penguin','pig','polar','tiger']
+              const POSES   = ['idle','walk','run','dance','eat','gesture-positive','gesture-negative']
+
+              // Helper to save changes back to original part files (or single file)
+              const saveChangesBack = (updatedTimeline: any[]) => {
+                if (partFilesMap.length > 0) {
+                  // Re-distribute scenes back into the part files
+                  let offset = 0
+                  for (const part of partFilesMap) {
+                    const count = part.timeline.length
+                    part.timeline = updatedTimeline.slice(offset, offset + count)
+                    offset += count
+                    const partPath = path.resolve(projectRoot, part.file)
+                    fs.writeFileSync(partPath, JSON.stringify({ timeline: part.timeline }, null, 2), 'utf-8')
+                  }
+                }
+                // Return the full merged spec for the editor to load
+                return { ...spec, timeline: updatedTimeline }
+              }
+              const BACKGROUNDS = ['classroom_bg.png','forest_bg.png','kitchen_bg.png','space_bg.png','ocean_bg.png','garden_bg.png','math_bg.png','desert_bg.png']
+              const cmd = userCmd.toLowerCase()
+
+              // Keyword detection — flexible, order-independent
+              const mentionedAnimal  = ANIMALS.find(a => cmd.includes(a))
+              const mentionedPose    = POSES.find(p => cmd.includes(p))
+              const mentionedBg      = BACKGROUNDS.find(b => cmd.includes(b.replace('.png','').replace(/_/g,' ')) || cmd.includes(b.replace('.png','').replace('_bg','').replace(/_/g,' ')))
+              const isBulk           = /\b(all|every|each|entire)\b/.test(cmd)
+              const isAdd            = /\b(add|include|put|place|show|give|bring|insert)\b/.test(cmd)
+              const isRemove         = /\b(remove|delete|hide|take out|get rid)\b/.test(cmd)
+              const isChangePose     = /\b(pose|animation|animate|make.*do|doing)\b/.test(cmd)
+              const isChangeBg       = /\b(background|bg|backdrop|scene background)\b/.test(cmd)
+              const isContextual     = /\b(context|natural|smart|intelligent|appropriate|based on|according to|different|vary|various|each scene|per scene)\b/.test(cmd)
+
+              // ── SMART ADD: context-aware poses per scene (uses AI minimally) ─
+              // Triggered when user wants different poses per scene based on content
+              if (mentionedAnimal && isAdd && (isBulk || cmd.includes('scene')) && isContextual) {
+                // Only send a tiny scene summary to the AI — NOT the full spec
+                const sceneSummaries = spec.timeline.map((s: any, i: number) => ({
+                  index: i,
+                  id: s.stepId,
+                  subtitle: s.subtitle || '',
+                  text: (s.textOverlays || []).map((t: any) => t.text).join(', ')
+                }))
+                // Ask for {"poses":[...]} format — compatible with Groq json_object mode
+                const posePick = `You are a children's video animator. Pick the best pose for a "${mentionedAnimal}" character in each scene.
+
+Available poses: idle, walk, run, dance, eat, gesture-positive, gesture-negative
+
+Scenes (${sceneSummaries.length} total):
+${sceneSummaries.map((s:any) => `${s.index+1}. [${s.id}] "${s.subtitle}" ${s.text ? '| text: '+s.text : ''}`).join('\n')}
+
+Respond with exactly this JSON format: {"poses": ["pose1", "pose2", ...]} — one pose per scene in order, ${sceneSummaries.length} total.`
+
+                let poseListText = ''
+                try {
+                  const prov2 = provider || 'groq'
+                  let poseResult: any
+                  if (prov2 === 'groq') {
+                    poseResult = await httpsPost('https://api.groq.com/openai/v1/chat/completions', {
+                      model: model || 'llama-3.3-70b-versatile',
+                      messages: [{ role: 'user', content: posePick }],
+                      temperature: 0.2,
+                      max_tokens: 500,
+                      response_format: { type: 'json_object' } // returns {"poses":[...]} which is compatible
+                    }, { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' })
+                    poseListText = poseResult.body?.choices?.[0]?.message?.content || ''
+                  } else if (prov2 === 'gemini') {
+                    const gemUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.0-flash'}:generateContent?key=${apiKey}`
+                    poseResult = await httpsPost(gemUrl, { contents: [{ parts: [{ text: posePick }] }] })
+                    poseListText = poseResult.body?.candidates?.[0]?.content?.parts?.[0]?.text || ''
+                  } else {
+                    poseResult = await httpsPost('https://openrouter.ai/api/v1/chat/completions', {
+                      model: model || 'meta-llama/llama-3.1-8b-instruct:free',
+                      messages: [{ role: 'user', content: posePick }],
+                      temperature: 0.3,
+                      max_tokens: 300
+                    }, { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://automato.app' })
+                    poseListText = poseResult.body?.choices?.[0]?.message?.content || ''
+                  }
+
+                  // Parse the pose array — handle {"poses":[...]} or bare array
+                  poseListText = poseListText.replace(/```json|```/gi,'').trim()
+                  let poses: string[] = []
+                  const parsed = JSON.parse(jsonrepair(poseListText))
+                  if (Array.isArray(parsed)) {
+                    poses = parsed
+                  } else {
+                    // Find the first array value in the object (handles {"poses":[...]} or any key)
+                    const arrVal = Object.values(parsed).find((v: any) => Array.isArray(v))
+                    poses = (arrVal as string[]) || []
+                  }
+                  // Ensure we have exactly the right number of poses
+                  while (poses.length < spec.timeline.length) poses.push('idle')
+
+                  // Inject character with AI-picked pose into each scene
+                  let count = 0
+                  const updatedTl = spec.timeline.map((scene: any, i: number) => {
+                    if (!scene.characters) scene.characters = []
+                    const already = scene.characters.some((c: any) => c.type === mentionedAnimal)
+                    const chosenPose = POSES.includes(poses[i]) ? poses[i] : 'idle'
+                    if (!already) { scene.characters.push({ type: mentionedAnimal, pose: chosenPose, actions: [] }); count++ }
+                    else { scene.characters = scene.characters.map((c: any) => c.type === mentionedAnimal ? { ...c, pose: chosenPose } : c) }
+                    return scene
+                  })
+                  const finalSpec = saveChangesBack(updatedTl)
+                  ok(res, { success: true, type: 'spec', spec: finalSpec, reply: `✅ Added **${mentionedAnimal}** to ${count} scene(s) with context-aware poses:\n${poses.slice(0,updatedTl.length).map((p:string,i:number) => `• Scene ${i+1}: **${p}**`).join('\n')}` }); return
+                } catch (e: any) {
+                  // If AI fails for pose picking, fall back to idle
+                  const fallbackTl = spec.timeline.map((scene: any) => {
+                    if (!scene.characters) scene.characters = []
+                    const already = scene.characters.some((c: any) => c.type === mentionedAnimal)
+                    if (!already) scene.characters.push({ type: mentionedAnimal, pose: 'idle', actions: [] })
+                    return scene
+                  })
+                  const finalSpec = saveChangesBack(fallbackTl)
+                  ok(res, { success: true, type: 'spec', spec: finalSpec, reply: `✅ Added **${mentionedAnimal}** to all scenes (pose AI fallback: idle). Error: ${e.message}` }); return
+                }
+              }
+
+              // ── ADD character to all scenes (same pose) ───────────────────
+              if (mentionedAnimal && isAdd && (isBulk || cmd.includes('scene'))) {
+                let count = 0
+                const addedTl = spec.timeline.map((scene: any) => {
+                  if (!scene.characters) scene.characters = []
+                  const already = scene.characters.some((c: any) => c.type === mentionedAnimal)
+                  if (!already) { scene.characters.push({ type: mentionedAnimal, pose: mentionedPose || 'idle', actions: [] }); count++ }
+                  return scene
+                })
+                ok(res, { success: true, type: 'spec', spec: saveChangesBack(addedTl), reply: `✅ Added **${mentionedAnimal}** (pose: ${mentionedPose || 'idle'}) to ${count} scene(s). Done instantly!` }); return
+              }
+
+              // ── REMOVE character from all scenes ──────────────────────────
+              if (mentionedAnimal && isRemove && (isBulk || cmd.includes('scene'))) {
+                let count = 0
+                const removedTl = spec.timeline.map((scene: any) => {
+                  const before = (scene.characters || []).length
+                  scene.characters = (scene.characters || []).filter((c: any) => c.type !== mentionedAnimal)
+                  if (scene.characters.length < before) count++
+                  return scene
+                })
+                ok(res, { success: true, type: 'spec', spec: saveChangesBack(removedTl), reply: `✅ Removed **${mentionedAnimal}** from ${count} scene(s). Done instantly!` }); return
+              }
+
+              // ── CHANGE POSE of character in all scenes ────────────────────
+              if (mentionedAnimal && mentionedPose && isChangePose && (isBulk || cmd.includes('scene'))) {
+                let count = 0
+                const posedTl = spec.timeline.map((scene: any) => {
+                  scene.characters = (scene.characters || []).map((c: any) => {
+                    if (c.type === mentionedAnimal) { c.pose = mentionedPose; count++ }
+                    return c
+                  })
+                  return scene
+                })
+                ok(res, { success: true, type: 'spec', spec: saveChangesBack(posedTl), reply: `✅ Changed **${mentionedAnimal}**'s pose to **${mentionedPose}** in ${count} scene(s). Done instantly!` }); return
+              }
+
+              // ── CHANGE BACKGROUND in all scenes ───────────────────────────
+              if (mentionedBg && isChangeBg && (isBulk || cmd.includes('scene'))) {
+                const bgFile = BACKGROUNDS.find(b => b.includes(mentionedBg.replace(' ','_'))) || mentionedBg + '.png'
+                spec.timeline = spec.timeline.map((scene: any) => {
+                  if (!scene.environment) scene.environment = {}
+                  scene.environment.background = bgFile
+                  return scene
+                })
+                ok(res, { success: true, type: 'spec', spec, reply: `✅ Changed background to **${bgFile}** in all ${spec.timeline.length} scenes. Done instantly without AI!` }); return
+              }
+            }
+            // ── End of programmatic bulk commands ────────────────────────────
+            // (if none matched, falls through to AI below)
+
             let systemPrompt = ''
             if (fs.existsSync(AI_PROMPT)) systemPrompt = fs.readFileSync(AI_PROMPT, 'utf-8')
 
+            const prov = provider || 'groq'
+            const lastUserMsg: string = (messages[messages.length - 1]?.content || '').toLowerCase()
+
+            // ── Surgical scene edit: detect if user is editing a specific scene
+            // Extract "scene N" or "scene_id" references from user message
+            let targetSceneIndex = -1
+            if (currentSpec?.timeline) {
+              const sceneNumMatch = lastUserMsg.match(/scene[\s_-]*(\d+)/i)
+              if (sceneNumMatch) {
+                const idx = parseInt(sceneNumMatch[1]) - 1
+                if (idx >= 0 && idx < currentSpec.timeline.length) targetSceneIndex = idx
+              }
+              // also match by stepId keyword
+              if (targetSceneIndex === -1) {
+                currentSpec.timeline.forEach((s: any, i: number) => {
+                  if (s.stepId && lastUserMsg.includes(s.stepId.toLowerCase())) targetSceneIndex = i
+                })
+              }
+            }
+
+            let replyText = ''
+
+            // ── If editing a single scene, only send that scene to the AI ──
+            if (targetSceneIndex !== -1 && currentSpec?.timeline) {
+              const targetScene = currentSpec.timeline[targetSceneIndex]
+              const sceneEditSys = (systemPrompt || '') +
+                `\n\nYou are a surgical JSON editor. The user wants to modify ONLY scene ${targetSceneIndex + 1} of their video.` +
+                `\n\nThe CURRENT scene JSON is:\n${JSON.stringify(targetScene, null, 2)}` +
+                `\n\nYour job: apply the user's requested change and return ONLY the updated scene object as raw JSON. No explanation, no markdown fences, just the JSON object.`
+
+              const sceneMessages = [
+                { role: 'system', content: sceneEditSys },
+                ...messages
+              ]
+
+              let result: any
+              if (prov === 'groq') {
+                result = await httpsPost('https://api.groq.com/openai/v1/chat/completions', {
+                  model: model || 'llama-3.3-70b-versatile',
+                  messages: sceneMessages,
+                  temperature: 0.1,
+                  max_tokens: 2000,
+                  response_format: { type: 'json_object' }
+                }, { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' })
+                if (result.status !== 200) { fail(res, `Groq ${result.status}: ${result.body?.error?.message}`); return }
+                replyText = result.body?.choices?.[0]?.message?.content || ''
+              } else if (prov === 'gemini') {
+                const gemUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.0-flash'}:generateContent?key=${apiKey}`
+                result = await httpsPost(gemUrl, { contents: [{ role: 'user', parts: [{ text: sceneEditSys + '\n\nUser: ' + messages[messages.length-1]?.content }] }] })
+                if (result.status !== 200) { fail(res, `Gemini error: ${result.body?.error?.message}`); return }
+                replyText = result.body?.candidates?.[0]?.content?.parts?.[0]?.text || ''
+              } else {
+                result = await httpsPost('https://openrouter.ai/api/v1/chat/completions', {
+                  model: model || 'meta-llama/llama-3.1-8b-instruct:free',
+                  messages: sceneMessages,
+                  temperature: 0.1,
+                  max_tokens: 2000
+                }, { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://automato.app' })
+                if (result.status !== 200) { fail(res, `OpenRouter error: ${result.body?.error?.message}`); return }
+                replyText = result.body?.choices?.[0]?.message?.content || ''
+              }
+
+              // Parse the updated scene and re-inject into the original spec
+              replyText = replyText.replace(/^```json\s*/im,'').replace(/^```\s*/im,'').replace(/```\s*$/im,'').trim()
+              const sceneMatch = replyText.match(/\{[\s\S]*\}/)
+              if (sceneMatch) {
+                try {
+                  const updatedScene = JSON.parse(jsonrepair(sceneMatch[0]))
+                  const updatedSpec = JSON.parse(JSON.stringify(currentSpec)) // deep clone
+                  updatedSpec.timeline[targetSceneIndex] = updatedScene
+                  ok(res, { success: true, type: 'spec', spec: updatedSpec, reply: `✅ Scene ${targetSceneIndex + 1} updated surgically.` }); return
+                } catch { /* fall through to full spec mode */ }
+              }
+            }
+
+            // ── Full spec edit (no specific scene detected) ──────────────────
             const specContext = currentSpec
-              ? `\n\nThe user's CURRENT video spec is:\n\`\`\`json\n${JSON.stringify(currentSpec, null, 2)}\n\`\`\`\n\nIf the user asks you to make changes, return the COMPLETE updated spec as raw JSON (no markdown fences). If the user is just asking a question or chatting, reply in plain text.`
+              ? `\n\nThe user's CURRENT video spec is:\n${JSON.stringify(currentSpec, null, 2)}` +
+                `\n\nCRITICAL: Return the ENTIRE, COMPLETE JSON spec with your changes applied. Every single scene must be present. No placeholders, no truncation. Raw JSON only.`
               : ''
 
-            const sysMsg = systemPrompt + specContext
-
-            const prov = provider || 'groq'
-            let replyText = ''
+            const sysMsg = (systemPrompt || '') + specContext
 
             if (prov === 'gemini') {
               const gemUrl = `https://generativelanguage.googleapis.com/v1beta/models/${model || 'gemini-2.0-flash'}:generateContent?key=${apiKey}`
@@ -324,24 +597,25 @@ function automotoPlugin() {
               ]
               let url2 = '', headers2: any = {}, body2: any = {}
               if (prov === 'groq') {
-                url2 = `https://api.groq.com/openai/v1/chat/completions`
+                url2 = 'https://api.groq.com/openai/v1/chat/completions'
                 headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' }
-                body2 = { model: model || 'llama-3.3-70b-versatile', messages: apiMessages, max_tokens: 4000 }
+                body2 = { model: model || 'llama-3.3-70b-versatile', messages: apiMessages, temperature: 0.1, max_tokens: 8000, response_format: { type: 'json_object' } }
               } else {
                 url2 = 'https://openrouter.ai/api/v1/chat/completions'
                 headers2 = { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://automato.app' }
-                body2 = { model: model || 'meta-llama/llama-3.1-8b-instruct:free', messages: apiMessages, max_tokens: 4000 }
+                body2 = { model: model || 'meta-llama/llama-3.1-8b-instruct:free', messages: apiMessages, temperature: 0.1, max_tokens: 8000 }
               }
               const result = await httpsPost(url2, body2, headers2)
               if (result.status !== 200) { fail(res, `API error (${result.status}): ${result.body?.error?.message}`); return }
               replyText = result.body?.choices?.[0]?.message?.content || ''
             }
 
-            // Check if the reply contains a JSON spec
+            // Parse the reply — try JSON first, fall back to text
+            replyText = replyText.replace(/^```json\s*/im,'').replace(/^```\s*/im,'').replace(/```\s*$/im,'').trim()
             const jsonMatch = replyText.match(/\{[\s\S]*\}/)
             if (jsonMatch) {
               try {
-                const spec = JSON.parse(jsonMatch[0])
+                const spec = JSON.parse(jsonrepair(jsonMatch[0]))
                 if (spec.meta && spec.timeline) {
                   ok(res, { success: true, type: 'spec', spec, reply: replyText }); return
                 }

@@ -1,0 +1,1103 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_06_001",
+      "audioFile": "scene_06_001.wav",
+      "subtitle": "Now for a quick quiz! How much bamboo is left?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_002",
+      "audioFile": "scene_06_002.wav",
+      "subtitle": "Let's see. There were 10 pieces, and I ate 3.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_003",
+      "audioFile": "scene_06_003.wav",
+      "subtitle": "So there are 1, 2, 3, 4, 5, 6, 7 pieces left!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_004",
+      "audioFile": "scene_06_004.wav",
+      "subtitle": "Right! 7 pieces out of 10 total pieces.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_005",
+      "audioFile": "scene_06_005.wav",
+      "subtitle": "As a fraction, that is 7/10.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_006",
+      "audioFile": "scene_06_006.wav",
+      "subtitle": "And as a decimal, it's 0.7!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_06_007",
+      "audioFile": "scene_06_007.wav",
+      "subtitle": "You got it! 7/10 equals 0.7.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "7/10 = 0.7",
+          "x": 50,
+          "y": 20,
+          "size": 80,
+          "color": "#4CAF50"
+        }
+      ]
+    }
+  ]
+}

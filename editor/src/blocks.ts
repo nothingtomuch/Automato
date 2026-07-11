@@ -3,6 +3,14 @@ import { FieldColour } from '@blockly/field-colour';
 
 export const defineBlocks = () => {
   const jsonGenerator = new Blockly.Generator('JSON');
+  
+  (jsonGenerator as any).scrub_ = function(block: Blockly.Block, code: string, thisOnly: boolean): string {
+    const nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+    if (nextBlock && !thisOnly) {
+      return code + jsonGenerator.blockToCode(nextBlock);
+    }
+    return code;
+  };
   jsonGenerator.INDENT = '  ';
 
   const ANIMAL_MODELS: [string, string][] = [

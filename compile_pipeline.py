@@ -156,7 +156,12 @@ def compile_actions_to_keyframes(actions: list, fps: int, current_state: dict) -
     elif keyframes[0]["frame"] > 0:
         keyframes.insert(0, {"frame": 0, **current_state})
 
-    return keyframes
+    unique_keyframes = {}
+    for k in keyframes:
+        unique_keyframes[k["frame"]] = k
+    
+    # Return strictly monotonic keyframes
+    return [unique_keyframes[f] for f in sorted(unique_keyframes.keys())]
 
 
 def compile_grid_actions_to_sprites(grid_actions: list, fps: int) -> list:
@@ -309,7 +314,12 @@ def enrich_scene(scene: dict, public_dir: Path, char_state_tracker: dict) -> dic
             ctype = cstate["type"]
             # get specific tracker for this character
             if ctype not in char_state_tracker:
-                char_state_tracker[ctype] = {"x": -15, "y": -1, "scale": 1.2, "opacity": 1, "rotationZ": 0, "rotationY": 0, "rotationX": 0}
+                # 1st character enters from the left (off-screen), subsequent
+                # characters are placed on the right side of the screen so they
+                # are actually visible even when they have no glide actions.
+                char_index = len(char_state_tracker)
+                default_x = -15 if char_index == 0 else 4
+                char_state_tracker[ctype] = {"x": default_x, "y": -1, "scale": 1.2, "opacity": 1, "rotationZ": 0, "rotationY": 0, "rotationX": 0}
             
             if "actions" in cstate and isinstance(cstate["actions"], list):
                 print(f"  [COMPILE] stepId='{step_id}': Compiling {len(cstate['actions'])} actions for '{ctype}'.")

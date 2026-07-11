@@ -2,9 +2,14 @@
   "meta": {
     "videoId": "fractions_and_decimals",
     "targetAge": "6-7",
-    "hostCharacter": "cat",
-    "themeColor": "#FF5733",
+    "hostCharacter": "panda",
+    "themeColor": "#8bc34a",
     "fps": 30
   },
-  "timeline": []
+  "includes": [
+    "part1.json",
+    "part2.json",
+    "part3.json",
+    "part4.json"
+  ]
 }

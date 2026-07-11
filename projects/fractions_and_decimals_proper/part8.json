@@ -1,0 +1,606 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_08_001",
+      "audioFile": "scene_08_001.wav",
+      "subtitle": "Step 1: Let's convert Monkey's first run into a decimal.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_002",
+      "audioFile": "scene_08_002.wav",
+      "subtitle": "4/10 is the same as 0.4 kilometers!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_003",
+      "audioFile": "scene_08_003.wav",
+      "subtitle": "Step 2: Add the two distances Monkey ran together.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_004",
+      "audioFile": "scene_08_004.wav",
+      "subtitle": "0.4 km plus 0.2 km equals 0.6 kilometers!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_005",
+      "audioFile": "scene_08_005.wav",
+      "subtitle": "Step 3: Subtract the distance ran from the total length of the track.",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_006",
+      "audioFile": "scene_08_006.wav",
+      "subtitle": "The whole track is 1.0 km. So 1.0 minus 0.6 leaves... 0.4 kilometers remaining!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_08_007",
+      "audioFile": "scene_08_007.wav",
+      "subtitle": "Fantastic job! Now we know all about fractions and decimals!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "Step 1: 4/10 = 0.4 km",
+          "x": 50,
+          "y": 20,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 2: 0.4 + 0.2 = 0.6 km",
+          "x": 50,
+          "y": 35,
+          "size": 50,
+          "color": "#FFFFFF"
+        },
+        {
+          "text": "Step 3: 1.0 - 0.6 = 0.4 km remaining!",
+          "x": 50,
+          "y": 50,
+          "size": 60,
+          "color": "#4CAF50"
+        }
+      ]
+    }
+  ]
+}

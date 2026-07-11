@@ -15,6 +15,11 @@ const CHARACTERS = [
   "lion","monkey","panda","parrot","penguin","pig","polar","tiger"
 ];
 
+const BACKGROUNDS = [
+  "classroom_bg.png", "forest_bg.png", "kitchen_bg.png", "space_bg.png",
+  "ocean_bg.png", "garden_bg.png", "math_bg.png", "desert_bg.png"
+];
+
 interface Props {
   apiKey: string;
   onSpecGenerated: (spec: any) => void;
@@ -43,9 +48,9 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
   // Generate tab state
   const [topic, setTopic]         = useState('');
   const [age, setAge]             = useState('3-5');
-  const [character, setCharacter] = useState('bunny');
+  const [characters, setCharacters] = useState<string[]>(['bunny']);
   const [duration, setDuration]   = useState('2 minutes');
-  const [background, setBackground] = useState('AI will choose');
+  const [backgrounds, setBackgrounds] = useState<string[]>([]);
   const [extra, setExtra]         = useState('');
   const [generating, setGenerating] = useState(false);
   const [provider, setProvider]     = useState('groq');
@@ -85,9 +90,15 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
     const prompt = [
       `Topic: ${topic}`,
       `Target age: ${age} years`,
-      `Host character: ${character}`,
+      characters.length === 1
+        ? `Host character: ${characters[0]}`
+        : `Characters to use: ${characters.join(', ')}. Use ALL of these characters in the video. The AI should assign them roles (e.g. teacher/student) and animate them independently in each scene.`,
       `Desired duration: ${duration}`,
-      background !== 'AI will choose' ? `Background: ${background}` : '',
+      backgrounds.length === 0
+        ? 'Backgrounds: AI will choose freely from the available set.'
+        : backgrounds.length === 1
+          ? `Background: Use ${backgrounds[0]} for all scenes.`
+          : `Available backgrounds: ${backgrounds.join(', ')}. Switch between these backgrounds across scenes to keep the video visually interesting.`,
       extra ? `Extra instructions: ${extra}` : '',
       'CRITICAL DURATION RULES:',
       '- Each scene lasts about 5 seconds.',
@@ -327,7 +338,7 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
                     placeholder="e.g. counting to 10, addition with apples, shapes..." />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
                   <div>
                     <label style={labelStyle}>Age Group</label>
                     <select style={{ ...inputStyle, marginBottom: 0 }} value={age} onChange={e => setAge(e.target.value)}>
@@ -349,26 +360,57 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 10 }}>
-                  <div>
-                    <label style={labelStyle}>Host Character</label>
-                    <select style={{ ...inputStyle, marginBottom: 0 }} value={character} onChange={e => setCharacter(e.target.value)}>
-                      {CHARACTERS.map(c => <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>)}
-                    </select>
+                <div style={{ marginBottom: 10 }}>
+                  <label style={labelStyle}>Characters <span style={{ color: '#666', fontWeight: 400 }}>(click to toggle)</span></label>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, maxHeight: 120, overflowY: 'auto', padding: '8px 0' }}>
+                    {CHARACTERS.map(c => {
+                      const selected = characters.includes(c);
+                      return (
+                        <button key={c} onClick={() => setCharacters(prev => selected ? prev.filter(x => x !== c) : [...prev, c])}
+                          style={{
+                            padding: '4px 10px', borderRadius: 14, fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                            border: selected ? '2px solid #7c6af7' : '1px solid #333',
+                            background: selected ? 'rgba(124,106,247,0.2)' : '#1a1a2e',
+                            color: selected ? '#c4b5fd' : '#888',
+                            transition: 'all 0.15s',
+                          }}>
+                          {c.charAt(0).toUpperCase() + c.slice(1)}
+                        </button>
+                      );
+                    })}
                   </div>
-                  <div>
-                    <label style={labelStyle}>Background</label>
-                    <select style={{ ...inputStyle, marginBottom: 0 }} value={background} onChange={e => setBackground(e.target.value)}>
-                      <option>AI will choose</option>
-                      <option>forest_bg.png</option>
-                      <option>classroom_bg.png</option>
-                      <option>kitchen_bg.png</option>
-                      <option>space_bg.png</option>
-                      <option>ocean_bg.png</option>
-                      <option>garden_bg.png</option>
-                      <option>math_bg.png</option>
-                    </select>
+                  {characters.length > 0 && (
+                    <p style={{ color: '#7c6af7', fontSize: 11, margin: '4px 0 0' }}>
+                      Selected: {characters.map(c => c.charAt(0).toUpperCase() + c.slice(1)).join(', ')}
+                    </p>
+                  )}
+                </div>
+
+                <div style={{ marginBottom: 10 }}>
+                  <label style={labelStyle}>Backgrounds <span style={{ color: '#666', fontWeight: 400 }}>(none = AI picks freely)</span></label>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, padding: '8px 0' }}>
+                    {BACKGROUNDS.map(bg => {
+                      const selected = backgrounds.includes(bg);
+                      const displayName = bg.replace('_bg.png', '').replace(/_/g, ' ');
+                      return (
+                        <button key={bg} onClick={() => setBackgrounds(prev => selected ? prev.filter(x => x !== bg) : [...prev, bg])}
+                          style={{
+                            padding: '4px 10px', borderRadius: 14, fontSize: 12, fontWeight: 600, cursor: 'pointer',
+                            border: selected ? '2px solid #22c55e' : '1px solid #333',
+                            background: selected ? 'rgba(34,197,94,0.15)' : '#1a1a2e',
+                            color: selected ? '#86efac' : '#888',
+                            transition: 'all 0.15s',
+                          }}>
+                          {displayName.charAt(0).toUpperCase() + displayName.slice(1)}
+                        </button>
+                      );
+                    })}
                   </div>
+                  {backgrounds.length > 0 && (
+                    <p style={{ color: '#22c55e', fontSize: 11, margin: '4px 0 0' }}>
+                      Selected: {backgrounds.map(b => b.replace('_bg.png', '')).join(', ')}
+                    </p>
+                  )}
                 </div>
 
                 <label style={labelStyle}>Extra Instructions (optional)</label>

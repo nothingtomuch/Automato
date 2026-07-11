@@ -135,31 +135,42 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
       </div>
 
       {/* 2. Overlaid 2D Subtitles (Clean typography for 6-7 year olds) */}
-      <div style={{
-        position: "absolute",
-        bottom: 80,
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        pointerEvents: "none",
-        zIndex: 20
-      }}>
-        <h1 style={{
-          fontFamily: "Comic Sans MS, Arial, sans-serif", // Kid-friendly readable print
-          fontSize: "64px",
-          color: "#FFF",
-          backgroundColor: (themeColor && themeColor.length === 7) ? themeColor + "80" : (themeColor || "rgba(0,0,0,0.5)"),
-          backdropFilter: "blur(6px)",
-          padding: "20px 40px",
-          borderRadius: "20px",
-          textAlign: "center",
-          maxWidth: "80%",
-          boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
-          textShadow: "0 2px 4px rgba(0,0,0,0.3)" // helps text readability against bright translucent backgrounds
-        }}>
-          {sceneData.subtitle}
-        </h1>
-      </div>
+      {(() => {
+        const subtitleText: string = sceneData.subtitle || "";
+        const subtitleFontSize =
+          subtitleText.length > 120 ? "36px" :
+          subtitleText.length > 80  ? "48px" :
+                                      "64px";
+        return (
+          <div style={{
+            position: "absolute",
+            bottom: 80,
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            pointerEvents: "none",
+            zIndex: 20
+          }}>
+            <h1 style={{
+              fontFamily: "Comic Sans MS, Arial, sans-serif",
+              fontSize: subtitleFontSize,
+              color: "#FFF",
+              backgroundColor: (themeColor && themeColor.length === 7) ? themeColor + "80" : (themeColor || "rgba(0,0,0,0.5)"),
+              backdropFilter: "blur(6px)",
+              padding: "20px 40px",
+              borderRadius: "20px",
+              textAlign: "center",
+              maxWidth: "80%",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+              textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+              lineHeight: 1.3,
+              margin: 0,
+            }}>
+              {subtitleText}
+            </h1>
+          </div>
+        );
+      })()}
 
       {/* 3. 2D Animated Sprites Layer */}
       {sceneData.sprites && (
@@ -188,6 +199,8 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
           whiteSpace: "pre-wrap",
           textAlign: "center",
           lineHeight: 1.3,
+          maxWidth: "90%",
+          boxSizing: "border-box",
         }}>
           {t.text}
         </div>

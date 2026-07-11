@@ -1,0 +1,974 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_03_001",
+      "audioFile": "scene_03_001.wav",
+      "subtitle": "There! Now we have two identical pieces.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_002",
+      "audioFile": "scene_03_002.wav",
+      "subtitle": "They look exactly the same size to me!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_003",
+      "audioFile": "scene_03_003.wav",
+      "subtitle": "Since we broke the whole bamboo into two equal parts...",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_004",
+      "audioFile": "scene_03_004.wav",
+      "subtitle": "...each part is called one-half!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_005",
+      "audioFile": "scene_03_005.wav",
+      "subtitle": "One-half? How do we write that in math?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_006",
+      "audioFile": "scene_03_006.wav",
+      "subtitle": "We write it as a fraction: 1 over 2.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_007",
+      "audioFile": "scene_03_007.wav",
+      "subtitle": "The top number is the Numerator. It shows how many parts we have.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_008",
+      "audioFile": "scene_03_008.wav",
+      "subtitle": "The bottom number is the Denominator. It shows the total number of equal parts.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_009",
+      "audioFile": "scene_03_009.wav",
+      "subtitle": "So 1 part out of 2 total parts is 1/2. I get it!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_010",
+      "audioFile": "scene_03_010.wav",
+      "subtitle": "You're a natural mathematician, Monkey!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_half_1",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 780,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        },
+        {
+          "id": "bamboo_half_2",
+          "src": "bamboo_half.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1140,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 60,
+          "color": "#FFFFFF"
+        }
+      ]
+    }
+  ]
+}

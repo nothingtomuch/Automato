@@ -1,0 +1,149 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_11_challenge",
+      "audioFile": "scene_11.wav",
+      "subtitle": "Can you solve this challenge?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Solve for x: 1/2 + 1/4 = x",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_12_solution",
+      "audioFile": "scene_12.wav",
+      "subtitle": "Let's solve it!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = 2/4",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_13_review2",
+      "audioFile": "scene_13.wav",
+      "subtitle": "Let's review again!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Fractions can be added and subtracted.",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_14_practice2",
+      "audioFile": "scene_14.wav",
+      "subtitle": "Practice some more!",
+      "environment": {
+        "background": "classroom_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Try solving some more fraction problems!",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_15_challenge2",
+      "audioFile": "scene_15.wav",
+      "subtitle": "Can you solve this challenge?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Solve for x: 3/4 - 1/4 = x",
+          "x": 10,
+          "y": 10,
+          "size": 80,
+          "color": "#000000"
+        }
+      ]
+    }
+  ]
+}

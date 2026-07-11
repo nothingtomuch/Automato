@@ -1,0 +1,854 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_01_001",
+      "audioFile": "scene_01_001.wav",
+      "subtitle": "Hello everyone! Welcome to Episode 1: What is a Fraction?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_002",
+      "audioFile": "scene_01_002.wav",
+      "subtitle": "Today, we have a very special treat.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_003",
+      "audioFile": "scene_01_003.wav",
+      "subtitle": "We found this giant, delicious piece of bamboo!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_004",
+      "audioFile": "scene_01_004.wav",
+      "subtitle": "Ooh! Bamboo! I love bamboo! Can I have it all?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_005",
+      "audioFile": "scene_01_005.wav",
+      "subtitle": "Hold on there, Monkey! We need to share it.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_006",
+      "audioFile": "scene_01_006.wav",
+      "subtitle": "Share it? But I'm so hungry!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_007",
+      "audioFile": "scene_01_007.wav",
+      "subtitle": "It's only fair if we divide this bamboo equally between the two of us.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_008",
+      "audioFile": "scene_01_008.wav",
+      "subtitle": "Hmm. Divide it? Like, chop it in pieces?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_009",
+      "audioFile": "scene_01_009.wav",
+      "subtitle": "Exactly! We need to make sure we both get the exact same amount.",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_01_010",
+      "audioFile": "scene_01_010.wav",
+      "subtitle": "Let's figure out the best way to divide this bamboo equally!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "bamboo_whole",
+          "src": "bamboo_whole.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 540,
+              "scale": 1.0
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 80,
+          "color": "#FFFFFF"
+        }
+      ]
+    }
+  ]
+}

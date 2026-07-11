@@ -1,0 +1,213 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_01_intro",
+      "audioFile": "scene_01.wav",
+      "subtitle": "Welcome to Fractions and Decimals!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 1.5,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationX": 0,
+                "rotationY": 0,
+                "rotationZ": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "gridActions": [
+        {
+          "type": "grid_init",
+          "gridId": "bamboo_whole",
+          "initialCount": 1,
+          "src": "bamboo_whole.png",
+          "startX": 500,
+          "startY": 700,
+          "spacingX": 0
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EPISODE 1: What is a Fraction?",
+          "x": 50,
+          "y": 10,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_equal_parts",
+      "audioFile": "scene_02.wav",
+      "subtitle": "But what does it mean?",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-negative",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "gridActions": [
+        {
+          "type": "grid_destroy",
+          "gridId": "bamboo_whole",
+          "index": 1
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "EQUAL PARTS?",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#ff0000"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_03_fractions",
+      "audioFile": "scene_03.wav",
+      "subtitle": "Let's learn about fractions!",
+      "environment": {
+        "background": "forest_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "gridActions": [
+        {
+          "type": "grid_init",
+          "gridId": "bamboo_half",
+          "initialCount": 2,
+          "src": "bamboo_half.png",
+          "startX": 300,
+          "startY": 700,
+          "spacingX": 220
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1/2 = Numerator / Denominator",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_grid",
+      "audioFile": "scene_04.wav",
+      "subtitle": "Now let's practice!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "walk",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 1.5,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationX": 0,
+                "rotationY": 0,
+                "rotationZ": 0
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "gridActions": [
+        {
+          "type": "grid_init",
+          "gridId": "bamboo_tenth",
+          "initialCount": 10,
+          "src": "bamboo_tenth.png",
+          "startX": 100,
+          "startY": 700,
+          "spacingX": 150
+        }
+      ]
+    },
+    {
+      "stepId": "scene_05_monkey_eats",
+      "audioFile": "scene_05.wav",
+      "subtitle": "Monkey is hungry!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": []
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": []
+        }
+      ],
+      "gridActions": [
+        {
+          "type": "grid_destroy",
+          "gridId": "bamboo_tenth",
+          "index": 1
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "Monkey ate 3/10",
+          "x": 50,
+          "y": 20,
+          "size": 120,
+          "color": "#4ade80"
+        }
+      ]
+    }
+  ]
+}

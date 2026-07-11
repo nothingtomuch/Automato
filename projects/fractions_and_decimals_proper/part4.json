@@ -1,0 +1,2320 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_04_001",
+      "audioFile": "scene_04_001.wav",
+      "subtitle": "Now, what if we wanted to share with lots of friends?",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_002",
+      "audioFile": "scene_04_002.wav",
+      "subtitle": "We would need more pieces!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_003",
+      "audioFile": "scene_04_003.wav",
+      "subtitle": "Let's divide the bamboo into ten equal parts.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_004",
+      "audioFile": "scene_04_004.wav",
+      "subtitle": "Wow! Look at all those little pieces!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_005",
+      "audioFile": "scene_04_005.wav",
+      "subtitle": "Let's count them together to be sure.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_006",
+      "audioFile": "scene_04_006.wav",
+      "subtitle": "1, 2, 3...",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_007",
+      "audioFile": "scene_04_007.wav",
+      "subtitle": "4, 5, 6...",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_008",
+      "audioFile": "scene_04_008.wav",
+      "subtitle": "7, 8, 9, 10!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_009",
+      "audioFile": "scene_04_009.wav",
+      "subtitle": "Perfect. Since there are 10 equal parts, each part is one-tenth.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_010",
+      "audioFile": "scene_04_010.wav",
+      "subtitle": "We write that as the fraction 1/10.",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_011",
+      "audioFile": "scene_04_011.wav",
+      "subtitle": "Ten parts makes it so easy to count!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_04_012",
+      "audioFile": "scene_04_012.wav",
+      "subtitle": "And when we use tenths, we can easily write them as decimals, too!",
+      "environment": {
+        "background": "math_bg.png"
+      },
+      "characters": [
+        {
+          "type": "panda",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": 1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "tenth_1",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 460,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_2",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 570,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_3",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 680,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_4",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 790,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_5",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 900,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_6",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1010,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_7",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1120,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_8",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1230,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_9",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1340,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        },
+        {
+          "id": "tenth_10",
+          "src": "bamboo_tenth.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 1450,
+              "y": 540,
+              "scale": 0.6
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "1  2  3  4  5  6  7  8  9  10",
+          "x": 50,
+          "y": 65,
+          "size": 40,
+          "color": "#FFFFFF"
+        }
+      ]
+    }
+  ]
+}
