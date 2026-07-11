@@ -250,11 +250,23 @@ def validate_required_fields(spec: dict) -> None:
 
     for i, scene in enumerate(spec["timeline"]):
         ctx = f"timeline[{i}]"
-        for key in ("stepId", "audioFile", "characterState"):
+        for key in ("stepId", "audioFile"):
             if key not in scene:
                 raise ValueError(f"{ctx} is missing required key '{key}'.")
-        if "pose" not in scene["characterState"]:
+        
+        has_state = "characterState" in scene
+        has_chars = "characters" in scene and isinstance(scene["characters"], list)
+        if not has_state and not has_chars:
+            raise ValueError(f"{ctx} must have 'characterState' or 'characters' array.")
+        
+        if has_state and "pose" not in scene["characterState"]:
             raise ValueError(f"{ctx}.characterState is missing 'pose'.")
+        if has_chars:
+            for j, c in enumerate(scene["characters"]):
+                if "pose" not in c:
+                    raise ValueError(f"{ctx}.characters[{j}] is missing 'pose'.")
+                if "type" not in c:
+                    raise ValueError(f"{ctx}.characters[{j}] is missing 'type'.")
 
 
 # ---------------------------------------------------------------------------
@@ -278,19 +290,34 @@ def enrich_scene(scene: dict, public_dir: Path, char_state_tracker: dict) -> dic
     step_id   = scene.get("stepId", "unknown")
     enriched  = json.loads(json.dumps(scene))  # deep copy without extra deps
 
-    # ── Pose validation ────────────────────────────────────────────────────
-    raw_pose      = enriched["characterState"]["pose"]
-    validated     = validate_pose(raw_pose, step_id)
-    enriched["characterState"]["pose"] = validated
-    if validated != raw_pose:
-        enriched["characterState"]["originalPose"] = raw_pose
-
-    # ── Compile declarative actions -> keyframes (new format) ─────────────────
-    char_state = enriched["characterState"]
-    if "actions" in char_state and isinstance(char_state["actions"], list):
-        print(f"  [COMPILE] stepId='{step_id}': Compiling {len(char_state['actions'])} character actions to keyframes.")
-        char_state["keyframes"] = compile_actions_to_keyframes(char_state["actions"], FPS, char_state_tracker)
-        del char_state["actions"]
+    # ── Map legacy characterState to characters array ─────────────────────
+    if "characters" not in enriched and "characterState" in enriched:
+        # Fallback to the meta hostCharacter
+        ctype = enriched.get("meta", {}).get("hostCharacter", "bunny")
+        enriched["characters"] = [{"type": ctype, **enriched["characterState"]}]
+        del enriched["characterState"]
+    
+    # ── Pose validation & actions compilation ──────────────────────────────
+    if "characters" in enriched:
+        for i, cstate in enumerate(enriched["characters"]):
+            raw_pose = cstate["pose"]
+            validated = validate_pose(raw_pose, step_id)
+            cstate["pose"] = validated
+            if validated != raw_pose:
+                cstate["originalPose"] = raw_pose
+            
+            ctype = cstate["type"]
+            # get specific tracker for this character
+            if ctype not in char_state_tracker:
+                char_state_tracker[ctype] = {"x": -15, "y": -1, "scale": 1.2, "opacity": 1, "rotationZ": 0, "rotationY": 0, "rotationX": 0}
+            
+            if "actions" in cstate and isinstance(cstate["actions"], list):
+                print(f"  [COMPILE] stepId='{step_id}': Compiling {len(cstate['actions'])} actions for '{ctype}'.")
+                cstate["keyframes"] = compile_actions_to_keyframes(cstate["actions"], FPS, char_state_tracker[ctype])
+                del cstate["actions"]
+            else:
+                # Still record static keyframe for this character so it doesn't disappear
+                cstate["keyframes"] = [{"frame": 0, **char_state_tracker[ctype]}]
 
     # ── Compile declarative gridActions -> sprites (new format) ───────────────
     if "gridActions" in enriched and isinstance(enriched["gridActions"], list):
@@ -428,8 +455,9 @@ def compile(input_path: Path, output_path: Path, public_dir: Path = PUBLIC_DIR) 
     # ── Step 3: Enrich each scene ──────────────────────────────────────────
     print("Probing audio and enriching timeline scenes:")
     
-    # Global state tracker so the character doesn't snap back to start every scene
-    char_state_tracker = {"x": -15, "y": -1, "scale": 1.2, "opacity": 1, "rotationZ": 0, "rotationY": 0, "rotationX": 0}
+    # Global state tracker maps character types to their transform state
+    # e.g. {"monkey": {"x": -15, "y": -1...}, "bunny": {...}}
+    char_state_tracker = {}
     
     enriched_timeline = [
         enrich_scene(scene, public_dir, char_state_tracker)

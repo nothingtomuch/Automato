@@ -16,12 +16,14 @@ Your job is to output a complete, valid `video_spec.json` that renders into an a
 
 ### Required Structure
 - Root object MUST have: `meta` and `timeline`.
-- `meta` MUST have: `videoId`, `targetAge`, `hostCharacter`, `themeColor`, `fps` (always 30).
-- Every scene MUST have: `stepId`, `audioFile`, `characterState` (with `pose`).
+- `meta` MUST have: `videoId`, `targetAge`, `hostCharacter` (primary), `themeColor`, `fps` (always 30).
+- Every scene MUST have: `stepId`, `audioFile`, and `characters` (an array of character objects).
 - `stepId` values: unique, snake_case (e.g. `"scene_01_intro"`).
 - `audioFile`: exact filename in public/ (e.g. `"scene_01.wav"`).
 
-### Character Animation (`characterState.actions`)
+### Character Animation (`characters` array)
+- You can have multiple characters in a scene by adding them to the `characters` array.
+- Each character object needs `type` (e.g., `"bunny"`, `"monkey"`, `"tiger"`), `pose`, and `actions`.
 - `pose` must be ONE of: `idle`, `static`, `walk`, `run`, `dance`, `eat`, `gesture-positive`, `gesture-negative`
   - Explaining / Affirmative → `gesture-positive`
   - Celebrating → `dance`
@@ -121,22 +123,32 @@ When the user sends a follow-up request to modify an existing spec (e.g. "make s
       "audioFile": "scene_01.wav",
       "subtitle": "Hi! Today we learn addition!",
       "environment": { "background": "classroom_bg.png" },
-      "characterState": {
-        "pose": "walk",
-        "actions": [
-          { "type": "glide", "duration": 1.5, "targetState": { "x": 0, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 } }
-        ]
-      }
+      "characters": [
+        {
+          "type": "bunny",
+          "pose": "walk",
+          "actions": [
+            { "type": "glide", "duration": 1.5, "targetState": { "x": -4, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 } }
+          ]
+        },
+        {
+          "type": "monkey",
+          "pose": "walk",
+          "actions": [
+            { "type": "glide", "duration": 1.5, "targetState": { "x": 4, "y": -1, "scale": 1.2, "rotationY": 0, "rotationZ": 0 } }
+          ]
+        }
+      ]
     },
     {
       "stepId": "scene_02_problem",
       "audioFile": "scene_02.wav",
       "subtitle": "What is 2 plus 3?",
       "environment": { "background": "classroom_bg.png" },
-      "characterState": {
-        "pose": "gesture-positive",
-        "actions": []
-      },
+      "characters": [
+        { "type": "bunny", "pose": "gesture-positive", "actions": [] },
+        { "type": "monkey", "pose": "idle", "actions": [] }
+      ],
       "textOverlays": [
         { "text": "2 + 3 = ?", "x": 50, "y": 22, "size": 120, "color": "#FFE44D" }
       ],
@@ -151,10 +163,10 @@ When the user sends a follow-up request to modify an existing spec (e.g. "make s
       "audioFile": "scene_03.wav",
       "subtitle": "2 plus 3 equals 5!",
       "environment": { "background": "classroom_bg.png" },
-      "characterState": {
-        "pose": "dance",
-        "actions": []
-      },
+      "characters": [
+        { "type": "bunny", "pose": "dance", "actions": [] },
+        { "type": "monkey", "pose": "dance", "actions": [] }
+      ],
       "textOverlays": [
         { "text": "2 + 3 = 5 ✓", "x": 50, "y": 22, "size": 130, "color": "#4ade80", "bg": "#00000088" }
       ],

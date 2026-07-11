@@ -36,20 +36,20 @@ const TEMPLATES = {
   intro: {
     type: 'scene', x: 80, y: 80,
     fields: { stepId:'scene_01_intro', audioFile:'scene_01_intro.wav', subtitle:'Hi! Let\'s learn something amazing today!', backgroundDropdown:'classroom_bg.png', backgroundCustom:'my_bg.png', confetti:'FALSE', autoNameAudio:'FALSE' },
-    inputs: { CHARACTER_STATE: { block: { type:'character_state', fields:{pose:'walk'}, inputs:{ ACTIONS:{ block:{ type:'action_glide', fields:{duration:1.5,x:'0',y:'-1',scale:1.2,rotationX:0,rotationY:0,rotationZ:0} } } } } } }
+    inputs: { CHARACTER_STATE: { block: { type:'character_state', fields:{type:'bunny', pose:'walk'}, inputs:{ ACTIONS:{ block:{ type:'action_glide', fields:{duration:1.5,x:'0',y:'-1',scale:1.2,rotationX:0,rotationY:0,rotationZ:0} } } } } } }
   },
   counting: {
     type: 'scene', x: 80, y: 80,
     fields: { stepId:'scene_02_count', audioFile:'scene_02_count.wav', subtitle:'Let\'s count together!', backgroundDropdown:'classroom_bg.png', backgroundCustom:'my_bg.png', confetti:'FALSE', autoNameAudio:'FALSE' },
     inputs: {
-      CHARACTER_STATE: { block: { type:'character_state', fields:{pose:'gesture-positive'}, inputs:{ ACTIONS:{ block:{ type:'action_glide', fields:{duration:0.5,x:'-4',y:'-1',scale:1.2,rotationX:0,rotationY:0,rotationZ:0} } } } } },
+      CHARACTER_STATE: { block: { type:'character_state', fields:{type:'bunny', pose:'gesture-positive'}, inputs:{ ACTIONS:{ block:{ type:'action_glide', fields:{duration:0.5,x:'-4',y:'-1',scale:1.2,rotationX:0,rotationY:0,rotationZ:0} } } } } },
       GRID_ACTIONS: { block: { type:'grid_init', fields:{gridId:'items',initialCount:3,src:'apple.png',startX:400,startY:720,spacingX:200} } }
     }
   },
   celebrate: {
     type: 'scene', x: 80, y: 80,
     fields: { stepId:'scene_final', audioFile:'scene_final.wav', subtitle:'Amazing! You did it! 🎉', backgroundDropdown:'classroom_bg.png', backgroundCustom:'my_bg.png', confetti:'TRUE', autoNameAudio:'FALSE' },
-    inputs: { CHARACTER_STATE: { block: { type:'character_state', fields:{pose:'dance'} } } }
+    inputs: { CHARACTER_STATE: { block: { type:'character_state', fields:{type:'bunny', pose:'dance'} } } }
   },
 };
 

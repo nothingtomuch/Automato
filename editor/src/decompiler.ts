@@ -99,15 +99,26 @@ function buildGridActionChain(gridActions: any[]): any | undefined {
   return current;
 }
 
-function buildCharacterStateBlock(charState: any): any {
+function buildCharacterStateBlock(charState: any, nextBlock?: any, fallbackHost?: string): any {
   const pose = charState?.pose ?? 'idle';
+  const type = charState?.type ?? fallbackHost ?? 'bunny';
   const actions = charState?.actions ?? [];
   const actionChain = buildActionChain(actions);
   return {
     type: "character_state",
-    fields: { pose },
-    ...(actionChain ? { inputs: { ACTIONS: { block: actionChain } } } : {})
+    fields: { type, pose },
+    ...(actionChain ? { inputs: { ACTIONS: { block: actionChain } } } : {}),
+    ...(nextBlock ? { next: { block: nextBlock } } : {})
   };
+}
+
+function buildCharacterStateChain(characters: any[], fallbackHost: string): any | undefined {
+  if (!characters || characters.length === 0) return undefined;
+  let current: any | undefined = undefined;
+  for (let i = characters.length - 1; i >= 0; i--) {
+    current = buildCharacterStateBlock(characters[i], current, fallbackHost);
+  }
+  return current;
 }
 
 function buildTextOverlayBlock(t: any, nextBlock?: any): any {
@@ -138,10 +149,18 @@ function buildTextOverlayChain(textOverlays: any[]): any | undefined {
   return current;
 }
 
-function buildSceneBlock(scene: any, nextBlock?: any): any {
+function buildSceneBlock(scene: any, nextBlock?: any, fallbackHost?: string): any {
   const bg = scene.environment?.background ?? "";
   const isKnownBg = KNOWN_BACKGROUNDS.includes(bg);
-  const charBlock   = buildCharacterStateBlock(scene.characterState);
+  
+  // Support both new `characters` array and old `characterState`
+  let charChain;
+  if (scene.characters && Array.isArray(scene.characters)) {
+    charChain = buildCharacterStateChain(scene.characters, fallbackHost ?? "bunny");
+  } else {
+    charChain = buildCharacterStateBlock(scene.characterState, undefined, fallbackHost ?? "bunny");
+  }
+
   const gridChain   = buildGridActionChain(scene.gridActions ?? []);
   const textChain   = buildTextOverlayChain(scene.textOverlays ?? []);
 
@@ -156,7 +175,7 @@ function buildSceneBlock(scene: any, nextBlock?: any): any {
       confetti: scene.effects?.confetti ? "TRUE" : "FALSE",
     },
     inputs: {
-      CHARACTER_STATE: { block: charBlock },
+      ...(charChain  ? { CHARACTER_STATE: { block: charChain  } } : {}),
       ...(gridChain  ? { GRID_ACTIONS:   { block: gridChain  } } : {}),
       ...(textChain  ? { TEXT_OVERLAYS:  { block: textChain  } } : {}),
     },

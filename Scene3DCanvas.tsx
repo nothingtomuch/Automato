@@ -96,8 +96,9 @@ const CubePetModel = ({ character, pose, keyframes }: { character: string; pose:
 
 // Main Scene Canvas Layout
 export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) => {
-  const { hostCharacter, themeColor = propThemeColor } = getInputProps().meta; // Grab the current global pet host and theme color
-  const { pose, keyframes } = sceneData.characterState;
+  const { hostCharacter, themeColor = propThemeColor } = getInputProps().meta; // Fallback for backwards compatibility
+  
+  const characters = sceneData.characters || (sceneData.characterState ? [{ type: hostCharacter, ...sceneData.characterState }] : []);
   
   const bgImage = sceneData.environment?.background 
     ? staticFile(sceneData.environment.background)
@@ -127,7 +128,9 @@ export const Scene3DCanvas = ({ sceneData, themeColor: propThemeColor }: any) =>
         <Canvas width={1920} height={1080}>
           <ambientLight intensity={0.8} />
           <directionalLight position={[5, 10, 5]} intensity={1.5} />
-          <CubePetModel character={hostCharacter} pose={pose} keyframes={keyframes} />
+          {characters.map((c: any, i: number) => (
+            <CubePetModel key={`${c.type}-${i}`} character={c.type} pose={c.pose} keyframes={c.keyframes} />
+          ))}
         </Canvas>
       </div>
 

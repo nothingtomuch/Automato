@@ -155,7 +155,8 @@ export const defineBlocks = () => {
     const confetti    = block.getFieldValue('confetti') === 'TRUE';
 
     let csCode = jsonGenerator.statementToCode(block, 'CHARACTER_STATE');
-    const charState = csCode ? JSON.parse(csCode) : { pose: 'idle', actions: [] };
+    if (csCode.endsWith(',\n')) csCode = csCode.slice(0, -2) + '\n';
+    const characters = csCode ? JSON.parse(`[${csCode}]`) : [];
 
     let gridCode = jsonGenerator.statementToCode(block, 'GRID_ACTIONS');
     if (gridCode.endsWith(',\n')) gridCode = gridCode.slice(0, -2) + '\n';
@@ -164,7 +165,7 @@ export const defineBlocks = () => {
     const obj: any = {
       stepId, audioFile, subtitle,
       environment: { background },
-      characterState: charState,
+      characters,
     };
     if (gridActions.length > 0) obj.gridActions = gridActions;
 
@@ -182,6 +183,8 @@ export const defineBlocks = () => {
   Blockly.Blocks['character_state'] = {
     init: function() {
       this.appendDummyInput()
+          .appendField("Type:")
+          .appendField(new Blockly.FieldDropdown(ANIMAL_MODELS), "type")
           .appendField("Pose:")
           .appendField(new Blockly.FieldDropdown([
             ["Idle", "idle"], ["Walk", "walk"], ["Run", "run"], ["Dance", "dance"],
@@ -191,16 +194,18 @@ export const defineBlocks = () => {
           .setCheck("Action")
           .appendField("Animations:");
       this.setPreviousStatement(true, "CharacterState");
+      this.setNextStatement(true, "CharacterState");
       this.setColour(290);
     }
   };
 
   jsonGenerator.forBlock['character_state'] = function(block: Blockly.Block) {
+    const type = block.getFieldValue('type');
     const pose = block.getFieldValue('pose');
     let actCode = jsonGenerator.statementToCode(block, 'ACTIONS');
     if (actCode.endsWith(',\n')) actCode = actCode.slice(0, -2) + '\n';
     const actions = actCode ? JSON.parse(`[${actCode}]`) : [];
-    return JSON.stringify({ pose, actions });
+    return JSON.stringify({ type, pose, actions }) + ',\n';
   };
 
   // ── Glide ─────────────────────────────────────────────────────────────────────
