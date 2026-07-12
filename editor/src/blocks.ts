@@ -398,9 +398,11 @@ export const defineBlocks = () => {
   // ── Infographic Overlay ───────────────────────────────────────────────────────
   Blockly.Blocks['infographic_overlay'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField("📊 Infographic DSL:")
-          .appendField(new Blockly.FieldTextInput("infographic list-pyramid-badge-card"), "dsl");
+      this.appendDummyInput("INFO_INPUT")
+          .appendField("📊 Infographic:")
+          .appendField(new Blockly.FieldDropdown(function() {
+            return (window as any).infographicOptions || [['No infographics yet', '']];
+          }), "filename");
       this.appendDummyInput()
           .appendField("X%:")
           .appendField(new Blockly.FieldNumber(50, 0, 100), "x")
@@ -417,17 +419,17 @@ export const defineBlocks = () => {
       this.setPreviousStatement(true, "InfographicOverlay");
       this.setNextStatement(true,     "InfographicOverlay");
       this.setColour(180);
-      this.setTooltip("Render an AntV Infographic using DSL syntax.");
+      this.setTooltip("Render a saved Infographic DSL file.");
     }
   };
   jsonGenerator.forBlock['infographic_overlay'] = function(block: Blockly.Block) {
-    const dsl    = block.getFieldValue('dsl');
+    const filename = block.getFieldValue('filename');
     const x      = Number(block.getFieldValue('x'));
     const y      = Number(block.getFieldValue('y'));
     const width  = Number(block.getFieldValue('width'));
     const height = Number(block.getFieldValue('height'));
     const scale  = Number(block.getFieldValue('scale'));
-    return JSON.stringify({ dsl, x, y, width, height, scale }) + ',\n';
+    return JSON.stringify({ filename, x, y, width, height, scale }) + ',\n';
   };
 
   return jsonGenerator;

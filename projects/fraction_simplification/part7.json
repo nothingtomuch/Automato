@@ -1,0 +1,708 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_07_001",
+      "audioFile": "scene_07_001.wav",
+      "subtitle": "Are you ready for a tougher challenge?",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_07_002",
+      "audioFile": "scene_07_002.wav",
+      "subtitle": "Bring it on! Roar!",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_07_003",
+      "audioFile": "scene_07_003.wav",
+      "subtitle": "Let's simplify 6/9.",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_004",
+      "audioFile": "scene_07_004.wav",
+      "subtitle": "Hmm... 6 and 9. They aren't both even, so I can't use 2.",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_005",
+      "audioFile": "scene_07_005.wav",
+      "subtitle": "Good thinking! What number divides both 6 and 9?",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_006",
+      "audioFile": "scene_07_006.wav",
+      "subtitle": "Oh! 3! They are both in the 3 times table!",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_007",
+      "audioFile": "scene_07_007.wav",
+      "subtitle": "Excellent! Let's scratch!",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_008",
+      "audioFile": "scene_07_008.wav",
+      "subtitle": "Scratch out 6. 6 divided by 3 is 2.",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_009",
+      "audioFile": "scene_07_009.wav",
+      "subtitle": "Scratch out 9. 9 divided by 3 is 3.",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_07_010",
+      "audioFile": "scene_07_010.wav",
+      "subtitle": "So 6/9 simplifies to...",
+      "environment": {
+        "background": "garden_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": [
+        {
+          "text": "6/9 -> 2/3",
+          "x": 50,
+          "y": 25,
+          "size": 120,
+          "color": "#FF5722"
+        }
+      ]
+    }
+  ]
+}

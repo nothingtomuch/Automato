@@ -153,7 +153,7 @@ function buildInfographicOverlayBlock(info: any, nextBlock?: any): any {
   return {
     type: "infographic_overlay",
     fields: {
-      dsl:    info.dsl    ?? 'infographic list-pyramid-badge-card',
+      filename: info.filename ?? '',
       x:      info.x      ?? 50,
       y:      info.y      ?? 50,
       width:  info.width  ?? 400,
@@ -257,6 +257,250 @@ export function specToBlocklyState(spec: any): any {
         inputs: {
           ...(chain ? { TIMELINE: { block: chain } } : {})
         }
+      }]
+    }
+  };
+}
+
+export function dslToBlocklyState(dsl: string): any {
+  if (!dsl || !dsl.trim()) {
+    return {
+      blocks: {
+        languageVersion: 0,
+        blocks: [{
+          type: "infographic_root",
+          x: 30, y: 30,
+          fields: { template: "flowchart", secondsPerStep: 1.5 }
+        }]
+      }
+    };
+  }
+  
+  const lines = dsl.split('\n').map(l => l.trim()).filter(Boolean);
+  let template = "list-pyramid-badge-card";
+  let firstLine = lines[0];
+  let startIndex = 0;
+  if (firstLine.startsWith("infographic ")) {
+    const rest = firstLine.replace("infographic ", "").trim();
+    if (rest.startsWith("flowchart")) {
+      template = "flowchart";
+      const spsM = rest.match(/sps=([\d.]+)/);
+      const sps = spsM ? parseFloat(spsM[1]) : 1.5;
+
+      // Parse step lines
+      const stepRegex = /^step\s+(oval|rect|diamond)\s+"([^"]*)"\s+edge="([^"]*)"\s+color=(#[0-9a-fA-F]{3,8})/;
+      const branchStartRegex = /^branch\s+"([^"]*)"\s*\{/;
+      const steps: { shape: string; label: string; edgeLabel: string; color: string; branch?: { label: string; steps: any[] } }[] = [];
+
+      let li = 1;
+      while (li < lines.length) {
+        const sm = lines[li].match(stepRegex);
+        if (sm) {
+          const step: any = { shape: sm[1], label: sm[2], edgeLabel: sm[3], color: sm[4] };
+          li++;
+          if (li < lines.length) {
+            const bm = lines[li].match(branchStartRegex);
+            if (bm) {
+              const branchSteps: any[] = [];
+              li++;
+              while (li < lines.length && lines[li] !== '}') {
+                const bsm = lines[li].match(stepRegex);
+                if (bsm) branchSteps.push({ shape: bsm[1], label: bsm[2], edgeLabel: bsm[3], color: bsm[4] });
+                li++;
+              }
+              step.branch = { label: bm[1], steps: branchSteps };
+              li++; // skip }
+            }
+          }
+          steps.push(step);
+        } else { li++; }
+      }
+
+      // Build chain of flowchart_step blocks
+      const buildStepChain = (stepArr: typeof steps): any => {
+        if (stepArr.length === 0) return undefined;
+        let chain: any = undefined;
+        for (let i = stepArr.length - 1; i >= 0; i--) {
+          const s = stepArr[i];
+          let block: any = {
+            type: "flowchart_step",
+            fields: { shape: s.shape, label: s.label, edgeLabel: s.edgeLabel, color: s.color },
+            ...(chain ? { next: { block: chain } } : {})
+          };
+          if (s.branch) {
+            const branchChain = buildStepChain(s.branch.steps);
+            block = {
+              ...block,
+              // Add branch block before the next chain
+              next: {
+                block: {
+                  type: "flowchart_branch",
+                  fields: { branchLabel: s.branch.label },
+                  ...(branchChain ? { inputs: { BRANCH_STEPS: { block: branchChain } } } : {}),
+                  ...(chain ? { next: { block: chain } } : {})
+                }
+              }
+            };
+          }
+          chain = block;
+        }
+        return chain;
+      };
+
+      const stepChain = buildStepChain(steps);
+      return {
+        blocks: {
+          languageVersion: 0,
+          blocks: [{
+            type: "infographic_root",
+            x: 30, y: 30,
+            fields: { template: "flowchart", secondsPerStep: sps },
+            ...(stepChain ? { inputs: { ELEMENTS: { block: stepChain } } } : {})
+          }]
+        }
+      };
+    }
+    template = rest.split(/\s/)[0]; // e.g. "power-tower"
+    startIndex = 1;
+  } else if (firstLine === "list-pyramid-badge-card" || firstLine === "custom number-line" || firstLine === "power-tower" || firstLine === "custom") {
+    template = firstLine;
+    startIndex = 1;
+  } else if (firstLine.includes("power-tower") || firstLine.includes("power tower")) {
+    template = "power-tower";
+  } else if (firstLine.includes("pyramid")) {
+    template = "list-pyramid-badge-card";
+  } else if (firstLine.includes("number-line")) {
+    template = "custom number-line";
+  }
+
+  // ── Power Tower: parse cube { } blocks ──────────────────────────────────────
+  if (template === "power-tower") {
+    const cubeRegex = /cube\s*\{([^}]+)\}/g;
+    const cubes: { label: string; desc: string; color: string }[] = [];
+    let m: RegExpExecArray | null;
+    while ((m = cubeRegex.exec(dsl)) !== null) {
+      const body = m[1];
+      const label = (body.match(/label\s+(.+)/)?.[1] ?? '').trim();
+      const desc  = (body.match(/desc\s+(.+)/)?.[1] ?? '').trim();
+      const color = (body.match(/color\s+(#[0-9a-fA-F]{3,8})/)?.[1] ?? '#2979ff').trim();
+      if (label) cubes.push({ label, desc, color });
+    }
+
+    let cubeChain: any = undefined;
+    for (let i = cubes.length - 1; i >= 0; i--) {
+      cubeChain = {
+        type: "infographic_power_tower_cube",
+        fields: { label: cubes[i].label, desc: cubes[i].desc, color: cubes[i].color },
+        ...(cubeChain ? { next: { block: cubeChain } } : {})
+      };
+    }
+
+    return {
+      blocks: {
+        languageVersion: 0,
+        blocks: [{
+          type: "infographic_root",
+          x: 30, y: 30,
+          fields: { template: "power-tower" },
+          ...(cubeChain ? { inputs: { ELEMENTS: { block: cubeChain } } } : {})
+        }]
+      }
+    };
+  }
+  
+  // Robust parser for list items
+  const parseItems = (lines: string[]) => {
+    let items = [];
+    let currentItem = null;
+    let inList = false;
+    
+    for (let line of lines) {
+      line = line.replace(/['"]/g, ''); // remove quotes
+      if (line.includes("list {") || line === "list" || line === "{") {
+        if (!currentItem) currentItem = { label: "", desc: "" };
+        inList = true;
+      } else if (line.includes("}") && currentItem) {
+        items.push(currentItem);
+        currentItem = null;
+        inList = false;
+      } else if (currentItem) {
+        if (line.match(/^label\s*:?\s*/i)) currentItem.label = line.replace(/^label\s*:?\s*/i, "");
+        if (line.match(/^desc\s*:?\s*/i)) currentItem.desc = line.replace(/^desc\s*:?\s*/i, "");
+        // Handle fallback parsing if they just put text
+        if (!line.toLowerCase().startsWith("label") && !line.toLowerCase().startsWith("desc")) {
+          if (!currentItem.label) currentItem.label = line;
+          else currentItem.desc += " " + line;
+        }
+      }
+    }
+    // Auto-close if missing }
+    if (currentItem) items.push(currentItem);
+    return items;
+  };
+
+  const items = parseItems(lines.slice(startIndex));
+  
+  const buildItemChain = (items: any[], isNumberLine = false) => {
+    if (items.length === 0) return undefined;
+    let chain: any = undefined;
+    const blockType = isNumberLine ? "infographic_number_line_step" : "infographic_pyramid_item";
+    for (let i = items.length - 1; i >= 0; i--) {
+      chain = {
+        type: blockType,
+        fields: {
+          label: items[i].label || `Step ${i+1}`,
+          desc: items[i].desc || ""
+        },
+        ...(chain ? { next: { block: chain } } : {})
+      };
+    }
+    return chain;
+  };
+  
+  let elementsChain = undefined;
+  if (template === "list-pyramid-badge-card" && items.length > 0) {
+    elementsChain = {
+      type: "infographic_pyramid",
+      inputs: {
+        ITEMS: { block: buildItemChain(items, false) }
+      }
+    };
+  } else if (template === "custom number-line" && items.length > 0) {
+    elementsChain = {
+      type: "infographic_number_line",
+      inputs: {
+        STEPS: { block: buildItemChain(items, true) }
+      }
+    };
+  } else if (items.length > 0) {
+    // If it's custom or unknown, just use cards
+    let chain: any = undefined;
+    for (let i = items.length - 1; i >= 0; i--) {
+      chain = {
+        type: "infographic_card",
+        fields: {
+          title: items[i].label || `Card ${i+1}`,
+          content: items[i].desc || ""
+        },
+        ...(chain ? { next: { block: chain } } : {})
+      };
+    }
+    elementsChain = {
+      type: "infographic_container",
+      fields: { direction: "col" },
+      inputs: { CHILDREN: { block: chain } }
+    };
+  }
+  
+  return {
+    blocks: {
+      languageVersion: 0,
+      blocks: [{
+        type: "infographic_root",
+        x: 30,
+        y: 30,
+        fields: { template },
+        ...(elementsChain ? { inputs: { ELEMENTS: { block: elementsChain } } } : {})
       }]
     }
   };

@@ -3,6 +3,7 @@ import { delayRender, continueRender } from 'remotion';
 import { parseSyntax } from '@antv/infographic';
 import { PowerTower } from './PowerTower';
 import { NumberLine } from './NumberLine';
+import { FlowChart, parseFlowchartDSL } from './FlowChart';
 
 interface InfographicOverlayProps {
   dsl: string;
@@ -10,67 +11,75 @@ interface InfographicOverlayProps {
   height?: number;
 }
 
+// Parse `cube { label ... color ... desc ... }` blocks from power-tower DSL
+function parsePowerTowerCubes(dsl: string): Array<{ label: string; desc?: string; color?: string }> {
+  const cubes: Array<{ label: string; desc?: string; color?: string }> = [];
+  const cubeRegex = /cube\s*\{([^}]+)\}/g;
+  let match;
+  while ((match = cubeRegex.exec(dsl)) !== null) {
+    const body = match[1];
+    const label = (body.match(/label\s+(.+)/)?.[1] ?? '').trim();
+    const desc  = (body.match(/desc\s+(.+)/)?.[1] ?? '').trim() || undefined;
+    const color = (body.match(/color\s+(#[0-9a-fA-F]{3,8})/)?.[1] ?? '').trim() || undefined;
+    if (label) cubes.push({ label, desc, color });
+  }
+  return cubes;
+}
+
 export const InfographicOverlay = ({ dsl, width = 600, height = 800 }: InfographicOverlayProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const infographicRef = useRef<any>(null);
   const [handle] = useState(() => delayRender('Waiting for AntV Infographic engine...'));
 
-  // 1. Try to parse AST synchronously to see if we should intercept
+  // 1. Detect custom templates early — no AntV needed for these
+  const trimmed = dsl.trim();
+  const isFlowchart       = trimmed.startsWith('infographic flowchart');
+  const isCustomPowerTower = trimmed.startsWith('infographic power-tower') || trimmed.startsWith('power-tower');
+  const isCustomNumberLine = trimmed.startsWith('custom number-line');
+
   let customAst: any = null;
-  try {
-    customAst = parseSyntax(dsl);
-  } catch (e) {
-    // ignore
+  let isCustomPyramid = false;
+  if (!isFlowchart && !isCustomPowerTower && !isCustomNumberLine) {
+    try {
+      customAst = parseSyntax(dsl);
+      isCustomPyramid = customAst?.options?.template === 'list-pyramid-badge-card';
+    } catch (e) {
+      // ignore
+    }
   }
 
-  const isCustomPyramid = customAst?.options?.template === 'list-pyramid-badge-card';
-  const isCustomNumberLine = dsl.trim().startsWith('custom number-line');
+  const isCustom = isFlowchart || isCustomPowerTower || isCustomNumberLine || isCustomPyramid;
 
   useEffect(() => {
-    // If it's a custom React component, we handle it via pure React, no AntV needed
-    if (isCustomPyramid || isCustomNumberLine) {
+    if (isCustom) {
       continueRender(handle);
       return;
     }
 
-    // Server-side safeguard — Remotion runs in headless Chromium, ensure DOM exists
     if (typeof window === 'undefined' || !containerRef.current) return;
 
     const initAndRender = async () => {
       try {
-        // Dynamic import prevents bundler errors during early initialization
         const { Infographic } = await import('@antv/infographic');
-
-        // Capture ref in a local variable — ref may change during async gap
         const container = containerRef.current;
         if (!container) return;
-
-        // Flush any previous instance DOM nodes
         container.innerHTML = '';
-
-        // Initialize with absolute pixel dimensions (critical for Remotion headless)
         infographicRef.current = new Infographic({
-          container: container,
+          container,
           width,
           height,
           editable: false,
         });
-
-        // Render the DSL layout
         infographicRef.current.render(dsl);
-
-        // Tell Remotion this frame is safe to capture
         continueRender(handle);
       } catch (error) {
         console.error('AntV Engine Render Exception:', error);
-        // Always release the render lock to avoid permanent freezes
         continueRender(handle);
       }
     };
 
     initAndRender();
 
-    // Cleanup: destroy the AntV instance and clear the DOM on unmount
     return () => {
       if (infographicRef.current && typeof infographicRef.current.destroy === 'function') {
         infographicRef.current.destroy();
@@ -81,14 +90,29 @@ export const InfographicOverlay = ({ dsl, width = 600, height = 800 }: Infograph
     };
   }, [dsl, handle, width, height]);
 
+  // ── Flowchart ───────────────────────────────────────────────────────────────
+  if (isFlowchart) {
+    const { steps, sps } = parseFlowchartDSL(dsl);
+    return <FlowChart steps={steps} secondsPerStep={sps} width={width} height={height} />;
+  }
+
+  // ── Power Tower ─────────────────────────────────────────────────────────────
+  if (isCustomPowerTower) {
+    const cubes = parsePowerTowerCubes(dsl);
+    return <PowerTower blocks={cubes.length > 0 ? cubes : [{ label: '?', desc: 'Add cubes in the editor' }]} width={width} height={height} />;
+  }
+
+  // ── Pyramid (legacy AntV list) ───────────────────────────────────────────────
   if (isCustomPyramid && customAst?.options?.data?.lists) {
     return <PowerTower blocks={customAst.options.data.lists} width={width} height={height} />;
   }
 
+  // ── Number Line ──────────────────────────────────────────────────────────────
   if (isCustomNumberLine) {
     return <NumberLine dsl={dsl} width={width} height={height} />;
   }
 
+  // ── AntV default ─────────────────────────────────────────────────────────────
   return (
     <div style={{ width: `${width}px`, height: `${height}px` }}>
       <div ref={containerRef} style={{ width: '100%', height: '100%' }} />

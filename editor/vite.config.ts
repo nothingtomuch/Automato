@@ -90,6 +90,98 @@ function fail(res: any, err: any) {
   res.end(JSON.stringify({ success: false, error: String(err?.message || err) }))
 }
 
+// ─── AI response → infographic DSL converter ───────────────────────────────────
+// The AI often ignores the exact format and produces its own JSON. This function
+// normalises ANY reasonable AI response into our infographic DSL string.
+function convertAIResponseToDSL(parsed: any): string | null {
+  // Already in our format
+  if (typeof parsed.dsl === 'string') return parsed.dsl
+
+  // ── JSON flowchart format: { flowchart: { start, steps: [...] } } ──────────
+  const fc = parsed.flowchart || parsed.flow_chart || parsed.flow
+  if (fc) {
+    const steps: any[] = fc.steps || fc.nodes || []
+    const startId: string = fc.start || steps[0]?.id || 'start'
+    const stepsMap: Record<string, any> = {}
+    steps.forEach((s: any) => { stepsMap[s.id] = s })
+
+    // Walk the chain following next/yes pointers
+    const COLOR_PALETTE = ['#4caf50','#5e9eff','#ff9800','#e91e63','#ab47bc','#00bcd4','#8bc34a','#f44336']
+    let colorIdx = 0
+    const nextColor = () => COLOR_PALETTE[colorIdx++ % COLOR_PALETTE.length]
+
+    const visited = new Set<string>()
+    const dslLines: string[] = [`infographic flowchart sps=1.5`]
+
+    function walkStep(id: string, depth = 0): void {
+      if (!id || visited.has(id) || depth > 30) return
+      if (id === 'end' || id === 'END') {
+        dslLines.push(`step oval "End" edge="" color=${nextColor()}`)
+        return
+      }
+      visited.add(id)
+      const s = stepsMap[id]
+      if (!s) return
+
+      const label = (s.description || s.label || s.title || s.text || id)
+        .replace(/"/g, "'").slice(0, 60)
+      const color = nextColor()
+
+      if (s.decision || (s.yes && s.no)) {
+        // Decision diamond
+        const yesId = s.decision?.yes || s.yes
+        const noId  = s.decision?.no  || s.no
+        const edgeLbl = 'Yes'
+        dslLines.push(`step diamond "${label}" edge="${edgeLbl}" color=${color}`)
+        // Branch (No path)
+        if (noId && stepsMap[noId]) {
+          dslLines.push(`branch "No" {`)
+          walkStep(noId, depth + 1)
+          dslLines.push(`}`)
+        }
+        // Continue Yes path
+        if (yesId) walkStep(yesId, depth + 1)
+      } else {
+        const isTerminal = !s.next || s.next === 'end' || s.next === 'END'
+        const shape = depth === 0 ? 'oval' : isTerminal ? 'oval' : 'rect'
+        dslLines.push(`step ${shape} "${label}" edge="" color=${color}`)
+        if (s.next && s.next !== 'end' && s.next !== 'END') walkStep(s.next, depth + 1)
+        else if (isTerminal && s.id !== startId) {
+          // last step — add an end oval
+        }
+      }
+    }
+
+    // Add start node if it's just a label string
+    if (typeof fc.start === 'string' && !stepsMap[fc.start]) {
+      dslLines.push(`step oval "${fc.start.replace(/"/g, "'")}" edge="" color=#4caf50`)
+    }
+    walkStep(startId)
+    // Add end terminal if last step doesn't lead there explicitly
+    const lastLine = dslLines[dslLines.length - 1]
+    if (!lastLine.includes('oval "End"') && !lastLine.includes("oval 'End'")) {
+      dslLines.push(`step oval "End" edge="" color=#4caf50`)
+    }
+    return dslLines.join('\n')
+  }
+
+  // ── Simple steps array: { steps: [{ label, type?, ... }] } ────────────────
+  const simpleSteps: any[] = parsed.steps || parsed.nodes || parsed.items
+  if (Array.isArray(simpleSteps) && simpleSteps.length > 0) {
+    const COLOR_PALETTE = ['#4caf50','#5e9eff','#ff9800','#e91e63','#ab47bc','#00bcd4','#8bc34a']
+    const lines = [`infographic flowchart sps=1.5`]
+    simpleSteps.forEach((s: any, i: number) => {
+      const label = (s.label || s.description || s.text || s.title || `Step ${i+1}`).replace(/"/g, "'").slice(0, 60)
+      const shape = i === 0 || i === simpleSteps.length - 1 ? 'oval' :
+                    (s.type === 'decision' || s.decision || s.condition) ? 'diamond' : 'rect'
+      lines.push(`step ${shape} "${label}" edge="" color=${COLOR_PALETTE[i % COLOR_PALETTE.length]}`)
+    })
+    return lines.join('\n')
+  }
+
+  return null // can't convert
+}
+
 // ─── Vite Plugin ───────────────────────────────────────────────────────────────
 function automotoPlugin() {
   return {
@@ -154,7 +246,7 @@ function automotoPlugin() {
           try {
             const root  = getProjectRoot(getCurrentProject())
             const files = fs.readdirSync(root).filter(f =>
-              f === 'video_spec.json' || /^part\d+\.json$/.test(f)
+              f === 'video_spec.json' || /^part\d+\.json$/.test(f) || /^infographic\d+\.json$/.test(f)
             )
             ok(res, { success: true, files, project: getCurrentProject() })
           } catch (err) { fail(res, err) }
@@ -215,14 +307,19 @@ function automotoPlugin() {
         // ── Generate spec (multi-provider) ────────────────────────────────
         } else if (url === '/api/generate' && req.method === 'POST') {
           try {
-            let { apiKey, prompt, provider, model } = JSON.parse(await readBody(req))
+            let { apiKey, prompt, provider, model, isInfoMode } = JSON.parse(await readBody(req))
             if (!apiKey) { fail(res, 'No API key provided. Open ⚙️ Settings to add one.'); return }
             apiKey = apiKey.trim()
             if (!prompt) { fail(res, 'No prompt provided'); return }
 
             let systemPrompt = ''
             if (fs.existsSync(AI_PROMPT)) systemPrompt = fs.readFileSync(AI_PROMPT, 'utf-8')
-            const jsonInstruction = '\n\nRespond with ONLY valid JSON — no markdown fences, no explanation. Just the raw JSON object starting with {.'
+            
+            if (isInfoMode) {
+              systemPrompt += `\n\nCRITICAL: The user is editing an INFOGRAPHIC. Respond ONLY with {"dsl": "..."} — no video spec, no meta, no timeline.\n\nIMPORTANT: Choose the CORRECT template based on what the user asks for!\n\n1. FLOWCHART (Use this for step-by-step processes, algorithms, e.g. long division, flow diagrams):\n{"dsl": "infographic flowchart sps=1.5\\nstep oval \\"Start\\" edge=\\"\\" color=#4caf50\\nstep rect \\"Action 1\\" edge=\\"\\" color=#5e9eff\\nstep diamond \\"Question?\\" edge=\\"Yes\\" color=#ff9800\\nbranch \\"No\\" {\\nstep rect \\"Action 2\\" edge=\\"\\" color=#e91e63\\n}\\nstep oval \\"End\\" edge=\\"\\" color=#4caf50"}\n- sps = seconds each step stays before the next appears\n- Shapes: oval (start/end), rect (action/calculation), diamond (question/decision)\n- After a diamond, add a branch block for the No path\n\n2. POWER TOWER (Use this for 3D stacked cubes):\n{"dsl": "infographic power-tower\\ncube {\\n  label 2^1\\n  color #2979ff\\n  desc = 2\\n}\\ncube {\\n  label 2^2\\n  color #00c853\\n  desc = 4\\n}"}\n\n3. LIST PYRAMID (Use this for hierarchical lists ONLY):\n{"dsl": "infographic list-pyramid-badge-card\\nlist {\\n  label Top level\\n  color #ff0000\\n  desc Short desc\\n}"}\n\n4. NUMBER LINE:\n{"dsl": "infographic custom number-line\\nstep 1 First step\\nstep 2 Second step"}`
+            }
+            
+            const jsonInstruction = '\n\nRespond with ONLY valid JSON — no markdown fences, no explanation. Just the raw JSON object starting with {.\nDO NOT just copy an example. Generate a NEW infographic based on the user request.'
             const fullPrompt = systemPrompt + '\n\n---\n\nUser request:\n' + prompt + jsonInstruction
 
             let rawText = ''
@@ -290,13 +387,22 @@ function automotoPlugin() {
             // Use jsonrepair as a safety net for truncated/malformed output
             const repairedRaw = jsonrepair(match[0])
             const spec = JSON.parse(repairedRaw)
+
+            if (isInfoMode) {
+              const convertedDsl = convertAIResponseToDSL(spec)
+              if (convertedDsl) {
+                ok(res, { success: true, spec: { dsl: convertedDsl } })
+                return
+              }
+            }
+
             ok(res, { success: true, spec })
           } catch (err) { fail(res, err) }
 
         // ── Chat with AI (iterative edits) ────────────────────────────────
         } else if (url === '/api/chat' && req.method === 'POST') {
           try {
-            let { apiKey, provider, model, messages, currentSpec } = JSON.parse(await readBody(req))
+            let { apiKey, provider, model, messages, currentSpec, isInfoMode } = JSON.parse(await readBody(req))
             if (!apiKey) { fail(res, 'No API key provided'); return }
             apiKey = apiKey.trim()
 
@@ -576,8 +682,11 @@ Respond with exactly this JSON format: {"poses": ["pose1", "pose2", ...]} — on
 
             // ── Full spec edit (no specific scene detected) ──────────────────
             const specContext = currentSpec
-              ? `\n\nThe user's CURRENT video spec is:\n${JSON.stringify(currentSpec, null, 2)}` +
-                `\n\nCRITICAL: Return the ENTIRE, COMPLETE JSON spec with your changes applied. Every single scene must be present. No placeholders, no truncation. Raw JSON only.`
+              ? (isInfoMode 
+                  ? `\n\nThe user's CURRENT infographic is:\n${JSON.stringify(currentSpec, null, 2)}` +
+                    `\n\nCRITICAL: Respond ONLY with {"dsl": "..."} — no video spec, no meta, no timeline.\n\nIMPORTANT: Choose the CORRECT template based on what the user asks for!\n\nTemplates:\n1. FLOWCHART (Algorithms/Steps): "infographic flowchart sps=1.5\\nstep oval \\"Start\\" edge=\\"\\" color=#4caf50\\nstep rect \\"Do X\\" edge=\\"\\" color=#5e9eff\\nstep diamond \\"Check?\\" edge=\\"Yes\\" color=#ff9800\\nbranch \\"No\\" {\\nstep rect \\"Handle No\\" edge=\\"\\" color=#e91e63\\n}\\nstep oval \\"End\\" edge=\\"\\" color=#4caf50"\n2. POWER TOWER (3D Cubes): "infographic power-tower\\ncube {\\n  label 2^1\\n  color #2979ff\\n}"\n3. LIST PYRAMID (Hierarchies): "infographic list-pyramid-badge-card\\nlist {\\n  label Top\\n  color #ff0000\\n}"\n4. NUMBER LINE: "infographic custom number-line\\nstep 1 First step"`
+                  : `\n\nThe user's CURRENT video spec is:\n${JSON.stringify(currentSpec, null, 2)}` +
+                    `\n\nCRITICAL: Return the ENTIRE, COMPLETE JSON spec with your changes applied. Every single scene must be present. No placeholders, no truncation. Raw JSON only.`)
               : ''
 
             const sysMsg = (systemPrompt || '') + specContext
@@ -616,7 +725,16 @@ Respond with exactly this JSON format: {"poses": ["pose1", "pose2", ...]} — on
             if (jsonMatch) {
               try {
                 const spec = JSON.parse(jsonrepair(jsonMatch[0]))
-                if (spec.meta && spec.timeline) {
+                
+                // If it's an infographic, aggressively try to salvage DSL
+                if (isInfoMode) {
+                  const convertedDsl = convertAIResponseToDSL(spec)
+                  if (convertedDsl) {
+                    ok(res, { success: true, type: 'spec', spec: { dsl: convertedDsl }, reply: replyText }); return
+                  }
+                }
+
+                if ((spec.meta && spec.timeline) || spec.dsl) {
                   ok(res, { success: true, type: 'spec', spec, reply: replyText }); return
                 }
               } catch { /* not valid JSON, treat as text */ }

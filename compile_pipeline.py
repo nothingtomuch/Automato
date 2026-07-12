@@ -441,6 +441,19 @@ def compile(input_path: Path, output_path: Path, public_dir: Path = PUBLIC_DIR) 
             print(f"[FATAL] Cannot read included file '{inc_file}': {exc}")
             sys.exit(1)
 
+    # ── Step 1.6: Inline Infographic DSL ───────────────────────────────────
+    for scene in spec.get("timeline", []):
+        for info in scene.get("infographics", []):
+            if "filename" in info and info["filename"]:
+                info_path = input_path.parent / info["filename"]
+                try:
+                    info_text = info_path.read_text(encoding="utf-8")
+                    info_json = json.loads(info_text)
+                    if "dsl" in info_json:
+                        info["dsl"] = info_json["dsl"]
+                except Exception as exc:
+                    print(f"[WARN] Failed to read infographic file '{info['filename']}': {exc}")
+
     # ── Step 2: Structural validation ─────────────────────────────────────
     try:
         validate_required_fields(spec)

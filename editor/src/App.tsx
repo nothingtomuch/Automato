@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as Blockly from 'blockly';
 import 'blockly/blocks';
 import { defineBlocks } from './blocks';
-import { specToBlocklyState } from './decompiler';
+import { defineInfographicBlocks } from './blocks-infographic';
+import { specToBlocklyState, dslToBlocklyState } from './decompiler';
 import { AiPanel } from './AiPanel';
 import './App.css';
 
@@ -30,6 +31,37 @@ const TOOLBOX = {
     { kind: "category", name: "✨ Animation",  colour: "65",  contents: [
       { kind: "block", type: "action_glide" },
       { kind: "block", type: "action_wait"  },
+    ]},
+  ]
+};
+
+const INFOGRAPHIC_TOOLBOX = {
+  kind: "categoryToolbox",
+  contents: [
+    { kind: "category", name: "📊 Root", colour: "180", contents: [
+      { kind: "block", type: "infographic_root" }
+    ]},
+    { kind: "category", name: "🔀 Flowchart", colour: "200", contents: [
+      { kind: "block", type: "flowchart_step" },
+      { kind: "block", type: "flowchart_branch" },
+    ]},
+    { kind: "category", name: "🟦 Power Tower", colour: "230", contents: [
+      { kind: "block", type: "infographic_power_tower_cube" }
+    ]},
+    { kind: "category", name: "📦 Layout", colour: "260", contents: [
+      { kind: "block", type: "infographic_container" }
+    ]},
+    { kind: "category", name: "🔺 Pyramids", colour: "160", contents: [
+      { kind: "block", type: "infographic_pyramid" },
+      { kind: "block", type: "infographic_pyramid_item" }
+    ]},
+    { kind: "category", name: "🔢 Process", colour: "210", contents: [
+      { kind: "block", type: "infographic_number_line" },
+      { kind: "block", type: "infographic_number_line_step" }
+    ]},
+    { kind: "category", name: "✏️ Typography", colour: "20", contents: [
+      { kind: "block", type: "infographic_text" },
+      { kind: "block", type: "infographic_card" }
     ]},
   ]
 };
@@ -234,7 +266,7 @@ function TemplatesMenu({ workspace, onClose }: { workspace:Blockly.WorkspaceSvg;
 // ─── Sidebar ──────────────────────────────────────────────────────────────────
 function Sidebar({
   projects, currentProject, specFiles, currentFile,
-  onSelectProject, onCreateProject, onSelectFile, onNewPart,
+  onSelectProject, onCreateProject, onSelectFile, onNewPart, onNewInfographic
 }: {
   projects: string[]; currentProject: string;
   specFiles: string[]; currentFile: string;
@@ -242,6 +274,7 @@ function Sidebar({
   onCreateProject: ()=>void;
   onSelectFile: (f:string)=>void;
   onNewPart: ()=>void;
+  onNewInfographic: ()=>void;
 }) {
   return (
     <div style={{ width:210, background:'#0b0b15', borderRight:'1px solid #1a1a2e', display:'flex', flexDirection:'column', flexShrink:0, fontFamily:"'Inter',sans-serif" }}>
@@ -292,6 +325,14 @@ function Sidebar({
           onMouseEnter={e => { e.currentTarget.style.borderColor='#7c6af7'; e.currentTarget.style.color='#7c6af7'; }}
           onMouseLeave={e => { e.currentTarget.style.borderColor='#2a2a3e'; e.currentTarget.style.color='#555'; }}
         >+ New Part File</button>
+        <button onClick={onNewInfographic} style={{
+          width:'100%', padding:'7px', background:'transparent', marginTop: 6,
+          border:'1px dashed #2a2a3e', borderRadius:6, color:'#555', fontSize:11,
+          cursor:'pointer', transition:'all 0.15s',
+        }}
+          onMouseEnter={e => { e.currentTarget.style.borderColor='#20c997'; e.currentTarget.style.color='#20c997'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor='#2a2a3e'; e.currentTarget.style.color='#555'; }}
+        >+ New Infographic</button>
       </div>
 
       {/* Spacer */}
@@ -312,6 +353,7 @@ export default function App() {
   const blocklyDiv   = useRef<HTMLDivElement>(null);
   const workspace    = useRef<Blockly.WorkspaceSvg|null>(null);
   const generatorRef = useRef<Blockly.Generator|null>(null);
+  const infoGeneratorRef = useRef<Blockly.Generator|null>(null);
 
   const [jsonCode,      setJsonCode]      = useState('');
   const [statusMsg,     setStatusMsg]     = useState('');
@@ -348,20 +390,28 @@ export default function App() {
   const refreshFiles = useCallback(async () => {
     const res  = await fetch('/api/list-specs');
     const data = await res.json();
-    if (data.success) setSpecFiles(data.files);
+    if (data.success) {
+      setSpecFiles(data.files);
+      const infoFiles = data.files.filter((f: string) => /^infographic\d+\.json$/.test(f));
+      (window as any).infographicOptions = infoFiles.length > 0
+        ? infoFiles.map((f: string) => [f, f])
+        : [['No infographics yet', '']];
+    }
   }, []);
 
   // ── Load a file into the canvas ───────────────────────────────────────────
   const loadFile = useCallback(async (filename: string) => {
     if (!workspace.current) return;
     const isMain = filename === 'video_spec.json';
+    const isInfo = /^infographic\d+\.json$/.test(filename);
     const url    = isMain ? '/api/load-spec' : `/api/load-part?file=${encodeURIComponent(filename)}`;
     const res    = await fetch(url);
     const data   = await res.json();
     if (!data.success) { setStatusMsg(`❌ Could not load ${filename}`); return; }
     try {
-      const state = specToBlocklyState(data.spec);
+      const state = isInfo && data.spec?.blocklyState ? data.spec.blocklyState : specToBlocklyState(data.spec);
       workspace.current.clear();
+      workspace.current.updateToolbox(isInfo ? INFOGRAPHIC_TOOLBOX : TOOLBOX);
       Blockly.serialization.workspaces.load(state, workspace.current);
       setCurrentFile(filename);
       setStatusMsg(`✅ Loaded ${filename}`);
@@ -401,9 +451,20 @@ export default function App() {
     await loadFile(filename);
   }, [specFiles, refreshFiles, loadFile]);
 
+  // ── New infographic ───────────────────────────────────────────────────────
+  const newInfographic = useCallback(async () => {
+    const infoNums = specFiles.filter(f => /^infographic\d+\.json$/.test(f)).map(f => parseInt(f.match(/\d+/)![0]));
+    const next     = infoNums.length > 0 ? Math.max(...infoNums)+1 : 1;
+    const filename = `infographic${next}.json`;
+    await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename, data:{ blocklyState:{blocks:{languageVersion:0,blocks:[]}}, dsl:"" } }) });
+    await refreshFiles();
+    await loadFile(filename);
+  }, [specFiles, refreshFiles, loadFile]);
+
   // ── Blockly init ──────────────────────────────────────────────────────────
   useEffect(() => {
     generatorRef.current = defineBlocks();
+    infoGeneratorRef.current = defineInfographicBlocks();
     if (blocklyDiv.current && !workspace.current) {
       workspace.current = Blockly.inject(blocklyDiv.current, {
         toolbox: TOOLBOX,
@@ -429,9 +490,18 @@ export default function App() {
       });
 
       workspace.current.addChangeListener((e: Blockly.Events.Abstract) => {
-        if (!e.isUiEvent && workspace.current && generatorRef.current) {
-          const root = workspace.current.getTopBlocks(true).find(b => b.type === 'video_spec');
-          if (root) { try { setJsonCode(String(generatorRef.current.blockToCode(root))); } catch { } }
+        if (!e.isUiEvent && workspace.current && generatorRef.current && infoGeneratorRef.current) {
+          const isInfo = /^infographic\d+\.json$/.test(currentFile);
+          if (isInfo) {
+            try {
+              const dsl = infoGeneratorRef.current.workspaceToCode(workspace.current);
+              const state = Blockly.serialization.workspaces.save(workspace.current);
+              setJsonCode(JSON.stringify({ blocklyState: state, dsl }));
+            } catch { }
+          } else {
+            const root = workspace.current.getTopBlocks(true).find(b => b.type === 'video_spec');
+            if (root) { try { setJsonCode(String(generatorRef.current.blockToCode(root))); } catch { } }
+          }
         }
       });
 
@@ -450,7 +520,8 @@ export default function App() {
   }, []);
 
   // ── Validate ──────────────────────────────────────────────────────────────
-  const validate = (spec: any): string | null => {
+  const validate = (spec: any, isInfo: boolean): string | null => {
+    if (isInfo) return null;
     if (!spec.meta) return 'Missing Video Spec block.';
     if (spec.includes?.length > 0) return null;
     const tl = spec.timeline;
@@ -473,35 +544,43 @@ export default function App() {
   const exportJson = async () => {
     try {
       const parsed = JSON.parse(jsonCode);
-      const err = validate(parsed);
+      const isInfo = /^infographic\d+\.json$/.test(currentFile);
+      const err = validate(parsed, isInfo);
       if (err) { setStatusMsg(`❌ ${err}`); return; }
       setStatusMsg('Exporting…');
-      const { meta, timeline, includes } = parsed;
-      const PER_FILE = 5;
 
-      if (currentFile !== 'video_spec.json') {
+      if (isInfo) {
+        const r = await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:currentFile, data:parsed }) });
+        const d = await r.json();
+        setStatusMsg(d.success ? `✅ Saved ${currentFile}` : `❌ ${d.error}`);
+      } else if (currentFile !== 'video_spec.json') {
         // Saving a part file
+        const { timeline } = parsed;
         const r = await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:currentFile, data:{ timeline:timeline??[] } }) });
         const d = await r.json();
         setStatusMsg(d.success ? `✅ Saved ${currentFile}` : `❌ ${d.error}`);
-      } else if (includes?.length > 0) {
-        // Has include blocks
-        await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:'video_spec.json', data:{ meta, includes } }) });
-        setStatusMsg(`✅ Saved with ${includes.length} part references`);
-      } else if (timeline?.length > PER_FILE) {
-        // Auto-split
-        const parts: string[] = [];
-        for (let i = 0; i < timeline.length; i += PER_FILE) {
-          const pName = `part${Math.floor(i/PER_FILE)+1}.json`;
-          parts.push(pName);
-          await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:pName, data:{ timeline:timeline.slice(i,i+PER_FILE) } }) });
-        }
-        await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:'video_spec.json', data:{ meta, includes:parts } }) });
-        setStatusMsg(`✅ Split into ${parts.length} part files`);
       } else {
-        const r = await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(parsed) });
-        const d = await r.json();
-        setStatusMsg(d.success ? '✅ Saved video_spec.json' : `❌ ${d.error}`);
+        const { meta, timeline, includes } = parsed;
+        const PER_FILE = 5;
+        if (includes?.length > 0) {
+          // Has include blocks
+          await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:'video_spec.json', data:{ meta, includes } }) });
+          setStatusMsg(`✅ Saved with ${includes.length} part references`);
+        } else if (timeline?.length > PER_FILE) {
+          // Auto-split
+          const parts: string[] = [];
+          for (let i = 0; i < timeline.length; i += PER_FILE) {
+            const pName = `part${Math.floor(i/PER_FILE)+1}.json`;
+            parts.push(pName);
+            await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:pName, data:{ timeline:timeline.slice(i,i+PER_FILE) } }) });
+          }
+          await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ filename:'video_spec.json', data:{ meta, includes:parts } }) });
+          setStatusMsg(`✅ Split into ${parts.length} part files`);
+        } else {
+          const r = await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(parsed) });
+          const d = await r.json();
+          setStatusMsg(d.success ? '✅ Saved video_spec.json' : `❌ ${d.error}`);
+        }
       }
       await refreshFiles();
     } catch (e: any) { setStatusMsg(`❌ ${e.message}`); }
@@ -518,12 +597,30 @@ export default function App() {
   };
 
   // ── AI spec generated ──────────────────────────────────────────────────────
-  const onSpecGenerated = (spec: any) => {
+  const onSpecGenerated = (newSpec: any) => {
     if (!workspace.current) return;
     try {
+      const isInfoMode = /^infographic\d+\.json$/.test(currentFile);
+      let state;
+      if (isInfoMode) {
+        if (newSpec.dsl) {
+          state = dslToBlocklyState(newSpec.dsl);
+        } else if (newSpec.blocklyState) {
+          state = newSpec.blocklyState;
+        } else {
+          // If the AI somehow generated a plain string instead of an object, or we fallback
+          state = dslToBlocklyState(typeof newSpec === 'string' ? newSpec : JSON.stringify(newSpec));
+        }
+      } else {
+        state = specToBlocklyState(newSpec);
+      }
+      
       workspace.current.clear();
-      Blockly.serialization.workspaces.load(specToBlocklyState(spec), workspace.current);
-    } catch (e: any) { setStatusMsg(`❌ Load error: ${e.message}`); }
+      Blockly.serialization.workspaces.load(state, workspace.current);
+      setJsonCode(JSON.stringify(newSpec));
+    } catch (e: any) {
+      setStatusMsg(`❌ Failed to load AI spec: ${e.message}`);
+    }
   };
 
   // ── Get current spec from canvas (for AI chat context) ────────────────────
@@ -612,6 +709,7 @@ export default function App() {
         onCreateProject={() => setShowNewProject(true)}
         onSelectFile={loadFile}
         onNewPart={newPart}
+        onNewInfographic={newInfographic}
       />
 
       {/* ── Canvas ── */}
@@ -657,7 +755,7 @@ export default function App() {
 
             <RecorderPanel onSaved={f => setStatusMsg(`✅ Audio saved: ${f}`)} />
 
-            <AiPanel apiKey={apiKey} onSpecGenerated={onSpecGenerated} onStatusMsg={setStatusMsg} getCurrentSpec={getCurrentSpec} />
+            <AiPanel apiKey={apiKey} onSpecGenerated={onSpecGenerated} onStatusMsg={setStatusMsg} getCurrentSpec={getCurrentSpec} isInfoMode={/^infographic\d+\.json$/.test(currentFile)} />
             <button onClick={generateAllAudio} style={btn('#5e35b1')} title="Generate TTS audio for all scene subtitles">🗣️ Auto-Gen Audio</button>
 
             <div style={{ width:1, height:34, background:'#1e1e38', alignSelf:'center' }} />

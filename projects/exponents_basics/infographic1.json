@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "videoId": "exponents_basics",
+    "targetAge": "6-7",
+    "hostCharacter": "elephant",
+    "themeColor": "#ffd700",
+    "fps": 30
+  },
+  "includes": [
+    "part1.json",
+    "part2.json",
+    "part3.json",
+    "part4.json",
+    "part5.json",
+    "part6.json",
+    "part7.json",
+    "part8.json"
+  ]
+}

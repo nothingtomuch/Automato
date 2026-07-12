@@ -25,6 +25,7 @@ interface Props {
   onSpecGenerated: (spec: any) => void;
   onStatusMsg: (msg: string) => void;
   getCurrentSpec: () => any;
+  isInfoMode?: boolean;
 }
 
 interface TtsJob {
@@ -41,7 +42,7 @@ interface ChatMessage {
   isSpec?: boolean;
 }
 
-export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }: Props) {
+export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec, isInfoMode }: Props) {
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<'generate' | 'chat' | 'tts' | 'image'>('generate');
 
@@ -58,11 +59,25 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
 
   // Chat tab state
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', content: "Hi! I'm your Automato AI assistant. I can help you:\n\n• **Generate** a new video from scratch\n• **Edit** your current video spec — just tell me what to change!\n• **Explain** what any part of your video does\n\nTry: *\"Change scene 3 to use the forest background\"* or *\"Add a text overlay showing 2+2=4 to scene 2\"*" }
+    { role: 'assistant', content: isInfoMode 
+        ? "Hi! I'm your Automato AI assistant. I notice you're editing an **Infographic**. I can help you design layouts, pyramids, number lines, and text cards! What would you like to build?"
+        : "Hi! I'm your Automato AI assistant. I can help you:\n\n• **Generate** a new video from scratch\n• **Edit** your current video spec — just tell me what to change!\n• **Explain** what any part of your video does\n\nTry: *\"Change scene 3 to use the forest background\"* or *\"Add a text overlay showing 2+2=4 to scene 2\"*" }
   ]);
   const [chatInput, setChatInput]     = useState('');
   const [chatSending, setChatSending] = useState(false);
   const chatBottomRef = useRef<HTMLDivElement>(null);
+
+  // When isInfoMode changes, reset the greeting if it's the first message
+  useEffect(() => {
+    setChatMessages(prev => {
+      if (prev.length === 1 && prev[0].role === 'assistant') {
+        return [{ role: 'assistant', content: isInfoMode 
+          ? "Hi! I'm your Automato AI assistant. I notice you're editing an **Infographic**. I can help you design layouts, pyramids, number lines, and text cards! What would you like to build?"
+          : "Hi! I'm your Automato AI assistant. I can help you:\n\n• **Generate** a new video from scratch\n• **Edit** your current video spec — just tell me what to change!\n• **Explain** what any part of your video does\n\nTry: *\"Change scene 3 to use the forest background\"* or *\"Add a text overlay showing 2+2=4 to scene 2\"*" }];
+      }
+      return prev;
+    });
+  }, [isInfoMode]);
 
   // TTS tab state
   const [ttsJobs, setTtsJobs] = useState<TtsJob[]>([
@@ -116,7 +131,7 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
       const res = await fetch('/api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ apiKey, prompt, provider, model })
+        body: JSON.stringify({ apiKey, prompt, provider, model, isInfoMode })
       });
       const data = await res.json();
       if (!data.success) throw new Error(data.error);
@@ -151,7 +166,7 @@ export function AiPanel({ apiKey, onSpecGenerated, onStatusMsg, getCurrentSpec }
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ apiKey, provider, model, messages: apiMessages, currentSpec })
+        body: JSON.stringify({ apiKey, provider, model, messages: apiMessages, currentSpec, isInfoMode })
       });
       const data = await res.json();
       if (!data.success) throw new Error(data.error);

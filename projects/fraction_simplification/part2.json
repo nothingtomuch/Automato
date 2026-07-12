@@ -1,0 +1,785 @@
+{
+  "timeline": [
+    {
+      "stepId": "scene_02_001",
+      "audioFile": "scene_02_001.wav",
+      "subtitle": "My brain is spinning! How can 4/8 be the same as 1/2?",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_002",
+      "audioFile": "scene_02_002.wav",
+      "subtitle": "Let's look at a picture of your pizza.",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_003",
+      "audioFile": "scene_02_003.wav",
+      "subtitle": "Ooh, yes! It was delicious.",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_004",
+      "audioFile": "scene_02_004.wav",
+      "subtitle": "See how half the pizza is gone? That's 4 slices out of 8.",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_005",
+      "audioFile": "scene_02_005.wav",
+      "subtitle": "Yeah, I see that!",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_006",
+      "audioFile": "scene_02_006.wav",
+      "subtitle": "If we erased the lines between the slices...",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_007",
+      "audioFile": "scene_02_007.wav",
+      "subtitle": "Then it's just one big half-circle!",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": []
+    },
+    {
+      "stepId": "scene_02_008",
+      "audioFile": "scene_02_008.wav",
+      "subtitle": "Exactly! 4/8 and 1/2 are called Equivalent Fractions.",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "4/8 = 1/2",
+          "x": 50,
+          "y": 20,
+          "size": 100,
+          "color": "#FFEB3B"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_009",
+      "audioFile": "scene_02_009.wav",
+      "subtitle": "Equivalent? That's a big word!",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "4/8 = 1/2",
+          "x": 50,
+          "y": 20,
+          "size": 100,
+          "color": "#FFEB3B"
+        }
+      ]
+    },
+    {
+      "stepId": "scene_02_010",
+      "audioFile": "scene_02_010.wav",
+      "subtitle": "It just means they have the exact same value!",
+      "environment": {
+        "background": "forest_bg_transparent.png"
+      },
+      "characters": [
+        {
+          "type": "deer",
+          "pose": "gesture-positive",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": 4,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            },
+            {
+              "type": "glide",
+              "duration": 0.25,
+              "targetState": {
+                "x": -4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": 75
+              }
+            }
+          ]
+        },
+        {
+          "type": "lion",
+          "pose": "idle",
+          "actions": [
+            {
+              "type": "glide",
+              "duration": 0.1,
+              "targetState": {
+                "x": 4,
+                "y": -1,
+                "scale": 1.2,
+                "rotationY": -75
+              }
+            }
+          ]
+        }
+      ],
+      "sprites": [
+        {
+          "id": "pizza",
+          "src": "pizza_prop_transparent.png",
+          "keyframes": [
+            {
+              "frame": 0,
+              "x": 960,
+              "y": 400,
+              "scale": 1.5
+            }
+          ]
+        }
+      ],
+      "textOverlays": [
+        {
+          "text": "4/8 = 1/2",
+          "x": 50,
+          "y": 20,
+          "size": 100,
+          "color": "#FFEB3B"
+        }
+      ]
+    }
+  ]
+}
